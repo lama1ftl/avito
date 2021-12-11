@@ -19,10 +19,11 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.index, name='home'),
+    path('', views.index, name='home'),
     path('bio', views.member_bio, name='mem_bio'),
     path('add_item', views.add_item, name='add_item'),
     path('registration', views.registration, name='reg'),
     path('logout', views.logout, name='logout'),
-    path(r'^single/(?P<id>\w+)$', views.single, name='single')
+    path(r'^single/(?P<id>\w+)$', views.single, name='single'),
+    path('cart', views.cart, name='cart')
 ]

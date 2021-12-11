@@ -137,27 +137,36 @@ def logout(request):
     return HttpResponseRedirect("/")
 
 
-@csrf_protect
-def search(request):
-    if request.method == 'POST':
-        form = main_app.main_app.forms.SearchForm(request.POST)
-        if form.is_valid():
-            search_text = request.POST.get('search_text')
-            category = request.POST.get('category')
-            item_all = Item.objects.all()
-            image_all = Image.objects.all()
-            user_all = User.objects.all()
-            template = loader.get_template('../templates/main_app/index.html')
-            return render(request, template, locals())
-        else:
-            print(form.errors)
-            return HttpResponse("Invalid form")
-    else:
-        form = main_app.main_app.forms.SearchForm()
-        return render(request, '../templates/main_app/index.html', {'form': form})
+# @csrf_protect
+# def search(request):
+#     if request.method == 'POST':
+#         form = main_app.main_app.forms.SearchForm(request.POST)
+#         if form.is_valid():
+#             search_text = request.POST.get('search_text')
+#             category = request.POST.get('category')
+#             item_all = Item.objects.all()
+#             image_all = Image.objects.all()
+#             user_all = User.objects.all()
+#             template = loader.get_template('../templates/main_app/index.html')
+#             return render(request, template, locals())
+#         else:
+#             print(form.errors)
+#             return HttpResponse("Invalid form")
+#     else:
+#         form = main_app.main_app.forms.SearchForm()
+#         return render(request, '../templates/main_app/index.html', {'form': form})
 
 
 def single(request, id):
     single_item = Item.objects.filter(id=id)
     template = loader.get_template('../templates/main_app/single.html')
-    return HttpResponse( template.render(locals()))
+    return HttpResponse(template.render(locals()))
+
+
+def cart(request):
+
+    images = Image.objects.all()
+    k = images.__len__()
+    template = loader.get_template('../templates/main_app/cart.html')
+
+    return HttpResponse(template.render(locals()))
