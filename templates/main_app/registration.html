@@ -1,0 +1,131 @@
+{% extends 'main_app/base.html' %}
+
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block title %}REG{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTML5 Website Template by gettemplates.co"/>
+    <meta name="keywords"
+          content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive"/>
+    <meta name="author" content="gettemplates.co"/>
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="../../static/main_app/css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="../../static/main_app/css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="../../static/main_app/css/bootstrap.css">
+
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="../../static/main_app/css/flexslider.css">
+
+    <!-- Owl Carousel  -->
+    <link rel="stylesheet" href="../../static/main_app/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../../static/main_app/css/owl.theme.default.min.css">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="../../static/main_app/css/style.css">
+
+    <!-- Modernizr JS -->
+    <script src="../../static/main_app/js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="../../static/main_app/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+{% block content %}
+
+    <div id="fh5co-product">
+        <div class="container">
+            <div class="row animate-box">
+                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                    <p>
+                    <h2>Регистрация</h2></p>
+                    <div class="row user-info-inner text-left">
+                        <form method="post" enctype="multipart/form-data" id="reg_form">
+                            {% csrf_token %}
+                            <fieldset>
+                                <div class="form-group reg-form-group row">
+                                    <label for="login" class="col-md-5">Логин:*</label>
+                                    <input class="col-md-7" type="text" id="login" name="login">
+                                </div>
+                                <div class="form-group reg-form-group row">
+                                    <label for="pwd" class="col-md-5">Пароль:*</label>
+                                    <input class="col-md-7" type="password" id="pwd" name="pwd">
+                                </div>
+                                <div class="form-group reg-form-group row">
+                                    <label for="pwd2" class="col-md-5">Подтверждение пароля:*</label>
+                                    <input class="col-md-7" type="password" id="pwd2" name="pwd2">
+                                </div>
+                                <div class="form-group reg-form-group row">
+                                    <label for="email" class="col-md-5">Адрес эл.почты:*</label>
+                                    <input class="col-md-7" type="text" id="email" name="email">
+                                </div>
+                                <div class="form-group reg-form-group row">
+                                    <label for="name" class="col-md-5">Имя:</label>
+                                    <input class="col-md-7" type="text" id="name" name="name">
+                                </div>
+
+                                <div class="form-group reg-form-group row">
+                                    <label class="col-md-5">Роль:</label>
+                                    <div class="col-md-7">
+                                        <label class="radio-inline"><input type="radio" name="role" value="1">Покупатель</label>
+                                        <label class="radio-inline"><input type="radio" name="role"
+                                                                           value="2">Продавец</label>
+                                    </div>
+                                </div>
+                                <div class="form-group reg-form-group row">
+                                    <label for="city" class="col-md-5">Город:</label>
+                                    <input class="col-md-7" type="text" id="city" name="city">
+                                </div>
+                                <div class="form-group reg-form-group row">
+                                    <label for="work" class="col-md-5">Телефон:</label>
+                                    <input class="col-md-7" type="text" id="phone" name="phone">
+                                </div>
+                            </fieldset>
+                            <input class="button" type="submit" value="Зарегистрироваться">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+<!-- jQuery -->
+<script src="../../static/main_app/js/jquery.min.js"></script>
+<!-- jQuery Easing -->
+<script src="../../static/main_app/js/jquery.easing.1.3.js"></script>
+<!-- Bootstrap -->
+<script src="../../static/main_app/js/bootstrap.min.js"></script>
+<!-- Waypoints -->
+<script src="../../static/main_app/js/jquery.waypoints.min.js"></script>
+<!-- Carousel -->
+<script src="../../static/main_app/js/owl.carousel.min.js"></script>
+<!-- countTo -->
+<script src="../../static/main_app/js/jquery.countTo.js"></script>
+<!-- Flexslider -->
+<script src="../../static/main_app/js/jquery.flexslider-min.js"></script>
+<!-- Main -->
+<script src="../../static/main_app/js/main.js"></script>
+
+
+</body>
+
+</html>

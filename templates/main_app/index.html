@@ -1,0 +1,57 @@
+{% extends 'main_app/base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+    <!--КАРТОЧКИ ТОВАРОВ-->
+    <div id="fh5co-product">
+        <div class="container">
+            <div class="row animate-box">
+                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                    <form method="post" enctype="multipart/form-data" id="SearchForm" class="">
+                    {% csrf_token %}
+                        <fieldset>x
+                        <input type="hidden" name="form_type" value="search_form">
+                    <input type="search" id="search_text" name="search_text" placeholder="Поиск проектов...">
+                    <div class="search_cat">
+                        <label for="category">Категория:</label>
+                        <select id="category" name="category" class="col-md-9">
+                        <option value="cat1">Категория 1</option>
+                        <option>Категория 2</option>
+                        <option>Категория 3</option>
+                        <option>Категория 4</option>
+                        </select>
+                    </div>
+                    <input class="button" type="submit" value="Поиск">
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <div class="row">
+                {% for i in item_all %}
+                <div class="col-md-4 text-center animate-box">
+                    <div class="product">
+                        <div class="product-grid" style="background-image:url(../../static/main_app/images/product-1.jpg);">
+                            <div class="inner">
+                                <p>
+                                    <a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
+                                    <a href={% url 'single' i.id %} class="icon"><i class="icon-eye"></i></a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="desc">
+                            <h3><a >{{ i.name }}</a></h3>
+                            <span class="price">$350</span>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
