@@ -1,0 +1,59 @@
+{% extends 'main_app/base.html' %}
+
+{% block title %}ITEM{% endblock %}
+
+{% block content %}
+
+
+    <div id="fh5co-product">
+        <div class="container animate-box">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                    <h2>Добавьте свое объявление</h2>
+                </div>
+            </div>
+            <form method="post" enctype="multipart/form-data" id="add_item_form">
+                {% csrf_token %}
+                <fieldset>
+            <div class="row">
+                <div class="form-group reg-form-group row ">
+                    <label for="form.name" class="col-md-3">Название:</label>
+                    <input class="col-md-9" id="form.name" name="name">
+                </div>
+                <div class="form-group reg-form-group row ">
+                    <label for="form.category" class="col-md-3">Категория:</label>
+                    <select id="form.category" name="category" class="col-md-9">
+                        <option value="cat1">Категория 1</option>
+                        <option>Категория 2</option>
+                        <option>Категория 3</option>
+                        <option>Категория 4</option>
+                    </select>
+                </div>
+                <div class="form-group reg-form-group row ">
+                    <label for="form.description" class="col-md-3">Описание:</label>
+                    <textarea rows="6" class="col-md-9" id="form.description"
+                              name="text"></textarea>
+                </div>
+                <div class="form-group reg-form-group row ">
+                    <label for="form.status" class="col-md-3">Категория:</label>
+                    <select id="form.status" name="status" class="col-md-9">
+                        <option>Доступен</option>
+                        <option value="no">Не доступен</option>
+                    </select>
+                </div>
+                <div class="form-group reg-form-group row">
+                    <label for="image" class="col-md-3">Загрузить</label>
+                    <input type="file" name="image" id="image" class="inputfile">
+                </div>
+                <div class="container">
+                    <div class="row col-md-8 col-md-offset-5 fh5co-heading">
+                        <input class="button" type="submit" value="Сохранить">
+                    </div>
+                </div>
+            </div>
+                    </fieldset>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
