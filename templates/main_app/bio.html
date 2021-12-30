@@ -8,63 +8,65 @@
 
 
     <!--ПРОФИЛЬ-->
-    <div id="fh5co-product">
-        <div class="container">
+  <div id="fh5co-product" >
+        <div class="">
+            <h2 style="text-align: center; margin-bottom: 20px">Профиль</h2>
+        </div>
+
+        <div class="container fh5co-product " id="fh5co-product">
             <div class="row animate-box">
-                <div class="col-md-8 col-md-offset-3 fh5co-heading text-left">
-                    <p><h2>Профиль</h2></p>
+                <div class="col-md-3">
+                    <img src="media/images/avatar1.png" style="width: 140px; height: 140px;">
+                </div>
+                <div class="col-md-9 fh5co-heading text-left">
 
 
-                            <h3>{{ request.user.username }}</h3>
-                            <p>{{ request.user.work }}</p>
-                            <p>{{ request.user.email }}</p>
-                            <p>{{ request.user.phone }}</p>
+                                <h3>{{ request.user.username }}</h3>
+                                <p>{{ request.user.work }}</p>
+                                <p>{{ request.user.email }}</p>
+                                <p>{{ request.user.phone }}</p>
 
 
 
 
-                    <a href="redaction.html">Редактировать</a>
+                        <a href="{% url 'redact' %}">Редактировать</a>
 
                 </div>
-
             </div>
         </div>
     </div>
 
 
 
-<!--ОБЪЯВЫ-->
-<section class="prj-title">
-    <div class="container">
-        <div class="row prj-title-h1 col-md-12 animate-box">
-            <h1>Объявления:</h1>
-            {% for i in items %}
-                {% if i.user_id == request.user.id %}
-                    <section class="container">
-                        <div class="animate-box">
-                            <div class="row">
-                                <div class="project-text col-md-12">
-                                    <h2>{{ i.name }}</h2>
-                                    <p><b>{{ i.category }}</b></p>
-                                    <p>{{ i.text }}</p>
+
+    <!--ОБЪЯВЫ-->
+        {% if request.user.role == 2 %}
+            <section class="prj-title" >
+                <div class="container">
+                    <h1 style="margin-top: 40px;">Объявления:</h1>
+                    {% for i in items %}
+                        {% if i.user_id == request.user.id %}
+                            <section class="container"style="    box-shadow: 0 0 10px 5px #ebebeb;border-radius: 4px;margin-top: 48px;">
+                                <div class="animate-box">
+                                    <div class="row">
+                                        <div class="project-text col-md-12">
+                                            <h2 style="margin-top: 11px;">{{ i.name }}</h2>
+                                            <p style="margin-bottom: 0;padding-left:30px;"><b>{{ i.category }}</b></p>
+                                            <p style="padding-left:30px;">{{ i.text }}</p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
+                            </section>
+                            <section class="end">
+                        {% endif %}
+                    {% endfor %}
+                    <div class="button"><a href="{% url 'add_item' %}" class="button_in">Добавить</a></div>
                     </section>
-                    <section class="end">
-                {% endif %}
-            {% endfor %}
-
-            <div class="button"><a href="{% url 'add_item' %}" class="button_in">Добавить</a></div>
-        </div>
-    </div>
-</section>
-
-
-
+                </div>
+            </section>
+        {% endif %}
 
 {% endblock %}
-
 
 
 

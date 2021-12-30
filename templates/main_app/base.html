@@ -65,34 +65,35 @@
                 </div>
 
                 <!--ПОИСК-->
-                <div class="col-md-3 col-xs-4 text-right hidden-xs menu-2">
+{#                    <div class="col-md-3 col-xs-4 text-right hidden-xs menu-2">#}
+{#                        <ul>#}
+{#                            <li class="search">#}
+{#                                <div class="input-group">#}
+{#                                    <input type="text" placeholder="Поиск">#}
+{#                                    <span class="input-group-btn">#}
+{#        						        <button class="btn btn-primary" type="button"><i class="icon-search"></i></button>#}
+{#        						      </span>#}
+{#                                </div>#}
+{#                            </li>#}
+{##}
+{#                        </ul>#}
+{#                    </div>#}
+                <div class="col-md-9  col-xs-6 text-right menu-1">
                     <ul>
-                        <li class="search">
-                            <div class="input-group">
-                                <input type="text" placeholder="Поиск">
-                                <span class="input-group-btn">
-    						        <button class="btn btn-primary" type="button"><i class="icon-search"></i></button>
-    						      </span>
-                            </div>
-                        </li>
-
-                    </ul>
-                </div>
-                <div class="col-md-6 col-xs-6 text-center menu-1">
-                    <ul>
-                        <li class="has-dropdown">
-                            {% if request.user.is_authenticated %}
-                                {% if request.user.role == 2 or request.user.role == 0 %}
-
+                        {% if request.user.is_authenticated %}
+                            {% if request.user.role == 2 %}
+                                <li><a href="{% url 'mem_bio' %}">Профиль</a></li>
+                                <li><a href="{% url 'add_item' %}">Разместить объяву</a></li>
+                               {% comment %} <li class="has-dropdown">
                                     <ul class="dropdown">
                                         <li><a href="{% url 'mem_bio' %}">Профиль</a></li>
                                         <li><a href="{% url 'add_item' %}">Разместить объяву</a></li>
                                     </ul>
-                                {% else %}
-                                    <a href="{% url 'mem_bio' %}">Профиль</a>
-                                {% endif %}
+                                </li>{% endcomment %}
+                            {% else %}
+                                <li><a href="{% url 'mem_bio' %}">Профиль</a></li>
                             {% endif %}
-                        </li>
+                        {% endif %}
                         {% if request.user.is_authenticated %}
                             <li><a href="{% url 'logout' %}">Выйти</a></li>
                         {% else %}
@@ -137,7 +138,7 @@
                                 <input class="col-md-7" type="password" id="pwd" name="pwd">
                             </div>
                         </fieldset>
-                        <input class="button" type="submit" value="Войти">
+                        <input class="col-md-3 button" type="submit" value="Войти">
                     </form>
                 </div>
 

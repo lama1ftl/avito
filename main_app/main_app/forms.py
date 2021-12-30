@@ -24,6 +24,7 @@ class AddItemForm(forms.Form):
     text = forms.CharField(label='text')
     status = forms.ChoiceField(label='status', choices=(('yes', 'yes'),
                                                         ('no', 'no')))
+
     image = forms.FileField(required=False, label='images',
                             widget=forms.ClearableFileInput(
                                 attrs={'multiple': True}))

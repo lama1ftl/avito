@@ -11,19 +11,21 @@
                 </div>
             </div>
 
-
+{% for c in cart_items %}
+    <div class="row">
             <div class="col-md-4 col-md-offset-4 text-center animate-box">
                 <div class="product">
                     <div class="product-grid" style="background-image:url(../static/main_app/images/kolyan.JPG);">
 
                     </div>
                     <div class="desc">
-                        <h4>Колян</h4>
+                        <input class="hidden" value="{{ c.id }}">
+                        <h4>{{ c.name }}</h4>
                         <div class="quantity">
                             <button class="plus-btn" type="button" name="button">
                                 <img src="../static/main_app/images/minus_18dp.svg" alt=""/>
                             </button>
-                            <input type="text" name="name" value="1">
+                            <input type="text" name="name" value="{{ c.cart_item.qty }}">
                             <button class="minus-btn" type="button" name="button">
                                 <img src="../static/main_app/images/plus_18dp.svg" alt=""/>
                             </button>
@@ -36,11 +38,11 @@
                     <h4>Итоговая цена: 350</h4>
                 </div>
             </div>
+</div>
+{% endfor %}
 
 
-
-
-	<div class="col-md-8 col-md-offset-2  animate-box">
+{% comment %}	<div class="col-md-8 col-md-offset-2  animate-box">
         <div class="row">
 					<h3>Оформление заказа</h3>
 					<form action="#">
@@ -73,13 +75,13 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<input type="submit" value="Отправить" class="btn btn-primary">
-						</div>
+                            <a href="{% url 'make_order' %}" ><input type="submit" value="Отправить" class="btn btn-primary"></a>
+                        </div>
 
 					</form>
 				</div>
 			</div>
-        </div>
+        </div>{% endcomment %}
 {% endblock %}
 
 
@@ -90,6 +92,7 @@
 
 
 
+{% comment %}
 
 
 
@@ -194,4 +197,4 @@
 
         <div class="total-price">$349</div>
       </div>
-    </div>
+    </div>{% endcomment %}
