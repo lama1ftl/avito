@@ -48,49 +48,49 @@
                 <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
                     <p>
                     <h2>Регистрация</h2></p>
-                    <div class="row user-info-inner text-left">
+                    <div class="row user-info-inner text-left reg_form_cont">
                         <form method="post" enctype="multipart/form-data" id="reg_form">
                             {% csrf_token %}
                             <fieldset>
                                 <div class="form-group reg-form-group row">
-                                    <label for="login" class="col-md-5">Логин:*</label>
-                                    <input class="col-md-7" type="text" id="login" name="login">
+                                    <label for="login" class="col-sm-5">Логин:*</label>
+                                    <input class="col-sm-7 input-fild" type="text" id="login" name="login">
                                 </div>
                                 <div class="form-group reg-form-group row">
-                                    <label for="pwd" class="col-md-5">Пароль:*</label>
-                                    <input class="col-md-7" type="password" id="pwd" name="pwd">
+                                    <label for="pwd" class="col-sm-5">Пароль:*</label>
+                                    <input class="col-sm-7" type="password" id="pwd" name="pwd">
                                 </div>
                                 <div class="form-group reg-form-group row">
-                                    <label for="pwd2" class="col-md-5">Подтверждение пароля:*</label>
-                                    <input class="col-md-7" type="password" id="pwd2" name="pwd2">
+                                    <label for="pwd2" class="col-sm-5">Подтверждение пароля:*</label>
+                                    <input class="col-sm-7" type="password" id="pwd2" name="pwd2">
                                 </div>
                                 <div class="form-group reg-form-group row">
-                                    <label for="email" class="col-md-5">Адрес эл.почты:*</label>
-                                    <input class="col-md-7" type="text" id="email" name="email">
+                                    <label for="email" class="col-sm-5">Адрес эл.почты:*</label>
+                                    <input class="col-sm-7" type="text" id="email" name="email">
                                 </div>
                                 <div class="form-group reg-form-group row">
-                                    <label for="name" class="col-md-5">Имя:</label>
-                                    <input class="col-md-7" type="text" id="name" name="name">
+                                    <label for="name" class="col-sm-5">Имя:</label>
+                                    <input class="col-sm-7" type="text" id="name" name="name">
                                 </div>
 
                                 <div class="form-group reg-form-group row">
-                                    <label class="col-md-5">Роль:</label>
-                                    <div class="col-md-7">
-                                        <label class="radio-inline"><input type="radio" name="role" value="1">Покупатель</label>
-                                        <label class="radio-inline"><input type="radio" name="role"
-                                                                           value="2">Продавец</label>
+                                    <label class="col-sm-5">Роль:</label>
+                                    <div class="col-sm-7">
+                                        <div class="radio_cont"><label class="radio-inline"><input type="radio" name="role" value="1">Покупатель</label></div>
+                                        <div class="radio_cont"><label class="radio-inline"><input class="inp_radio_margin" type="radio" name="role"
+                                                                           value="2">Продавец</label></div>
                                     </div>
                                 </div>
                                 <div class="form-group reg-form-group row">
-                                    <label for="city" class="col-md-5">Город:</label>
-                                    <input class="col-md-7" type="text" id="city" name="city">
+                                    <label for="city" class="col-sm-5">Город:</label>
+                                    <input class="col-sm-7" type="text" id="city" name="city">
                                 </div>
                                 <div class="form-group reg-form-group row">
-                                    <label for="work" class="col-md-5">Телефон:</label>
-                                    <input class="col-md-7" type="text" id="phone" name="phone">
+                                    <label for="work" class="col-sm-5">Телефон:</label>
+                                    <input class="col-sm-7" type="text" id="phone" name="phone">
                                 </div>
                             </fieldset>
-                            <input class="button" type="submit" value="Зарегистрироваться">
+                            <div class="div_btn_reg_group"><input class="button btn_reg_group" type="submit" value="Зарегистрироваться"></div>
                         </form>
                     </div>
                 </div>

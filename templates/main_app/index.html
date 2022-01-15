@@ -5,11 +5,18 @@
 
 {% block content %}
 
+    <!-- ВСПЛЫВАЮЩЕЕ ОКНО -->
+    <div id="zatemnenie">
+      <div id="okno">
+        Всплывающее окошко!<br>
+        <a href="#" class="close">Закрыть окно</a>
+      </div>
+    </div>
     <!--ПОИСК ТОВАРОВ-->
     <div id="fh5co-product">
         <div class="container">
             <div class="row animate-box">
-                <section class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                <section class="col-md-8 col-md-offset-2 text-center fh5co-heading search_section">
                     <form method="post" enctype="multipart/form-data" id="SearchForm">
                         <div class="search_inline">
                             <div><input type="hidden" name="form_type" value="search_form"></div>
@@ -34,9 +41,11 @@
         <!--КАРТОЧКИ ТОВАРОВ-->
     <div class="container">
         <div class="row">
+            {% if not item_all %}
+                <h3>По вашему запросу ничего не найдено</h3>
+            {% else %}
             {% for i in item_all %}
-            <div class="col-md-4 text-center animate-box product_card">
-
+            <div class="col-md-4 col-xs-6 text-center animate-box product_card">
                 <div class="product">
                     <div class="owl-carousel owl-carousel-fullwidth product-carousel">
                         {% for im in image_all %}
@@ -44,11 +53,14 @@
                                 <div class="item">
                                     <div class="product-grid"
                                          style="background-image:url({{ MEDIA_URL }}{{ im.image.url }});">
-
                                         <div class="inner">
                                             <p>
                                                 <input class="hidden" value="{{ i.id }}">
-                                                <a href='{% url 'add_to_cart' i.id%}' class="icon"><i class="icon-shopping-cart"></i></a>
+                                                {% if request.user.is_authenticated %}
+                                                   <a href='{% url 'add_to_cart' i.id%}' class="icon"><i class="icon-shopping-cart"></i></a>
+                                                {% else %}
+                                                    <a  data-toggle="modal" data-target="#loginModal" class="icon"><i class="icon-shopping-cart"></i></a>
+                                                {% endif %}
                                                 <a href='{% url 'single' i.id %}' class="icon"><i class="icon-eye"></i></a>
                                             </p>
                                         </div>
@@ -63,13 +75,12 @@
                             <h4>  - - -  </h4>
                         {% endif %}
                         <h4>{{ i.price }}</h4>
-                        <h4>{{ i.status }}</h4>
+                        {% comment %}<h4>{{ i.status }}</h4>{% endcomment %}
                     </div>
                 </div>
-
             </div>
             {% endfor %}
-
+            {% endif %}
         </div>
     </div>
 

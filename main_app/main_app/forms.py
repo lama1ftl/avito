@@ -1,6 +1,7 @@
 from django import forms
 
 
+
 class LoginForm(forms.Form):
     login = forms.CharField(label='login')
     pwd = forms.CharField(label='pwd')
@@ -19,6 +20,7 @@ class RegForm(forms.Form):
 
 class AddItemForm(forms.Form):
     name = forms.CharField(label='name')
+    price = forms.CharField(label='price')
     category = forms.ChoiceField(label='category', choices=(('cat1', 'cat1'),
                                                             ('cat2', 'cat2')))
     text = forms.CharField(label='text')
@@ -34,3 +36,15 @@ class SearchForm(forms.Form):
     search_text = forms.CharField(label='search_text')
     category = forms.ChoiceField(label='category', choices=(('cat1', 'cat1'),
                                                             ('cat2', 'cat2')))
+
+
+class RedactForm(forms.Form):
+    email = forms.EmailField(label='email')
+    name = forms.CharField(label='name')
+    surname = forms.CharField(label='surname')
+    city = forms.CharField(label='city')
+    phone = forms.CharField(label='phone')
+
+
+
+

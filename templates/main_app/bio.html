@@ -10,33 +10,35 @@
     <!--ПРОФИЛЬ-->
   <div id="fh5co-product" >
         <div class="">
-            <h2 style="text-align: center; margin-bottom: 20px">Профиль</h2>
+            <h2 style="text-align: center;">Профиль</h2>
         </div>
 
-        <div class="container fh5co-product " id="fh5co-product">
-            <div class="row animate-box">
-                <div class="col-md-3">
-                    <img src="media/images/avatar1.png" style="width: 140px; height: 140px;">
+        <div class="container">
+            <div class="row animate-box bio_flex">
+                <div class="col-sm-3 bio_img bio_decs">
+                    <img src="media/images/avatar1.png">
                 </div>
-                <div class="col-md-9 fh5co-heading text-left">
-
+                <div class="col-sm-9  text-left bio_text bio_desc">
 
                                 <h3>{{ request.user.username }}</h3>
-                                <p>{{ request.user.work }}</p>
                                 <p>{{ request.user.email }}</p>
                                 <p>{{ request.user.phone }}</p>
 
-
-
-
-                        <a href="{% url 'redact' %}">Редактировать</a>
+                        <a href="{% url 'redaction' %}">Редактировать</a>
 
                 </div>
+{% comment %}                <div>
+                    {% for im in images %}
+                        {% if im.item_id == i.id %}
+                             <div class="img_single_owl_cont" style="background-image:url({{ MEDIA_URL }}{{ i.image.url }});">
+                         <img class="img_single_owl" src="{{ MEDIA_URL }}{{ i.image.url }}" alt="{{ i.item_id }}{{ s.id }}">
+                       </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>{% endcomment %}
             </div>
         </div>
     </div>
-
-
 
 
     <!--ОБЪЯВЫ-->
@@ -49,17 +51,30 @@
                             <section class="container"style="    box-shadow: 0 0 10px 5px #ebebeb;border-radius: 4px;margin-top: 48px;">
                                 <div class="animate-box">
                                     <div class="row">
-                                        <div class="project-text col-md-12">
+                                        <div class="project-text col-md-2">
+                                            <div class="img_single_cont">
+                                                {% for im in image_item %}
+                                                    {% if im.item_id == i.id %}
+                                                     <img class="img_single" src="{{ MEDIA_URL }}{{ im.image.url }}">
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                        <div class="project-text col-md-10">
                                             <h2 style="margin-top: 11px;">{{ i.name }}</h2>
                                             <p style="margin-bottom: 0;padding-left:30px;"><b>{{ i.category }}</b></p>
                                             <p style="padding-left:30px;">{{ i.text }}</p>
                                         </div>
                                     </div>
+                                    <div>
+                                        <a href="{% url 'del_item' i.id %}">Удалить</a>
+                                        <a href="{% url 'single' i.id %}">Подробнее</a>
+                                    </div>
                                 </div>
                             </section>
-                            <section class="end">
                         {% endif %}
                     {% endfor %}
+                    <section class="end">
                     <div class="button"><a href="{% url 'add_item' %}" class="button_in">Добавить</a></div>
                     </section>
                 </div>

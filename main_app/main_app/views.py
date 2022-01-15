@@ -1,16 +1,65 @@
 import re
+from decimal import Decimal
+
 from django.core.cache import cache
-from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
+from django.db.models import Q
+from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound
 from django.contrib.auth import authenticate
 import django.contrib.auth
 from django.template import loader
+from django.urls import reverse
 from django.views.decorators.csrf import csrf_protect, csrf_exempt
+
 from .models import *
 
 import main_app.main_app.forms
 
 
+# @csrf_exempt
+# def index(request):
+#     # item_all = Item.objects.all()
+#     # image_all = Image.objects.all()
+#     # user_all = User.objects.all()
+#     if request.method == 'POST':
+#         if request.POST.get('form_type') == 'login_form':
+#             login_form = main_app.main_app.forms.LoginForm(request.POST)
+#             if login_form.is_valid():
+#                 login = request.POST.get('login', None)
+#                 pwd = request.POST.get('pwd', None)
+#                 user = authenticate(username=login, password=pwd)
+#                 if user is not None:
+#                     if user.is_active:
+#                         django.contrib.auth.login(request, user)
+#                         return HttpResponseRedirect("/")
+#                     else:
+#                         return HttpResponse("disabled account")
+#                 else:
+#                     return HttpResponse("user none")
+#             else:
+#                 return HttpResponse("Invalid data form")
+#
+#         if request.POST.get('form_type') == 'search_form':
+#             search_form = main_app.main_app.forms.SearchForm(request.POST)
+#             if search_form.is_valid():
+#                 search_text = request.POST.get('search_text')
+#                 category = request.POST.get('category')
+#                 item_all = Item.objects.filter(Q(category=category) and Q(name__icontains=search_text))
+#                 image_all = Image.objects.all()
+#                 user_all = User.objects.all()
+#                 template = loader.get_template('../templates/main_app/index.html')
+#                 return HttpResponse(template.render(locals()))
+#             else:
+#                 print(search_form.errors)
+#                 return HttpResponse("Invalid form")
+#     else:
+#         image_all = Image.objects.all()
+#         item_all = Item.objects.all()
+#         login_form = main_app.main_app.forms.LoginForm()
+#         search_form = main_app.main_app.forms.SearchForm()
+#         return render(request, '../templates/main_app/index.html',
+#                       {'login_form': login_form, 'search_form': search_form})
+#
 @csrf_exempt
 def index(request):
     if request.method == 'POST':
@@ -33,10 +82,17 @@ def index(request):
 
         if request.POST.get('form_type') == 'search_form':
             search_form = main_app.main_app.forms.SearchForm(request.POST)
+
             if search_form.is_valid():
                 search_text = request.POST.get('search_text')
                 category = request.POST.get('category')
-                item_all = Item.objects.filter(category=category, name=search_text)
+                item_all = list()
+                item_search = Item.objects.all()
+                for i in item_search:
+                    if search_text.upper().lower() in i.name.upper().lower() or search_text.upper().lower() in i.text.upper().lower():
+                        item_all.append(i)
+
+                # item_all = Item.objects.filter(category=category, name=search_text)
                 image_all = Image.objects.all()
                 user_all = User.objects.all()
                 template = loader.get_template('../templates/main_app/index.html')
@@ -45,18 +101,28 @@ def index(request):
                 print(search_form.errors)
                 return HttpResponse("Invalid form")
     else:
+        image_all = Image.objects.all()
+        item_all = Item.objects.all()
         login_form = main_app.main_app.forms.LoginForm()
         search_form = main_app.main_app.forms.SearchForm()
-        return render(request, '../templates/main_app/index.html', {'login_form': login_form, 'search_form': search_form})
+
+        return render(request, '../templates/main_app/index.html',
+                      {'login_form': login_form, 'search_form': search_form, 'item_all': item_all,
+                       'image_all': image_all})
 
 
 def member_bio(request):
     if request.user.is_authenticated:
         items = Item.objects.filter(user_id=request.user.id)
         images = Image.objects.all()
+        image_item = list()
+        for i in items:
+            for im in images:
+                if im.item_id == i.id:
+                    image_item.append(im)
+                    break
 
         template = loader.get_template('../templates/main_app/bio.html')
-
         return HttpResponse(template.render(locals()))
     else:
         return render(request, '../templates/main_app/bio.html')
@@ -69,12 +135,14 @@ def add_item(request):
             form = main_app.main_app.forms.AddItemForm(request.POST, request.FILES)
             if form.is_valid():
                 name = request.POST.get('name')
+                price = request.POST.get('price')
                 category = request.POST.get('category')
                 text = request.POST.get('text')
                 status = request.POST.get('status')
                 item = Item.objects.create(
                     user_id=request.user.id,
                     name=name,
+                    price=price,
                     category=category,
                     text=text,
                     status=status)
@@ -91,6 +159,14 @@ def add_item(request):
             return render(request, '../templates/main_app/add_item.html', {'form': form})
     else:
         return HttpResponseRedirect('index')
+
+
+def del_item(request, id):
+    if request.user.is_authenticated:
+        Item.objects.filter(id=id).delete()
+        return HttpResponseRedirect('/bio')
+    else:
+        return HttpResponseRedirect('/bio')
 
 
 @csrf_protect
@@ -157,39 +233,134 @@ def logout(request):
 #         return render(request, '../templates/main_app/index.html', {'form': form})
 
 
+@csrf_protect
+def redaction(request):
+    user = User.objects.all()
+    if request.method == "POST":
+        form = main_app.main_app.forms.RedactForm(request.POST)
+        for user in user:
+            if user.id == request.user.id:
+                if form.is_valid():
+                    user.email = request.POST.get("email")
+                    user.first_name = request.POST.get('name')
+                    user.last_name = request.POST.get('surname')
+                    user.city = request.POST.get('city')
+                    user.phone = request.POST.get('phone')
+                    user.save()
+                else:
+                    print(form.errors)
+                    return HttpResponse("Invalid data form")
+    else:
+        form = main_app.main_app.forms.RedactForm()
+        return render(request, '../templates/main_app/redaction.html', {'form': form})
+
+    # form = main_app.main_app.forms.RedactForm()
+    # items = Item.objects.filter(user_id=request.user.id)
+    # template = loader.get_template('../templates/main_app/bio.html')
+    # return HttpResponse(template.render(locals()))
+    return HttpResponseRedirect('/bio')
+
+
 def single(request, id):
+    cart_items = list()
+    cart_id = list()
+    ids = Item.objects.values_list('id', flat=True)
+    if 'cart' not in request.session:
+        request.session['cart'] = list()
+    for c in request.session['cart']:
+        cart_items.append(Item.objects.get(id=c))
+    for i in ids:
+        for c in cart_items:
+            if i == c.id:
+                cart_id.append(i)
     single_item = Item.objects.filter(id=id)
     image_all = Image.objects.all()
     template = loader.get_template('../templates/main_app/single.html')
     return HttpResponse(template.render(locals()))
 
 
+# def cart(request):
+#     cart_items = list()
+#     if 'cart' not in request.session:
+#         request.session['cart'] = list()
+#     if request.user.is_authenticated:
+#         for c in request.session['cart']:
+#             cart_items.append(Item.objects.get(id=c))
+#     else:
+#         return HttpResponse('user not auth')
+#     image_all = Image.objects.all()
+#     template = loader.get_template('../templates/main_app/cart.html')
+#     return HttpResponse(template.render(locals()))
 def cart(request):
-    # request.session['cart'].clear()
+    count = 0
+    total = 0
+    items = list()
     cart_items = list()
-
-    for c in request.session['cart']:
-        cart_items.append(Item.objects.get(id=c))
-
-    # print(request.session['cart'])
-    # print(cart_items[6].id)
-    images = Image.objects.all()
+    if 'cart' not in request.session:
+        request.session['cart'] = list()
+    if request.user.is_authenticated:
+        user = User.objects.get(id=request.user.id)
+        for c in request.session['cart']:
+            count = count + 1
+            items.append(Item.objects.get(id=c))
+            cartItem = CartItem.objects.create(item_total_price=Item.objects.get(id=c).price,
+                                               item_id=Item.objects.get(id=c).id, )
+            cartItem.save()
+            cart_items.append(cartItem)
+            # итоговая стоимость без учета количсетва
+            price = cartItem.item_total_price
+            total = Decimal(price) + total
+        # k = items.__len__()
+        # print(items)
+        # for i in items:
+        #     for ci in cart_items:
+        #         print(ci)
+        #         if i != ci.item:
+        #             cartItem = CartItem.objects.create(item = i)
+        #             cart_items.append(cartItem)
+        # cart_items.clear()
+        # for p in cart_items:
+        #     print(p)
+        # print(items)
+        # print(cart_items)
+    # else:
+    #     return HttpResponseRedirect("/")
+    image_all = Image.objects.all()
+    # cart_item = CartItem.objects.filter(id=id)
     template = loader.get_template('../templates/main_app/cart.html')
-
     return HttpResponse(template.render(locals()))
 
 
 def add_to_cart(request, id):
+    cart_items = list()
     if request.user.is_authenticated:
         if 'cart' not in request.session:
             request.session['cart'] = list()
-        request.session['cart'].append(int(id))
+        if id not in request.session['cart']:
+            request.session['cart'].append(int(id))
         request.session.save()
+        for c in request.session['cart']:
+            for ci in cart_items:
+                if c != ci.id:
+                    cart_items.append(Item.objects.get(id=c))
     else:
         return HttpResponse('user not auth')
-    template = loader.get_template('../templates/main_app/cart.html')
+    # template = loader.get_template('../templates/main_app/cart.html')
+    # return HttpResponse(template.render(locals()))
+    return HttpResponse(cart(request))
 
-    return HttpResponse(template.render(locals()))
+
+def del_item_cart(request, id):
+    cart_items = list()
+    if request.user.is_authenticated:
+        if id in request.session['cart']:
+            request.session['cart'].remove(int(id))
+        request.session.save()
+        for c in request.session['cart']:
+            cart_items.append(Item.objects.get(id=c))
+    # template = loader.get_template('../templates/main_app/cart.html')
+    # return HttpResponse(template.render(locals()))
+    return HttpResponse(cart(request))
 
 
 def make_order(request):
@@ -198,6 +369,17 @@ def make_order(request):
     return HttpResponse(template.render(locals()))
 
 
-def redaction(request):
-    template = loader.get_template('../templates/main_app/redaction.html')
+def cat(request):
+
+    cat_1 = list()
+    cat_2 = list()
+    cat_3 = list()
+    # cat_4 = list()
+
+    cat_1 = Category.objects.filter(level=0)
+    cat_2 = Category.objects.filter(level=1)
+    cat_3 = Category.objects.filter(level=2)
+    # cat_4 = Category.objects.filter(level=3)
+
+    template = loader.get_template('../templates/main_app/cat.html')
     return HttpResponse(template.render(locals()))

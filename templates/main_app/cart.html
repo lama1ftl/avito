@@ -6,82 +6,107 @@
     <div id="fh5co-product">
         <div class="container">
             <div class="row animate-box">
-                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading fh5co-heading-cart ">
                     <h2>Корзина</h2>
                 </div>
             </div>
-
-{% for c in cart_items %}
-    <div class="row">
-            <div class="col-md-4 col-md-offset-4 text-center animate-box">
-                <div class="product">
-                    <div class="product-grid" style="background-image:url(../static/main_app/images/kolyan.JPG);">
-
-                    </div>
-                    <div class="desc">
-                        <input class="hidden" value="{{ c.id }}">
-                        <h4>{{ c.name }}</h4>
-                        <div class="quantity">
-                            <button class="plus-btn" type="button" name="button">
-                                <img src="../static/main_app/images/minus_18dp.svg" alt=""/>
-                            </button>
-                            <input type="text" name="name" value="{{ c.cart_item.qty }}">
-                            <button class="minus-btn" type="button" name="button">
-                                <img src="../static/main_app/images/plus_18dp.svg" alt=""/>
-                            </button>
-                        </div>
-                        <span class="price">350</span>
-                    </div>
-                </div>
-
+            {% if not cart_items %}
                 <div>
-                    <h4>Итоговая цена: 350</h4>
+                    <p>Корзина пустая</p>
                 </div>
-            </div>
-</div>
-{% endfor %}
+            {% else %}
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1" style="text-align:end">
+                        <p>Цена<span class="total_sum_cart">{{ total }}</span></p>
+                    </div>
+                </div>
+                {% for c in cart_items %}
+                    <div class="row">
+                        <section class="container"
+                                 style="    box-shadow: 0 0 10px 5px #ebebeb;border-radius: 4px;margin-bottom: 40px;">
+                            <div class="animate-box">
+                                <div class="row">
+                                    <div class="project-text col-md-8">
+                                        <h2 style="margin-top: 11px;">{{ c.item.name }}</h2>
+                                        <p style="margin-bottom: 0;padding-left:30px;"><b>{{ c.item.id }}</b></p>
+                                        <p style="margin-bottom: 0;padding-left:30px;"><b>{{ c.item.price }}</b></p>
+                                        <p style="padding-left:30px;">{{ c.item.status }}</p>
+                                        {% comment %}                                        {% for im in images %}
+                                            <img src="{{ MEDIA_URL }}{{ im.image.url }}">
+                                        {% endfor %}{% endcomment %}
+                                    </div>
+                                    <div class="col-md-4" style="text-align: end;">
+                                        <a href="{% url 'del_item_cart' c.item.id %}">удалить из корзины</a>
+                                        <div class="desc">
+                                            <input class="hidden" value="{{  c.item.id }}">
+                                             <div class="quantity">
+{#                                                <button class="minus-btn" type="button" name="button"#}
+{#                                                        onclick="document.getElementById('qty').value =#}
+{#                                                parseInt(document.getElementById('qty').value)-1">#}
+{#                                                    <img src="../static/main_app/images/minus_18dp.svg" alt=""/>#}
+{#                                                </button>#}
+                                               <input type="number" min="1" id="qty" name="name" value="{{ c.qty }}">
 
+{#                                                <button class="plus-btn" type="button" name="button"#}
+{#                                                        onclick="document.getElementById('qty').value =#}
+{#                                                parseInt(document.getElementById('qty').value)+1">#}
+{#                                                    <img src="../static/main_app/images/plus_18dp.svg" alt=""/>#}
+{#                                                </button>#}
+                                                <span class="price" style="text-align: center">{{ c.item.price }}</span>
+                                             </div>
+                                        </div>
+                                        <a href="{% url 'single' c.item_id %}">Подробнее</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
 
-{% comment %}	<div class="col-md-8 col-md-offset-2  animate-box">
-        <div class="row">
-					<h3>Оформление заказа</h3>
-					<form action="#">
-						<div class="row form-group">
-							<div class="col-md-12">
-								<!-- <label for="fname">First Name</label> -->
-								<input type="text" id="fname" class="form-control" placeholder="ФИО">
-							</div>
-
-						</div>
-
-						<div class="row form-group">
-							<div class="col-md-12">
-								<!-- <label for="email">Email</label> -->
-								<input type="text" id="email" class="form-control" placeholder="Email">
-							</div>
-						</div>
-
-                        <div class="row form-group">
-							<div class="col-md-12">
-								<!-- <label for="email">Email</label> -->
-								<input type="text" id="phone" class="form-control" placeholder="Телефон">
-							</div>
-						</div>
-
-						<div class="row form-group">
-							<div class="col-md-12">
-								<!-- <label for="message">Message</label> -->
-								<textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Сообщение"></textarea>
-							</div>
-						</div>
-						<div class="form-group">
-                            <a href="{% url 'make_order' %}" ><input type="submit" value="Отправить" class="btn btn-primary"></a>
+        <div class="col-md-8 col-md-offset-2  animate-box">
+            <div class="row">
+                <h3>Оформление заказа</h3>
+                <form action="#">
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <!-- <label for="fname">First Name</label> -->
+                            <input type="text" id="fname" class="form-control" placeholder="ФИО" value="{{ user.name }}">
                         </div>
+                    </div>
 
-					</form>
-				</div>
-			</div>
-        </div>{% endcomment %}
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <!-- <label for="email">Email</label> -->
+                            <input type="text" id="email" class="form-control" placeholder="Email" value="{{ user.email }}">
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <!-- <label for="email">Email</label> -->
+                            <input type="text" id="phone" class="form-control" placeholder="Телефон" value="{{ user.phone }}">
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <!-- <label for="message">Message</label> -->
+                            <textarea name="message" id="message" cols="30" rows="10" class="form-control"
+                                      placeholder="Сообщение"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <a href="{% url 'make_order' %}"><input type="submit" value="Отправить" class="btn btn-primary"></a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
 {% endblock %}
 
 

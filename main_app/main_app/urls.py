@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from . import views
 from avito2_0 import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
@@ -27,12 +27,17 @@ urlpatterns = [
     path('bio', views.member_bio, name='mem_bio'),
     path('add_item', views.add_item, name='add_item'),
     path('registration', views.registration, name='reg'),
-    path('redaction', views.redaction, name='redact'),
+    path('redaction', views.redaction, name='redaction'),
     path('logout', views.logout, name='logout'),
     path(r'^single/(?P<id>\w+)$', views.single, name='single'),
     path(r'cart', views.cart, name='cart'),
-    path(r'^add_to_cart/<int:id>', views.add_to_cart, name='add_to_cart'),
-    path(r'make_order', views.make_order, name='make_order')
+    path(r'bio/(?P<int:id>\d+)$', views.del_item, name='del_item'),
+    path(r'^add_to_cart/(?P<int:id>\d+)$', views.add_to_cart, name='add_to_cart'),
+    path(r'^del_item_cart/(?P<int:id>\d+)$', views.del_item_cart, name='del_item_cart'),
+    path(r'make_order', views.make_order, name='make_order'),
+
+    path('cat', views.cat, name='cat'),
+
 ]
 if settings.DEBUG:
     if settings.MEDIA_ROOT:

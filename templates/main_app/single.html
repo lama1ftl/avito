@@ -31,9 +31,12 @@
                     <div class="row animate-box">
                         <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
                             <h2>{{ s.name }}</h2>
-                            <p>
-                                <a href="#" class="btn btn-primary btn-outline btn-lg">Добавить в корзину</a>
-                            </p>
+                            {% comment %}<h2>{{ s.id }}</h2>{% endcomment %}
+                                {% if s.id in cart_id %}
+                                    <p><a href="{% url 'cart' %}" class="btn btn-primary btn-outline btn-lg">Товар в корзине</a></p>
+                                {% else%}
+                                    <p><a href='{% url 'add_to_cart' s.id%}' class="btn btn-primary btn-outline btn-lg">Добавить в корзину</a></p>
+                                {% endif %}
                         </div>
                     </div>
 

@@ -1,0 +1,767 @@
+Index: .idea/sqldialects.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/sqldialects.xml b/.idea/sqldialects.xml
+deleted file mode 100644
+--- a/.idea/sqldialects.xml	(revision 4f2b24ddc43998fc82b62dd047024bc90f67dc1a)
++++ /dev/null	(revision 4f2b24ddc43998fc82b62dd047024bc90f67dc1a)
+@@ -1,6 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="SqlDialectMappings">
+-    <file url="file://$PROJECT_DIR$/db.sqlite3" dialect="SQLite" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/avito2_0.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/avito2_0.iml b/.idea/avito2_0.iml
+deleted file mode 100644
+--- a/.idea/avito2_0.iml	(revision 4f2b24ddc43998fc82b62dd047024bc90f67dc1a)
++++ /dev/null	(revision 4f2b24ddc43998fc82b62dd047024bc90f67dc1a)
+@@ -1,30 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module type="PYTHON_MODULE" version="4">
+-  <component name="FacetManager">
+-    <facet type="django" name="Django">
+-      <configuration>
+-        <option name="rootFolder" value="$MODULE_DIR$" />
+-        <option name="settingsModule" value="avito2_0/settings.py" />
+-        <option name="manageScript" value="$MODULE_DIR$/manage.py" />
+-        <option name="environment" value="&lt;map/&gt;" />
+-        <option name="doNotUseTestRunner" value="false" />
+-        <option name="trackFilePattern" value="migrations" />
+-      </configuration>
+-    </facet>
+-  </component>
+-  <component name="NewModuleRootManager">
+-    <content url="file://$MODULE_DIR$">
+-      <excludeFolder url="file://$MODULE_DIR$/venv" />
+-    </content>
+-    <orderEntry type="jdk" jdkName="Python 3.7" jdkType="Python SDK" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-  </component>
+-  <component name="TemplatesService">
+-    <option name="TEMPLATE_CONFIGURATION" value="Django" />
+-    <option name="TEMPLATE_FOLDERS">
+-      <list>
+-        <option value="$MODULE_DIR$/templates" />
+-      </list>
+-    </option>
+-  </component>
+-</module>
+\ No newline at end of file
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+deleted file mode 100644
+--- a/.idea/.gitignore	(revision 4f2b24ddc43998fc82b62dd047024bc90f67dc1a)
++++ /dev/null	(revision 4f2b24ddc43998fc82b62dd047024bc90f67dc1a)
+@@ -1,8 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+-# Datasource local storage ignored files
+-/dataSources/
+-/dataSources.local.xml
+-# Editor-based HTTP Client requests
+-/httpRequests/
+Index: .idea/dbnavigator.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/dbnavigator.xml b/.idea/dbnavigator.xml
+deleted file mode 100644
+--- a/.idea/dbnavigator.xml	(revision 4f2b24ddc43998fc82b62dd047024bc90f67dc1a)
++++ /dev/null	(revision 4f2b24ddc43998fc82b62dd047024bc90f67dc1a)
+@@ -1,456 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="DBNavigator.Project.DataEditorManager">
+-    <record-view-column-sorting-type value="BY_INDEX" />
+-    <value-preview-text-wrapping value="true" />
+-    <value-preview-pinned value="false" />
+-  </component>
+-  <component name="DBNavigator.Project.DataExportManager">
+-    <export-instructions>
+-      <create-header value="true" />
+-      <friendly-headers value="false" />
+-      <quote-values-containing-separator value="true" />
+-      <quote-all-values value="false" />
+-      <value-separator value="" />
+-      <file-name value="" />
+-      <file-location value="" />
+-      <scope value="GLOBAL" />
+-      <destination value="FILE" />
+-      <format value="EXCEL" />
+-      <charset value="windows-1251" />
+-    </export-instructions>
+-  </component>
+-  <component name="DBNavigator.Project.DatabaseBrowserManager">
+-    <autoscroll-to-editor value="false" />
+-    <autoscroll-from-editor value="true" />
+-    <show-object-properties value="true" />
+-    <loaded-nodes />
+-  </component>
+-  <component name="DBNavigator.Project.DatabaseFileManager">
+-    <open-files />
+-  </component>
+-  <component name="DBNavigator.Project.EditorStateManager">
+-    <last-used-providers />
+-  </component>
+-  <component name="DBNavigator.Project.ExecutionManager">
+-    <retain-sticky-names value="false" />
+-  </component>
+-  <component name="DBNavigator.Project.MethodExecutionManager">
+-    <method-browser />
+-    <execution-history>
+-      <group-entries value="true" />
+-      <execution-inputs />
+-    </execution-history>
+-    <argument-values-cache />
+-  </component>
+-  <component name="DBNavigator.Project.ObjectDependencyManager">
+-    <last-used-dependency-type value="INCOMING" />
+-  </component>
+-  <component name="DBNavigator.Project.ObjectQuickFilterManager">
+-    <last-used-operator value="EQUAL" />
+-    <filters />
+-  </component>
+-  <component name="DBNavigator.Project.ScriptExecutionManager" clear-outputs="true">
+-    <recently-used-interfaces />
+-  </component>
+-  <component name="DBNavigator.Project.Settings">
+-    <connections />
+-    <browser-settings>
+-      <general>
+-        <display-mode value="TABBED" />
+-        <navigation-history-size value="100" />
+-        <show-object-details value="false" />
+-      </general>
+-      <filters>
+-        <object-type-filter>
+-          <object-type name="SCHEMA" enabled="true" />
+-          <object-type name="USER" enabled="true" />
+-          <object-type name="ROLE" enabled="true" />
+-          <object-type name="PRIVILEGE" enabled="true" />
+-          <object-type name="CHARSET" enabled="true" />
+-          <object-type name="TABLE" enabled="true" />
+-          <object-type name="VIEW" enabled="true" />
+-          <object-type name="MATERIALIZED_VIEW" enabled="true" />
+-          <object-type name="NESTED_TABLE" enabled="true" />
+-          <object-type name="COLUMN" enabled="true" />
+-          <object-type name="INDEX" enabled="true" />
+-          <object-type name="CONSTRAINT" enabled="true" />
+-          <object-type name="DATASET_TRIGGER" enabled="true" />
+-          <object-type name="DATABASE_TRIGGER" enabled="true" />
+-          <object-type name="SYNONYM" enabled="true" />
+-          <object-type name="SEQUENCE" enabled="true" />
+-          <object-type name="PROCEDURE" enabled="true" />
+-          <object-type name="FUNCTION" enabled="true" />
+-          <object-type name="PACKAGE" enabled="true" />
+-          <object-type name="TYPE" enabled="true" />
+-          <object-type name="TYPE_ATTRIBUTE" enabled="true" />
+-          <object-type name="ARGUMENT" enabled="true" />
+-          <object-type name="DIMENSION" enabled="true" />
+-          <object-type name="CLUSTER" enabled="true" />
+-          <object-type name="DBLINK" enabled="true" />
+-        </object-type-filter>
+-      </filters>
+-      <sorting>
+-        <object-type name="COLUMN" sorting-type="NAME" />
+-        <object-type name="FUNCTION" sorting-type="NAME" />
+-        <object-type name="PROCEDURE" sorting-type="NAME" />
+-        <object-type name="ARGUMENT" sorting-type="POSITION" />
+-      </sorting>
+-      <default-editors>
+-        <object-type name="VIEW" editor-type="SELECTION" />
+-        <object-type name="PACKAGE" editor-type="SELECTION" />
+-        <object-type name="TYPE" editor-type="SELECTION" />
+-      </default-editors>
+-    </browser-settings>
+-    <navigation-settings>
+-      <lookup-filters>
+-        <lookup-objects>
+-          <object-type name="SCHEMA" enabled="true" />
+-          <object-type name="USER" enabled="false" />
+-          <object-type name="ROLE" enabled="false" />
+-          <object-type name="PRIVILEGE" enabled="false" />
+-          <object-type name="CHARSET" enabled="false" />
+-          <object-type name="TABLE" enabled="true" />
+-          <object-type name="VIEW" enabled="true" />
+-          <object-type name="MATERIALIZED VIEW" enabled="true" />
+-          <object-type name="INDEX" enabled="true" />
+-          <object-type name="CONSTRAINT" enabled="true" />
+-          <object-type name="DATASET TRIGGER" enabled="true" />
+-          <object-type name="DATABASE TRIGGER" enabled="true" />
+-          <object-type name="SYNONYM" enabled="false" />
+-          <object-type name="SEQUENCE" enabled="true" />
+-          <object-type name="PROCEDURE" enabled="true" />
+-          <object-type name="FUNCTION" enabled="true" />
+-          <object-type name="PACKAGE" enabled="true" />
+-          <object-type name="TYPE" enabled="true" />
+-          <object-type name="DIMENSION" enabled="false" />
+-          <object-type name="CLUSTER" enabled="false" />
+-          <object-type name="DBLINK" enabled="true" />
+-        </lookup-objects>
+-        <force-database-load value="false" />
+-        <prompt-connection-selection value="true" />
+-        <prompt-schema-selection value="true" />
+-      </lookup-filters>
+-    </navigation-settings>
+-    <dataset-grid-settings>
+-      <general>
+-        <enable-zooming value="true" />
+-        <enable-column-tooltip value="true" />
+-      </general>
+-      <sorting>
+-        <nulls-first value="true" />
+-        <max-sorting-columns value="4" />
+-      </sorting>
+-      <tracking-columns>
+-        <columnNames value="" />
+-        <visible value="true" />
+-        <editable value="false" />
+-      </tracking-columns>
+-    </dataset-grid-settings>
+-    <dataset-editor-settings>
+-      <text-editor-popup>
+-        <active value="false" />
+-        <active-if-empty value="false" />
+-        <data-length-threshold value="100" />
+-        <popup-delay value="1000" />
+-      </text-editor-popup>
+-      <values-actions-popup>
+-        <show-popup-button value="true" />
+-        <element-count-threshold value="1000" />
+-        <data-length-threshold value="250" />
+-      </values-actions-popup>
+-      <general>
+-        <fetch-block-size value="100" />
+-        <fetch-timeout value="30" />
+-        <trim-whitespaces value="true" />
+-        <convert-empty-strings-to-null value="true" />
+-        <select-content-on-cell-edit value="true" />
+-        <large-value-preview-active value="true" />
+-      </general>
+-      <filters>
+-        <prompt-filter-dialog value="true" />
+-        <default-filter-type value="BASIC" />
+-      </filters>
+-      <qualified-text-editor text-length-threshold="300">
+-        <content-types>
+-          <content-type name="Text" enabled="true" />
+-          <content-type name="Properties" enabled="true" />
+-          <content-type name="XML" enabled="true" />
+-          <content-type name="DTD" enabled="true" />
+-          <content-type name="HTML" enabled="true" />
+-          <content-type name="XHTML" enabled="true" />
+-          <content-type name="CSS" enabled="true" />
+-          <content-type name="SQL" enabled="true" />
+-          <content-type name="PL/SQL" enabled="true" />
+-          <content-type name="JavaScript" enabled="true" />
+-          <content-type name="JSON" enabled="true" />
+-          <content-type name="JSON5" enabled="true" />
+-          <content-type name="YAML" enabled="true" />
+-        </content-types>
+-      </qualified-text-editor>
+-      <record-navigation>
+-        <navigation-target value="VIEWER" />
+-      </record-navigation>
+-    </dataset-editor-settings>
+-    <code-editor-settings>
+-      <general>
+-        <show-object-navigation-gutter value="false" />
+-        <show-spec-declaration-navigation-gutter value="true" />
+-        <enable-spellchecking value="true" />
+-        <enable-reference-spellchecking value="false" />
+-      </general>
+-      <confirmations>
+-        <save-changes value="false" />
+-        <revert-changes value="true" />
+-      </confirmations>
+-    </code-editor-settings>
+-    <code-completion-settings>
+-      <filters>
+-        <basic-filter>
+-          <filter-element type="RESERVED_WORD" id="keyword" selected="true" />
+-          <filter-element type="RESERVED_WORD" id="function" selected="true" />
+-          <filter-element type="RESERVED_WORD" id="parameter" selected="true" />
+-          <filter-element type="RESERVED_WORD" id="datatype" selected="true" />
+-          <filter-element type="RESERVED_WORD" id="exception" selected="true" />
+-          <filter-element type="OBJECT" id="schema" selected="true" />
+-          <filter-element type="OBJECT" id="role" selected="true" />
+-          <filter-element type="OBJECT" id="user" selected="true" />
+-          <filter-element type="OBJECT" id="privilege" selected="true" />
+-          <user-schema>
+-            <filter-element type="OBJECT" id="table" selected="true" />
+-            <filter-element type="OBJECT" id="view" selected="true" />
+-            <filter-element type="OBJECT" id="materialized view" selected="true" />
+-            <filter-element type="OBJECT" id="index" selected="true" />
+-            <filter-element type="OBJECT" id="constraint" selected="true" />
+-            <filter-element type="OBJECT" id="trigger" selected="true" />
+-            <filter-element type="OBJECT" id="synonym" selected="false" />
+-            <filter-element type="OBJECT" id="sequence" selected="true" />
+-            <filter-element type="OBJECT" id="procedure" selected="true" />
+-            <filter-element type="OBJECT" id="function" selected="true" />
+-            <filter-element type="OBJECT" id="package" selected="true" />
+-            <filter-element type="OBJECT" id="type" selected="true" />
+-            <filter-element type="OBJECT" id="dimension" selected="true" />
+-            <filter-element type="OBJECT" id="cluster" selected="true" />
+-            <filter-element type="OBJECT" id="dblink" selected="true" />
+-          </user-schema>
+-          <public-schema>
+-            <filter-element type="OBJECT" id="table" selected="false" />
+-            <filter-element type="OBJECT" id="view" selected="false" />
+-            <filter-element type="OBJECT" id="materialized view" selected="false" />
+-            <filter-element type="OBJECT" id="index" selected="false" />
+-            <filter-element type="OBJECT" id="constraint" selected="false" />
+-            <filter-element type="OBJECT" id="trigger" selected="false" />
+-            <filter-element type="OBJECT" id="synonym" selected="false" />
+-            <filter-element type="OBJECT" id="sequence" selected="false" />
+-            <filter-element type="OBJECT" id="procedure" selected="false" />
+-            <filter-element type="OBJECT" id="function" selected="false" />
+-            <filter-element type="OBJECT" id="package" selected="false" />
+-            <filter-element type="OBJECT" id="type" selected="false" />
+-            <filter-element type="OBJECT" id="dimension" selected="false" />
+-            <filter-element type="OBJECT" id="cluster" selected="false" />
+-            <filter-element type="OBJECT" id="dblink" selected="false" />
+-          </public-schema>
+-          <any-schema>
+-            <filter-element type="OBJECT" id="table" selected="true" />
+-            <filter-element type="OBJECT" id="view" selected="true" />
+-            <filter-element type="OBJECT" id="materialized view" selected="true" />
+-            <filter-element type="OBJECT" id="index" selected="true" />
+-            <filter-element type="OBJECT" id="constraint" selected="true" />
+-            <filter-element type="OBJECT" id="trigger" selected="true" />
+-            <filter-element type="OBJECT" id="synonym" selected="true" />
+-            <filter-element type="OBJECT" id="sequence" selected="true" />
+-            <filter-element type="OBJECT" id="procedure" selected="true" />
+-            <filter-element type="OBJECT" id="function" selected="true" />
+-            <filter-element type="OBJECT" id="package" selected="true" />
+-            <filter-element type="OBJECT" id="type" selected="true" />
+-            <filter-element type="OBJECT" id="dimension" selected="true" />
+-            <filter-element type="OBJECT" id="cluster" selected="true" />
+-            <filter-element type="OBJECT" id="dblink" selected="true" />
+-          </any-schema>
+-        </basic-filter>
+-        <extended-filter>
+-          <filter-element type="RESERVED_WORD" id="keyword" selected="true" />
+-          <filter-element type="RESERVED_WORD" id="function" selected="true" />
+-          <filter-element type="RESERVED_WORD" id="parameter" selected="true" />
+-          <filter-element type="RESERVED_WORD" id="datatype" selected="true" />
+-          <filter-element type="RESERVED_WORD" id="exception" selected="true" />
+-          <filter-element type="OBJECT" id="schema" selected="true" />
+-          <filter-element type="OBJECT" id="user" selected="true" />
+-          <filter-element type="OBJECT" id="role" selected="true" />
+-          <filter-element type="OBJECT" id="privilege" selected="true" />
+-          <user-schema>
+-            <filter-element type="OBJECT" id="table" selected="true" />
+-            <filter-element type="OBJECT" id="view" selected="true" />
+-            <filter-element type="OBJECT" id="materialized view" selected="true" />
+-            <filter-element type="OBJECT" id="index" selected="true" />
+-            <filter-element type="OBJECT" id="constraint" selected="true" />
+-            <filter-element type="OBJECT" id="trigger" selected="true" />
+-            <filter-element type="OBJECT" id="synonym" selected="true" />
+-            <filter-element type="OBJECT" id="sequence" selected="true" />
+-            <filter-element type="OBJECT" id="procedure" selected="true" />
+-            <filter-element type="OBJECT" id="function" selected="true" />
+-            <filter-element type="OBJECT" id="package" selected="true" />
+-            <filter-element type="OBJECT" id="type" selected="true" />
+-            <filter-element type="OBJECT" id="dimension" selected="true" />
+-            <filter-element type="OBJECT" id="cluster" selected="true" />
+-            <filter-element type="OBJECT" id="dblink" selected="true" />
+-          </user-schema>
+-          <public-schema>
+-            <filter-element type="OBJECT" id="table" selected="true" />
+-            <filter-element type="OBJECT" id="view" selected="true" />
+-            <filter-element type="OBJECT" id="materialized view" selected="true" />
+-            <filter-element type="OBJECT" id="index" selected="true" />
+-            <filter-element type="OBJECT" id="constraint" selected="true" />
+-            <filter-element type="OBJECT" id="trigger" selected="true" />
+-            <filter-element type="OBJECT" id="synonym" selected="true" />
+-            <filter-element type="OBJECT" id="sequence" selected="true" />
+-            <filter-element type="OBJECT" id="procedure" selected="true" />
+-            <filter-element type="OBJECT" id="function" selected="true" />
+-            <filter-element type="OBJECT" id="package" selected="true" />
+-            <filter-element type="OBJECT" id="type" selected="true" />
+-            <filter-element type="OBJECT" id="dimension" selected="true" />
+-            <filter-element type="OBJECT" id="cluster" selected="true" />
+-            <filter-element type="OBJECT" id="dblink" selected="true" />
+-          </public-schema>
+-          <any-schema>
+-            <filter-element type="OBJECT" id="table" selected="true" />
+-            <filter-element type="OBJECT" id="view" selected="true" />
+-            <filter-element type="OBJECT" id="materialized view" selected="true" />
+-            <filter-element type="OBJECT" id="index" selected="true" />
+-            <filter-element type="OBJECT" id="constraint" selected="true" />
+-            <filter-element type="OBJECT" id="trigger" selected="true" />
+-            <filter-element type="OBJECT" id="synonym" selected="true" />
+-            <filter-element type="OBJECT" id="sequence" selected="true" />
+-            <filter-element type="OBJECT" id="procedure" selected="true" />
+-            <filter-element type="OBJECT" id="function" selected="true" />
+-            <filter-element type="OBJECT" id="package" selected="true" />
+-            <filter-element type="OBJECT" id="type" selected="true" />
+-            <filter-element type="OBJECT" id="dimension" selected="true" />
+-            <filter-element type="OBJECT" id="cluster" selected="true" />
+-            <filter-element type="OBJECT" id="dblink" selected="true" />
+-          </any-schema>
+-        </extended-filter>
+-      </filters>
+-      <sorting enabled="true">
+-        <sorting-element type="RESERVED_WORD" id="keyword" />
+-        <sorting-element type="RESERVED_WORD" id="datatype" />
+-        <sorting-element type="OBJECT" id="column" />
+-        <sorting-element type="OBJECT" id="table" />
+-        <sorting-element type="OBJECT" id="view" />
+-        <sorting-element type="OBJECT" id="materialized view" />
+-        <sorting-element type="OBJECT" id="index" />
+-        <sorting-element type="OBJECT" id="constraint" />
+-        <sorting-element type="OBJECT" id="trigger" />
+-        <sorting-element type="OBJECT" id="synonym" />
+-        <sorting-element type="OBJECT" id="sequence" />
+-        <sorting-element type="OBJECT" id="procedure" />
+-        <sorting-element type="OBJECT" id="function" />
+-        <sorting-element type="OBJECT" id="package" />
+-        <sorting-element type="OBJECT" id="type" />
+-        <sorting-element type="OBJECT" id="dimension" />
+-        <sorting-element type="OBJECT" id="cluster" />
+-        <sorting-element type="OBJECT" id="dblink" />
+-        <sorting-element type="OBJECT" id="schema" />
+-        <sorting-element type="OBJECT" id="role" />
+-        <sorting-element type="OBJECT" id="user" />
+-        <sorting-element type="RESERVED_WORD" id="function" />
+-        <sorting-element type="RESERVED_WORD" id="parameter" />
+-      </sorting>
+-      <format>
+-        <enforce-code-style-case value="true" />
+-      </format>
+-    </code-completion-settings>
+-    <execution-engine-settings>
+-      <statement-execution>
+-        <fetch-block-size value="100" />
+-        <execution-timeout value="20" />
+-        <debug-execution-timeout value="600" />
+-        <focus-result value="false" />
+-        <prompt-execution value="false" />
+-      </statement-execution>
+-      <script-execution>
+-        <command-line-interfaces />
+-        <execution-timeout value="300" />
+-      </script-execution>
+-      <method-execution>
+-        <execution-timeout value="30" />
+-        <debug-execution-timeout value="600" />
+-        <parameter-history-size value="10" />
+-      </method-execution>
+-    </execution-engine-settings>
+-    <operation-settings>
+-      <transactions>
+-        <uncommitted-changes>
+-          <on-project-close value="ASK" />
+-          <on-disconnect value="ASK" />
+-          <on-autocommit-toggle value="ASK" />
+-        </uncommitted-changes>
+-        <multiple-uncommitted-changes>
+-          <on-commit value="ASK" />
+-          <on-rollback value="ASK" />
+-        </multiple-uncommitted-changes>
+-      </transactions>
+-      <session-browser>
+-        <disconnect-session value="ASK" />
+-        <kill-session value="ASK" />
+-        <reload-on-filter-change value="false" />
+-      </session-browser>
+-      <compiler>
+-        <compile-type value="KEEP" />
+-        <compile-dependencies value="ASK" />
+-        <always-show-controls value="false" />
+-      </compiler>
+-      <debugger>
+-        <debugger-type value="JDBC" />
+-        <use-generic-runners value="true" />
+-      </debugger>
+-    </operation-settings>
+-    <ddl-file-settings>
+-      <extensions>
+-        <mapping file-type-id="VIEW" extensions="vw" />
+-        <mapping file-type-id="TRIGGER" extensions="trg" />
+-        <mapping file-type-id="PROCEDURE" extensions="prc" />
+-        <mapping file-type-id="FUNCTION" extensions="fnc" />
+-        <mapping file-type-id="PACKAGE" extensions="pkg" />
+-        <mapping file-type-id="PACKAGE_SPEC" extensions="pks" />
+-        <mapping file-type-id="PACKAGE_BODY" extensions="pkb" />
+-        <mapping file-type-id="TYPE" extensions="tpe" />
+-        <mapping file-type-id="TYPE_SPEC" extensions="tps" />
+-        <mapping file-type-id="TYPE_BODY" extensions="tpb" />
+-      </extensions>
+-      <general>
+-        <lookup-ddl-files value="true" />
+-        <create-ddl-files value="false" />
+-        <synchronize-ddl-files value="true" />
+-        <use-qualified-names value="false" />
+-        <make-scripts-rerunnable value="true" />
+-      </general>
+-    </ddl-file-settings>
+-    <general-settings>
+-      <regional-settings>
+-        <date-format value="MEDIUM" />
+-        <number-format value="UNGROUPED" />
+-        <locale value="SYSTEM_DEFAULT" />
+-        <use-custom-formats value="false" />
+-      </regional-settings>
+-      <environment>
+-        <environment-types>
+-          <environment-type id="development" name="Development" description="Development environment" color="-2430209/-12296320" readonly-code="false" readonly-data="false" />
+-          <environment-type id="integration" name="Integration" description="Integration environment" color="-2621494/-12163514" readonly-code="true" readonly-data="false" />
+-          <environment-type id="production" name="Production" description="Productive environment" color="-11574/-10271420" readonly-code="true" readonly-data="true" />
+-          <environment-type id="other" name="Other" description="" color="-1576/-10724543" readonly-code="false" readonly-data="false" />
+-        </environment-types>
+-        <visibility-settings>
+-          <connection-tabs value="true" />
+-          <dialog-headers value="true" />
+-          <object-editor-tabs value="true" />
+-          <script-editor-tabs value="false" />
+-          <execution-result-tabs value="true" />
+-        </visibility-settings>
+-      </environment>
+-    </general-settings>
+-  </component>
+-  <component name="DBNavigator.Project.StatementExecutionManager">
+-    <execution-variables />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/webResources.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/webResources.xml b/.idea/webResources.xml
+deleted file mode 100644
+--- a/.idea/webResources.xml	(revision 4f2b24ddc43998fc82b62dd047024bc90f67dc1a)
++++ /dev/null	(revision 4f2b24ddc43998fc82b62dd047024bc90f67dc1a)
+@@ -1,14 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="WebResourcesPaths">
+-    <contentEntries>
+-      <entry url="file://$PROJECT_DIR$">
+-        <entryData>
+-          <resourceRoots>
+-            <path value="file://$PROJECT_DIR$/static" />
+-          </resourceRoots>
+-        </entryData>
+-      </entry>
+-    </contentEntries>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: static/main_app/css/style.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@font-face {\r\n  font-family: 'icomoon';\r\n  src: url(\"../fonts/icomoon/icomoon.eot?srf3rx\");\r\n  src: url(\"../fonts/icomoon/icomoon.eot?srf3rx#iefix\") format(\"embedded-opentype\"), url(\"../fonts/icomoon/icomoon.ttf?srf3rx\") format(\"truetype\"), url(\"../fonts/icomoon/icomoon.woff?srf3rx\") format(\"woff\"), url(\"../fonts/icomoon/icomoon.svg?srf3rx#icomoon\") format(\"svg\");\r\n  font-weight: normal;\r\n  font-style: normal;\r\n}\r\n/* =======================================================\r\n*\r\n* \tTemplate Style \r\n*\r\n* ======================================================= */\r\nbody {\r\n  font-family: \"Playfair Display\", serif;\r\n  font-weight: 400;\r\n  font-size: 16px;\r\n  line-height: 1.7;\r\n  color: #828282;\r\n  background: #fff;\r\n}\r\n\r\n#page {\r\n  position: relative;\r\n  overflow-x: hidden;\r\n  width: 100%;\r\n  height: 100%;\r\n  -webkit-transition: 0.5s;\r\n  -o-transition: 0.5s;\r\n  transition: 0.5s;\r\n}\r\n.offcanvas #page {\r\n  overflow: hidden;\r\n  position: absolute;\r\n}\r\n.offcanvas #page:after {\r\n  -webkit-transition: 2s;\r\n  -o-transition: 2s;\r\n  transition: 2s;\r\n  position: absolute;\r\n  top: 0;\r\n  right: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  z-index: 101;\r\n  background: rgba(0, 0, 0, 0.7);\r\n  content: \"\";\r\n}\r\n\r\na {\r\n  color: #d1c286;\r\n  -webkit-transition: 0.5s;\r\n  -o-transition: 0.5s;\r\n  transition: 0.5s;\r\n}\r\na:hover, a:active, a:focus {\r\n  color: #d1c286;\r\n  outline: none;\r\n  text-decoration: none;\r\n}\r\n\r\np {\r\n  margin-bottom: 20px;\r\n}\r\n\r\nh1, h2, h3, h4, h5, h6, figure {\r\n  color: #000;\r\n  font-family: \"Montserrat\", Arial, sans-serif;\r\n  font-weight: 400;\r\n  margin: 0 0 20px 0;\r\n}\r\n\r\n::-webkit-selection {\r\n  color: #fff;\r\n  background: #d1c286;\r\n}\r\n\r\n::-moz-selection {\r\n  color: #fff;\r\n  background: #d1c286;\r\n}\r\n\r\n::selection {\r\n  color: #fff;\r\n  background: #d1c286;\r\n}\r\n\r\n.fh5co-nav {\r\n  padding: 18px 0;\r\n  background: #fff;\r\n}\r\n@media screen and (max-width: 768px) {\r\n  .fh5co-nav {\r\n    padding: 20px 0;\r\n  }\r\n}\r\n.fh5co-nav #fh5co-logo {\r\n  font-size: 20px;\r\n  margin: 0;\r\n  padding: 0;\r\n  text-transform: uppercase;\r\n  font-weight: bold;\r\n  font-family: \"Montserrat\", Arial, sans-serif;\r\n}\r\n.fh5co-nav a {\r\n  padding: 5px 10px;\r\n  color: #000;\r\n}\r\n@media screen and (max-width: 768px) {\r\n  .fh5co-nav .menu-1, .fh5co-nav .menu-2 {\r\n    display: none;\r\n  }\r\n}\r\n.fh5co-nav .menu-2 li.search {\r\n  float: left;\r\n  width: 83%;\r\n  font-family: \"Playfair Display\", serif;\r\n  -webkit-transition: 0.3s;\r\n  -o-transition: 0.3s;\r\n  transition: 0.3s;\r\n  padding: 0;\r\n  margin: -5px 0 0 0;\r\n}\r\n.fh5co-nav .menu-2 li input[type=text] {\r\n  padding: 6px 10px;\r\n  width: 40%;\r\n  border: none;\r\n  float: right;\r\n  font-size: 13px;\r\n  margin-top: 4px;\r\n  -webkit-transition: 0.3s;\r\n  -o-transition: 0.3s;\r\n  transition: 0.3s;\r\n}\r\n.fh5co-nav .menu-2 li input[type=text]:focus {\r\n  width: 100%;\r\n  outline: none;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\r\n}\r\n.fh5co-nav .menu-2 li button {\r\n  margin-top: 4px;\r\n  padding: 5px;\r\n  background: transparent;\r\n  border: none;\r\n}\r\n.fh5co-nav .menu-2 li button i {\r\n  color: rgba(0, 0, 0, 0.5);\r\n}\r\n.fh5co-nav .menu-2 li button:hover, .fh5co-nav .menu-2 li button:focus {\r\n  background: transparent !important;\r\n}\r\n.fh5co-nav .menu-2 li button:hover i, .fh5co-nav .menu-2 li button:focus i {\r\n  color: black;\r\n}\r\n.fh5co-nav .menu-2 li.shopping-cart {\r\n  float: right;\r\n}\r\n.fh5co-nav .menu-2 li a.cart {\r\n  color: black;\r\n}\r\n.fh5co-nav .menu-2 li a.cart span {\r\n  position: relative;\r\n}\r\n.fh5co-nav .menu-2 li a.cart span small {\r\n  position: absolute;\r\n  top: -20px;\r\n  right: -15px;\r\n  padding: 10px 6px;\r\n  line-height: 0;\r\n  font-size: 11px;\r\n  background: #d1c286;\r\n  color: white;\r\n  -webkit-border-radius: 50%;\r\n  -moz-border-radius: 50%;\r\n  -ms-border-radius: 50%;\r\n  border-radius: 50%;\r\n}\r\n.fh5co-nav ul {\r\n  padding: 0;\r\n  margin: 0;\r\n}\r\n.fh5co-nav ul li {\r\n  padding: 0;\r\n  margin: 0;\r\n  list-style: none;\r\n  display: inline-block;\r\n  font-family: \"Montserrat\", Arial, sans-serif;\r\n}\r\n.fh5co-nav ul li a {\r\n  font-size: 13px;\r\n  padding: 30px 10px;\r\n  text-transform: uppercase;\r\n  color: rgba(0, 0, 0, 0.5);\r\n  -webkit-transition: 0.5s;\r\n  -o-transition: 0.5s;\r\n  transition: 0.5s;\r\n}\r\n.fh5co-nav ul li a:hover, .fh5co-nav ul li a:focus, .fh5co-nav ul li a:active {\r\n  color: black;\r\n}\r\n.fh5co-nav ul li a.cart {\r\n  color: black;\r\n}\r\n.fh5co-nav ul li a.cart span {\r\n  position: relative;\r\n}\r\n.fh5co-nav ul li a.cart span small {\r\n  position: absolute;\r\n  top: -20px;\r\n  right: -15px;\r\n  padding: 10px 6px;\r\n  line-height: 0;\r\n  font-size: 11px;\r\n  background: #d1c286;\r\n  color: white;\r\n  -webkit-border-radius: 50%;\r\n  -moz-border-radius: 50%;\r\n  -ms-border-radius: 50%;\r\n  border-radius: 50%;\r\n}\r\n.fh5co-nav ul li.has-dropdown {\r\n  position: relative;\r\n}\r\n.fh5co-nav ul li.has-dropdown .dropdown {\r\n  width: 150px;\r\n  -webkit-box-shadow: 0px 14px 33px -9px rgba(0, 0, 0, 0.75);\r\n  -moz-box-shadow: 0px 14px 33px -9px rgba(0, 0, 0, 0.75);\r\n  box-shadow: 0px 14px 33px -9px rgba(0, 0, 0, 0.75);\r\n  z-index: 1002;\r\n  visibility: hidden;\r\n  opacity: 0;\r\n  position: absolute;\r\n  top: 40px;\r\n  left: 0;\r\n  text-align: left;\r\n  background: #000;\r\n  padding: 20px;\r\n  -webkit-border-radius: 4px;\r\n  -moz-border-radius: 4px;\r\n  -ms-border-radius: 4px;\r\n  border-radius: 4px;\r\n  -webkit-transition: 0s;\r\n  -o-transition: 0s;\r\n  transition: 0s;\r\n}\r\n.fh5co-nav ul li.has-dropdown .dropdown:before {\r\n  bottom: 100%;\r\n  left: 40px;\r\n  border: solid transparent;\r\n  content: \" \";\r\n  height: 0;\r\n  width: 0;\r\n  position: absolute;\r\n  pointer-events: none;\r\n  border-bottom-color: #000;\r\n  border-width: 8px;\r\n  margin-left: -8px;\r\n}\r\n.fh5co-nav ul li.has-dropdown .dropdown li {\r\n  display: block;\r\n  margin-bottom: 7px;\r\n}\r\n.fh5co-nav ul li.has-dropdown .dropdown li:last-child {\r\n  margin-bottom: 0;\r\n}\r\n.fh5co-nav ul li.has-dropdown .dropdown li a {\r\n  padding: 2px 0;\r\n  display: block;\r\n  color: #999999;\r\n  line-height: 1.2;\r\n  text-transform: none;\r\n  font-size: 15px;\r\n}\r\n.fh5co-nav ul li.has-dropdown .dropdown li a:hover {\r\n  color: #fff;\r\n}\r\n.fh5co-nav ul li.has-dropdown:hover a, .fh5co-nav ul li.has-dropdown:focus a {\r\n  color: #000;\r\n}\r\n.fh5co-nav ul li.active > a {\r\n  color: #000 !important;\r\n}\r\n.fh5co-nav ul li .form-group {\r\n  border: 1px solid red;\r\n  width: 100%;\r\n}\r\n\r\n#fh5co-hero {\r\n  min-height: 700px;\r\n  background: #fff url(../images/loader.gif) no-repeat center center;\r\n}\r\n#fh5co-hero .btn {\r\n  font-size: 24px;\r\n}\r\n#fh5co-hero .btn.btn-primary {\r\n  padding: 14px 30px !important;\r\n}\r\n#fh5co-hero .flexslider {\r\n  border: none;\r\n  z-index: 1;\r\n  margin-bottom: 0;\r\n}\r\n#fh5co-hero .flexslider .slides {\r\n  position: relative;\r\n  overflow: hidden;\r\n}\r\n#fh5co-hero .flexslider .slides li {\r\n  background-repeat: no-repeat;\r\n  background-size: cover;\r\n  background-position: center center;\r\n  min-height: 700px;\r\n}\r\n#fh5co-hero .flexslider .flex-control-nav {\r\n  bottom: 40px;\r\n  z-index: 1000;\r\n}\r\n#fh5co-hero .flexslider .flex-control-nav li a {\r\n  background: rgba(255, 255, 255, 0.2);\r\n  box-shadow: none;\r\n  width: 12px;\r\n  height: 12px;\r\n  cursor: pointer;\r\n}\r\n#fh5co-hero .flexslider .flex-control-nav li a.flex-active {\r\n  cursor: pointer;\r\n  background: rgba(255, 255, 255, 0.7);\r\n}\r\n#fh5co-hero .flexslider .flex-direction-nav {\r\n  display: none;\r\n}\r\n#fh5co-hero .flexslider .slider-text {\r\n  display: table;\r\n  opacity: 0;\r\n  min-height: 700px;\r\n}\r\n#fh5co-hero .flexslider .slider-text > .slider-text-inner {\r\n  display: table-cell;\r\n  vertical-align: middle;\r\n  min-height: 700px;\r\n}\r\n#fh5co-hero .flexslider .slider-text > .slider-text-inner h2 {\r\n  font-size: 24px;\r\n  font-weight: 400;\r\n  color: #000;\r\n  text-transform: uppercase;\r\n  letter-spacing: 2px;\r\n}\r\n@media screen and (max-width: 768px) {\r\n  #fh5co-hero .flexslider .slider-text > .slider-text-inner h2 {\r\n    font-size: 40px;\r\n  }\r\n}\r\n#fh5co-hero .flexslider .slider-text > .slider-text-inner .desc {\r\n  background: rgba(255, 255, 255, 0.9);\r\n  padding: 40px;\r\n}\r\n#fh5co-hero .flexslider .slider-text > .slider-text-inner .desc .price {\r\n  font-size: 14px;\r\n  letter-spacing: 3px;\r\n  display: block;\r\n  margin-bottom: 20px;\r\n}\r\n#fh5co-hero .flexslider .slider-text > .slider-text-inner .btn {\r\n  font-size: 18px;\r\n}\r\n#fh5co-hero .flexslider .slider-text > .slider-text-inner .fh5co-lead {\r\n  font-size: 20px;\r\n  color: #fff;\r\n}\r\n#fh5co-hero .flexslider .slider-text > .slider-text-inner .fh5co-lead .icon-heart {\r\n  color: #d9534f;\r\n}\r\n\r\n#fh5co-header,\r\n#fh5co-counter,\r\n.fh5co-bg {\r\n  background-size: cover;\r\n  background-position: top center;\r\n  background-repeat: no-repeat;\r\n  position: relative;\r\n}\r\n\r\n.fh5co-bg {\r\n  background-size: cover;\r\n  background-position: center center;\r\n  position: relative;\r\n  width: 100%;\r\n  float: left;\r\n  position: relative;\r\n}\r\n\r\n#fh5co-counter {\r\n  height: 500px;\r\n}\r\n#fh5co-counter .display-t,\r\n#fh5co-counter .display-tc {\r\n  height: 500px;\r\n  display: table;\r\n  width: 100%;\r\n}\r\n@media screen and (max-width: 992px) {\r\n  #fh5co-counter {\r\n    height: inherit;\r\n    padding: 7em 0;\r\n  }\r\n  #fh5co-counter .display-t,\r\n  #fh5co-counter .display-tc {\r\n    height: inherit;\r\n  }\r\n}\r\n@media screen and (max-width: 768px) {\r\n  #fh5co-counter {\r\n    height: inherit;\r\n    padding: 7em 0;\r\n  }\r\n  #fh5co-counter .display-t,\r\n  #fh5co-counter .display-tc {\r\n    height: inherit;\r\n  }\r\n}\r\n\r\n.fh5co-cover {\r\n  height: 800px;\r\n  background-size: cover;\r\n  background-position: top center;\r\n  background-repeat: no-repeat;\r\n  position: relative;\r\n  float: left;\r\n  width: 100%;\r\n}\r\n.fh5co-cover .overlay {\r\n  z-index: 0;\r\n  position: absolute;\r\n  bottom: 0;\r\n  top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  background: rgba(0, 0, 0, 0.2);\r\n}\r\n.fh5co-cover > .fh5co-container {\r\n  position: relative;\r\n  z-index: 10;\r\n}\r\n@media screen and (max-width: 768px) {\r\n  .fh5co-cover {\r\n    height: 600px;\r\n  }\r\n}\r\n.fh5co-cover .display-t,\r\n.fh5co-cover .display-tc {\r\n  z-index: 9;\r\n  height: 900px;\r\n  display: table;\r\n  width: 100%;\r\n}\r\n@media screen and (max-width: 768px) {\r\n  .fh5co-cover .display-t,\r\n  .fh5co-cover .display-tc {\r\n    height: 600px;\r\n  }\r\n}\r\n.fh5co-cover.fh5co-cover-sm {\r\n  height: 600px;\r\n}\r\n@media screen and (max-width: 768px) {\r\n  .fh5co-cover.fh5co-cover-sm {\r\n    height: 400px;\r\n  }\r\n}\r\n.fh5co-cover.fh5co-cover-sm .display-t,\r\n.fh5co-cover.fh5co-cover-sm .display-tc {\r\n  height: 600px;\r\n  display: table;\r\n  width: 100%;\r\n}\r\n@media screen and (max-width: 768px) {\r\n  .fh5co-cover.fh5co-cover-sm .display-t,\r\n  .fh5co-cover.fh5co-cover-sm .display-tc {\r\n    height: 400px;\r\n  }\r\n}\r\n\r\n.about-content {\r\n  margin-bottom: 7em;\r\n}\r\n.about-content img {\r\n  border: 1px solid rgba(0, 0, 0, 0.05);\r\n  padding: 10px;\r\n}\r\n.about-content .desc {\r\n  margin-bottom: 3em;\r\n}\r\n\r\n.fh5co-staff {\r\n  text-align: center;\r\n  margin-bottom: 30px;\r\n}\r\n.fh5co-staff img {\r\n  width: 170px;\r\n  margin-bottom: 20px;\r\n  -webkit-border-radius: 50%;\r\n  -moz-border-radius: 50%;\r\n  -ms-border-radius: 50%;\r\n  border-radius: 50%;\r\n}\r\n.fh5co-staff h3 {\r\n  font-size: 24px;\r\n  margin-bottom: 5px;\r\n}\r\n.fh5co-staff p {\r\n  margin-bottom: 30px;\r\n}\r\n.fh5co-staff .role {\r\n  color: #bfbfbf;\r\n  margin-bottom: 30px;\r\n  font-weight: normal;\r\n  display: block;\r\n}\r\n\r\n.fh5co-social-icons {\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n.fh5co-social-icons li {\r\n  margin: 0;\r\n  padding: 0;\r\n  list-style: none;\r\n  display: -moz-inline-stack;\r\n  display: inline-block;\r\n  zoom: 1;\r\n  *display: inline;\r\n}\r\n.fh5co-social-icons li a {\r\n  display: -moz-inline-stack;\r\n  display: inline-block;\r\n  zoom: 1;\r\n  *display: inline;\r\n  color: #d1c286;\r\n  padding-left: 10px;\r\n  padding-right: 10px;\r\n}\r\n.fh5co-social-icons li a i {\r\n  font-size: 20px;\r\n}\r\n\r\n.fh5co-contact-info ul {\r\n  padding: 0;\r\n  margin: 0;\r\n}\r\n.fh5co-contact-info ul li {\r\n  padding: 0 0 0 40px;\r\n  margin: 0 0 30px 0;\r\n  list-style: none;\r\n  position: relative;\r\n}\r\n.fh5co-contact-info ul li:before {\r\n  color: #d1c286;\r\n  position: absolute;\r\n  left: 0;\r\n  top: .05em;\r\n  font-family: 'icomoon';\r\n  speak: none;\r\n  font-style: normal;\r\n  font-weight: normal;\r\n  font-variant: normal;\r\n  text-transform: none;\r\n  line-height: 1;\r\n  /* Better Font Rendering =========== */\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n}\r\n.fh5co-contact-info ul li.address:before {\r\n  font-size: 30px;\r\n  content: \"\\e9d1\";\r\n}\r\n.fh5co-contact-info ul li.phone:before {\r\n  font-size: 23px;\r\n  content: \"\\e9f4\";\r\n}\r\n.fh5co-contact-info ul li.email:before {\r\n  font-size: 23px;\r\n  content: \"\\e9da\";\r\n}\r\n.fh5co-contact-info ul li.url:before {\r\n  font-size: 23px;\r\n  content: \"\\e9af\";\r\n}\r\n\r\n#fh5co-header .display-tc,\r\n#fh5co-counter .display-tc,\r\n.fh5co-cover .display-tc {\r\n  display: table-cell !important;\r\n  vertical-align: middle;\r\n}\r\n#fh5co-header .display-tc h1, #fh5co-header .display-tc h2,\r\n#fh5co-counter .display-tc h1,\r\n#fh5co-counter .display-tc h2,\r\n.fh5co-cover .display-tc h1,\r\n.fh5co-cover .display-tc h2 {\r\n  margin: 0;\r\n  padding: 0;\r\n  color: white;\r\n}\r\n#fh5co-header .display-tc h1,\r\n#fh5co-counter .display-tc h1,\r\n.fh5co-cover .display-tc h1 {\r\n  margin-bottom: 0px;\r\n  font-size: 60px;\r\n  line-height: 1.5;\r\n  text-transform: uppercase;\r\n  font-weight: 700;\r\n}\r\n@media screen and (max-width: 768px) {\r\n  #fh5co-header .display-tc h1,\r\n  #fh5co-counter .display-tc h1,\r\n  .fh5co-cover .display-tc h1 {\r\n    font-size: 40px;\r\n  }\r\n}\r\n#fh5co-header .display-tc h2,\r\n#fh5co-counter .display-tc h2,\r\n.fh5co-cover .display-tc h2 {\r\n  font-size: 20px;\r\n  line-height: 1.5;\r\n  margin-bottom: 30px;\r\n  font-family: \"Playfair Display\", serif;\r\n}\r\n#fh5co-header .display-tc h2 a,\r\n#fh5co-counter .display-tc h2 a,\r\n.fh5co-cover .display-tc h2 a {\r\n  color: rgba(255, 255, 255, 0.7);\r\n  border-bottom: 1px solid rgba(255, 255, 255, 0.6);\r\n}\r\n#fh5co-header .display-tc .btn,\r\n#fh5co-counter .display-tc .btn,\r\n.fh5co-cover .display-tc .btn {\r\n  padding: 15px 30px;\r\n  background: #d1c286 !important;\r\n  color: #fff;\r\n  border: none !important;\r\n  font-size: 18px;\r\n  text-transform: uppercase;\r\n}\r\n#fh5co-header .display-tc .btn:hover,\r\n#fh5co-counter .display-tc .btn:hover,\r\n.fh5co-cover .display-tc .btn:hover {\r\n  background: #d1c286 !important;\r\n  -webkit-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75) !important;\r\n  -moz-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75) !important;\r\n  box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75) !important;\r\n}\r\n#fh5co-header .display-tc .form-inline .form-group,\r\n#fh5co-counter .display-tc .form-inline .form-group,\r\n.fh5co-cover .display-tc .form-inline .form-group {\r\n  width: 100% !important;\r\n  margin-bottom: 10px;\r\n}\r\n#fh5co-header .display-tc .form-inline .form-group .form-control,\r\n#fh5co-counter .display-tc .form-inline .form-group .form-control,\r\n.fh5co-cover .display-tc .form-inline .form-group .form-control {\r\n  width: 100%;\r\n  background: #fff;\r\n  border: none;\r\n}\r\n\r\n#fh5co-counter {\r\n  text-align: center;\r\n}\r\n#fh5co-counter .counter {\r\n  font-size: 50px;\r\n  margin-bottom: 10px;\r\n  color: #000;\r\n  font-weight: 100;\r\n  display: block;\r\n}\r\n#fh5co-counter .counter-label {\r\n  margin-bottom: 0;\r\n  text-transform: uppercase;\r\n  color: rgba(0, 0, 0, 0.5);\r\n  letter-spacing: 1px;\r\n  font-family: \"Montserrat\", Arial, sans-serif;\r\n}\r\n#fh5co-counter .feature-center {\r\n  padding: 40px 20px;\r\n  background: rgba(255, 255, 255, 0.8);\r\n}\r\n@media screen and (max-width: 768px) {\r\n  #fh5co-counter .feature-center {\r\n    margin-bottom: 50px;\r\n  }\r\n}\r\n#fh5co-counter .icon {\r\n  width: 70px;\r\n  height: 70px;\r\n  text-align: center;\r\n  background: #d1c286;\r\n  -webkit-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75);\r\n  -moz-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75);\r\n  box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75);\r\n  margin-bottom: 20px;\r\n}\r\n#fh5co-counter .icon i {\r\n  height: 70px;\r\n  color: #fff;\r\n}\r\n#fh5co-counter .icon i:before {\r\n  display: block;\r\n  text-align: center;\r\n  margin-left: 3px;\r\n}\r\n\r\n.fh5co-bg-section {\r\n  background: rgba(0, 0, 0, 0.05);\r\n}\r\n\r\n#fh5co-services,\r\n#fh5co-started,\r\n#fh5co-testimonial,\r\n#fh5co-started,\r\n#fh5co-product,\r\n#fh5co-about,\r\n#fh5co-contact,\r\n#fh5co-footer {\r\n  padding: 7em 0;\r\n  clear: both;\r\n}\r\n@media screen and (max-width: 768px) {\r\n  #fh5co-services,\r\n  #fh5co-started,\r\n  #fh5co-testimonial,\r\n  #fh5co-started,\r\n  #fh5co-product,\r\n  #fh5co-about,\r\n  #fh5co-contact,\r\n  #fh5co-footer {\r\n    padding: 3em 0;\r\n  }\r\n}\r\n\r\n.feature-center {\r\n  padding-left: 20px;\r\n  padding-right: 20px;\r\n  float: left;\r\n  width: 100%;\r\n  margin-bottom: 40px;\r\n}\r\n@media screen and (max-width: 768px) {\r\n  .feature-center {\r\n    margin-bottom: 50px;\r\n  }\r\n}\r\n.feature-center .desc {\r\n  padding-left: 180px;\r\n}\r\n.feature-center .icon {\r\n  width: 90px;\r\n  height: 90px;\r\n  background: #d1c286;\r\n  display: table;\r\n  text-align: center;\r\n  margin: 0 auto 30px auto;\r\n  -webkit-border-radius: 50%;\r\n  -moz-border-radius: 50%;\r\n  -ms-border-radius: 50%;\r\n  border-radius: 50%;\r\n}\r\n.feature-center .icon i {\r\n  display: table-cell;\r\n  vertical-align: middle;\r\n  height: 90px;\r\n  font-size: 40px;\r\n  line-height: 40px;\r\n  color: #fff;\r\n}\r\n.feature-center p, .feature-center h3 {\r\n  margin-bottom: 30px;\r\n}\r\n.feature-center h3 {\r\n  text-transform: uppercase;\r\n  font-size: 15px;\r\n  letter-spacing: 1px;\r\n  font-weight: 600;\r\n}\r\n\r\n.product {\r\n  margin-bottom: 40px;\r\n}\r\n.product .product-grid {\r\n  background-size: cover;\r\n  background-position: top center;\r\n  background-repeat: no-repeat;\r\n  position: relative;\r\n  height: 350px;\r\n  margin-bottom: 20px;\r\n  -webkit-transition: 0.3s;\r\n  -o-transition: 0.3s;\r\n  transition: 0.3s;\r\n}\r\n.product .product-grid .sale {\r\n  position: absolute;\r\n  top: 10px;\r\n  left: 10px;\r\n  padding: 10px;\r\n  z-index: 100;\r\n  background: #d1c286;\r\n  color: #fff;\r\n  -webkit-border-radius: 50%;\r\n  -moz-border-radius: 50%;\r\n  -ms-border-radius: 50%;\r\n  border-radius: 50%;\r\n}\r\n.product .product-grid .inner {\r\n  display: table;\r\n  height: 350px;\r\n  width: 100%;\r\n  opacity: 0;\r\n  background: rgba(0, 0, 0, 0.3);\r\n  -webkit-transition: 0.3s;\r\n  -o-transition: 0.3s;\r\n  transition: 0.3s;\r\n}\r\n@media screen and (max-width: 768px) {\r\n  .product .product-grid .inner {\r\n    opacity: 1;\r\n    background: transparent;\r\n  }\r\n}\r\n.product .product-grid .inner p {\r\n  display: table-cell;\r\n  vertical-align: middle;\r\n}\r\n.product .product-grid .inner p .icon {\r\n  padding: 7px 10px;\r\n  color: #fff;\r\n  background: #d1c286;\r\n}\r\n.product .product-grid .inner p .icon:hover, .product .product-grid .inner p .icon:focus {\r\n  color: #d1c286;\r\n  background: #fff;\r\n}\r\n.product .desc h3 {\r\n  font-size: 14px;\r\n  letter-spacing: 1px;\r\n  text-transform: uppercase;\r\n  margin-bottom: 5px;\r\n  font-weight: bold;\r\n  line-height: 24px;\r\n}\r\n.product .desc h3 a {\r\n  color: #000;\r\n}\r\n.product .desc .price {\r\n  letter-spacing: 2px;\r\n  text-transform: uppercase;\r\n}\r\n.product:hover .product-grid, .product:focus .product-grid {\r\n  -webkit-box-shadow: 0px 10px 24px -7px rgba(0, 0, 0, 0.35);\r\n  -moz-box-shadow: 0px 10px 24px -7px rgba(0, 0, 0, 0.35);\r\n  -ms-box-shadow: 0px 10px 24px -7px rgba(0, 0, 0, 0.35);\r\n  -o-box-shadow: 0px 10px 24px -7px rgba(0, 0, 0, 0.35);\r\n  box-shadow: 0px 10px 24px -7px rgba(0, 0, 0, 0.35);\r\n}\r\n.product:hover .inner, .product:focus .inner {\r\n  opacity: 1;\r\n}\r\n.product:hover .desc h3 a, .product:focus .desc h3 a {\r\n  color: #d1c286;\r\n}\r\n\r\n.product-carousel {\r\n  margin-bottom: 7em;\r\n}\r\n\r\n.fh5co-tabs .fh5co-tab-nav {\r\n  clear: both;\r\n  margin: 0 0 3em 0;\r\n  padding: 3px;\r\n  float: left;\r\n  width: 100%;\r\n  background: #f2f2f2;\r\n  -webkit-border-radius: 4px;\r\n  -moz-border-radius: 4px;\r\n  -ms-border-radius: 4px;\r\n  border-radius: 4px;\r\n}\r\n.fh5co-tabs .fh5co-tab-nav li {\r\n  float: left;\r\n  margin: 0;\r\n  padding: 0;\r\n  width: 33.33%;\r\n  text-align: center;\r\n  list-style: none;\r\n  display: -moz-inline-stack;\r\n  display: inline-block;\r\n  zoom: 1;\r\n  *display: inline;\r\n}\r\n.fh5co-tabs .fh5co-tab-nav li .icon {\r\n  font-size: 30px;\r\n}\r\n.fh5co-tabs .fh5co-tab-nav li a {\r\n  padding: 20px;\r\n  width: 100%;\r\n  float: left;\r\n  -webkit-border-radius: 4px;\r\n  -moz-border-radius: 4px;\r\n  -ms-border-radius: 4px;\r\n  border-radius: 4px;\r\n  color: #b3b3b3;\r\n}\r\n.fh5co-tabs .fh5co-tab-nav li a:hover {\r\n  color: #4d4d4d;\r\n}\r\n.fh5co-tabs .fh5co-tab-nav li.active a {\r\n  background: #fff;\r\n  color: #d1c286;\r\n}\r\n.fh5co-tabs .fh5co-tab-content-wrap {\r\n  clear: both;\r\n  position: relative;\r\n  top: 70px;\r\n}\r\n.fh5co-tabs .fh5co-tab-content-wrap .tab-content {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  opacity: 0;\r\n  visibility: hidden;\r\n}\r\n.fh5co-tabs .fh5co-tab-content-wrap .tab-content.active {\r\n  opacity: 1;\r\n  visibility: visible;\r\n}\r\n.fh5co-tabs .fh5co-tab-content-wrap .tab-content .price {\r\n  letter-spacing: 2px;\r\n  border: 2px solid #d1c286;\r\n  display: inline-block;\r\n  margin-bottom: 20px;\r\n  padding: 7px 20px 10px 20px;\r\n}\r\n.fh5co-tabs .fh5co-tab-content-wrap ul {\r\n  padding: 0;\r\n  margin: 0;\r\n  margin-bottom: 3em;\r\n}\r\n.fh5co-tabs .fh5co-tab-content-wrap ul li {\r\n  list-style: none;\r\n  margin-bottom: 20px;\r\n  position: relative;\r\n  padding-left: 30px;\r\n}\r\n.fh5co-tabs .fh5co-tab-content-wrap ul li:before {\r\n  font-family: 'icomoon';\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  content: '\\e116';\r\n}\r\n.fh5co-tabs .fh5co-tab-content-wrap .feed {\r\n  width: 100%;\r\n  float: left;\r\n  margin-bottom: 7em;\r\n}\r\n.fh5co-tabs .fh5co-tab-content-wrap .feed > div {\r\n  width: 100%;\r\n  float: left;\r\n  margin-bottom: 1em;\r\n}\r\n.fh5co-tabs .fh5co-tab-content-wrap .feed > div blockquote {\r\n  border-left: 0;\r\n  padding: 20px;\r\n  background: rgba(0, 0, 0, 0.04);\r\n}\r\n.fh5co-tabs .fh5co-tab-content-wrap .feed > div h3 {\r\n  font-family: \"Playfair Display\", serif;\r\n  font-size: 18px;\r\n  display: inline-block;\r\n  padding-right: 20px;\r\n}\r\n.fh5co-tabs .fh5co-tab-content-wrap .feed > div .rate {\r\n  color: #ffba00;\r\n}\r\n.fh5co-tabs .icon-xlg {\r\n  font-size: 400px;\r\n  margin-bottom: 30px;\r\n  text-align: center;\r\n}\r\n@media screen and (max-width: 768px) {\r\n  .fh5co-tabs .icon-xlg {\r\n    font-size: 300px;\r\n  }\r\n}\r\n@media screen and (max-width: 480px) {\r\n  .fh5co-tabs .icon-xlg {\r\n    font-size: 200px;\r\n  }\r\n}\r\n.fh5co-tabs .icon-xlg i {\r\n  color: #d1c286;\r\n}\r\n\r\n.fh5co-heading {\r\n  margin-bottom: 5em;\r\n}\r\n.fh5co-heading.fh5co-heading-sm {\r\n  margin-bottom: 2em;\r\n}\r\n.fh5co-heading h2 {\r\n  font-size: 24px;\r\n  margin-bottom: 20px;\r\n  line-height: 1.5;\r\n  font-weight: bold;\r\n  text-transform: uppercase;\r\n  letter-spacing: 1px;\r\n  color: #000;\r\n}\r\n.fh5co-heading p {\r\n  font-size: 18px;\r\n  line-height: 1.5;\r\n  color: #828282;\r\n}\r\n.fh5co-heading span {\r\n  display: block;\r\n  margin-bottom: 10px;\r\n  text-transform: uppercase;\r\n  font-size: 12px;\r\n  letter-spacing: 2px;\r\n  font-family: \"Montserrat\", Arial, sans-serif;\r\n}\r\n\r\n#fh5co-testimonial {\r\n  background: #efefef;\r\n}\r\n#fh5co-testimonial .testimony-slide {\r\n  text-align: center;\r\n}\r\n#fh5co-testimonial .testimony-slide span {\r\n  font-size: 12px;\r\n  text-transform: uppercase;\r\n  letter-spacing: 2px;\r\n  font-weight: 700;\r\n  display: block;\r\n}\r\n#fh5co-testimonial .testimony-slide figure {\r\n  margin-bottom: 10px;\r\n  display: -moz-inline-stack;\r\n  display: inline-block;\r\n  zoom: 1;\r\n  *display: inline;\r\n}\r\n#fh5co-testimonial .testimony-slide figure img {\r\n  width: 100px;\r\n  -webkit-border-radius: 50%;\r\n  -moz-border-radius: 50%;\r\n  -ms-border-radius: 50%;\r\n  border-radius: 50%;\r\n}\r\n#fh5co-testimonial .testimony-slide blockquote {\r\n  border: none;\r\n  margin: 30px auto;\r\n  width: 50%;\r\n  position: relative;\r\n  padding: 0;\r\n}\r\n@media screen and (max-width: 992px) {\r\n  #fh5co-testimonial .testimony-slide blockquote {\r\n    width: 100%;\r\n  }\r\n}\r\n#fh5co-testimonial .arrow-thumb {\r\n  position: absolute;\r\n  top: 40%;\r\n  display: block;\r\n  width: 100%;\r\n}\r\n#fh5co-testimonial .arrow-thumb a {\r\n  font-size: 32px;\r\n  color: #dadada;\r\n}\r\n#fh5co-testimonial .arrow-thumb a:hover, #fh5co-testimonial .arrow-thumb a:focus, #fh5co-testimonial .arrow-thumb a:active {\r\n  text-decoration: none;\r\n}\r\n\r\n#fh5co-started {\r\n  background: #d1c286;\r\n}\r\n#fh5co-started .fh5co-heading h2 {\r\n  color: #fff;\r\n  margin-bottom: 20px !important;\r\n}\r\n#fh5co-started .fh5co-heading p {\r\n  color: rgba(255, 255, 255, 0.6);\r\n}\r\n#fh5co-started .form-control {\r\n  background: rgba(255, 255, 255, 0.2);\r\n  border: none !important;\r\n  color: #fff;\r\n  font-size: 16px !important;\r\n  width: 100%;\r\n  -webkit-transition: 0.5s;\r\n  -o-transition: 0.5s;\r\n  transition: 0.5s;\r\n}\r\n#fh5co-started .form-control::-webkit-input-placeholder {\r\n  color: #fff;\r\n}\r\n#fh5co-started .form-control:-moz-placeholder {\r\n  /* Firefox 18- */\r\n  color: #fff;\r\n}\r\n#fh5co-started .form-control::-moz-placeholder {\r\n  /* Firefox 19+ */\r\n  color: #fff;\r\n}\r\n#fh5co-started .form-control:-ms-input-placeholder {\r\n  color: #fff;\r\n}\r\n#fh5co-started .form-control:focus {\r\n  background: rgba(255, 255, 255, 0.3);\r\n}\r\n#fh5co-started .btn {\r\n  height: 54px;\r\n  border: none !important;\r\n  background: rgba(0, 0, 0, 0.8);\r\n  color: #fff;\r\n  font-size: 16px;\r\n  text-transform: uppercase;\r\n  font-weight: 400;\r\n  padding-left: 50px;\r\n  padding-right: 50px;\r\n}\r\n#fh5co-started .form-inline .form-group {\r\n  width: 100% !important;\r\n  margin-bottom: 10px;\r\n}\r\n#fh5co-started .form-inline .form-group .form-control {\r\n  width: 100%;\r\n}\r\n\r\n#fh5co-footer {\r\n  background: #efefef;\r\n}\r\n#fh5co-footer .fh5co-footer-links {\r\n  padding: 0;\r\n  margin: 0;\r\n}\r\n#fh5co-footer .fh5co-footer-links li {\r\n  padding: 0;\r\n  margin: 0;\r\n  list-style: none;\r\n}\r\n#fh5co-footer .fh5co-footer-links li a {\r\n  color: #000;\r\n  text-decoration: none;\r\n}\r\n#fh5co-footer .fh5co-footer-links li a:hover {\r\n  text-decoration: underline;\r\n}\r\n#fh5co-footer .fh5co-widget {\r\n  margin-bottom: 30px;\r\n}\r\n@media screen and (max-width: 768px) {\r\n  #fh5co-footer .fh5co-widget {\r\n    text-align: left;\r\n  }\r\n}\r\n#fh5co-footer .fh5co-widget h3 {\r\n  margin-bottom: 15px;\r\n  font-weight: bold;\r\n  font-size: 15px;\r\n  letter-spacing: 2px;\r\n  text-transform: uppercase;\r\n}\r\n#fh5co-footer .copyright .block {\r\n  display: block;\r\n}\r\n\r\n#map {\r\n  height: 500px;\r\n  width: 100%;\r\n}\r\n@media screen and (max-width: 768px) {\r\n  #map {\r\n    height: 400px;\r\n  }\r\n}\r\n@media screen and (max-width: 480px) {\r\n  #map {\r\n    height: 200px;\r\n  }\r\n}\r\n\r\n#fh5co-offcanvas {\r\n  position: absolute;\r\n  z-index: 1901;\r\n  width: 270px;\r\n  background: black;\r\n  top: 0;\r\n  right: 0;\r\n  top: 0;\r\n  bottom: 0;\r\n  padding: 45px 40px 40px 40px;\r\n  overflow-y: auto;\r\n  display: none;\r\n  -moz-transform: translateX(270px);\r\n  -webkit-transform: translateX(270px);\r\n  -ms-transform: translateX(270px);\r\n  -o-transform: translateX(270px);\r\n  transform: translateX(270px);\r\n  -webkit-transition: 0.5s;\r\n  -o-transition: 0.5s;\r\n  transition: 0.5s;\r\n}\r\n@media screen and (max-width: 768px) {\r\n  #fh5co-offcanvas {\r\n    display: block;\r\n  }\r\n}\r\n.offcanvas #fh5co-offcanvas {\r\n  -moz-transform: translateX(0px);\r\n  -webkit-transform: translateX(0px);\r\n  -ms-transform: translateX(0px);\r\n  -o-transform: translateX(0px);\r\n  transform: translateX(0px);\r\n}\r\n#fh5co-offcanvas a {\r\n  color: rgba(255, 255, 255, 0.5);\r\n}\r\n#fh5co-offcanvas a:hover {\r\n  color: rgba(255, 255, 255, 0.8);\r\n}\r\n#fh5co-offcanvas ul {\r\n  padding: 0;\r\n  margin: 0;\r\n}\r\n#fh5co-offcanvas ul li {\r\n  padding: 0;\r\n  margin: 0;\r\n  list-style: none;\r\n}\r\n#fh5co-offcanvas ul li.search {\r\n  float: left;\r\n  width: 100%;\r\n  font-family: \"Playfair Display\", serif;\r\n  -webkit-transition: 0.3s;\r\n  -o-transition: 0.3s;\r\n  transition: 0.3s;\r\n  padding: 0;\r\n  margin: 5px 0 0 0;\r\n}\r\n#fh5co-offcanvas ul li input[type=text] {\r\n  padding: 6px 10px;\r\n  width: 100%;\r\n  border: 1px solid rgba(255, 255, 255, 0.1);\r\n  float: right;\r\n  font-size: 13px;\r\n  margin-top: 4px;\r\n  background: transparent;\r\n  -webkit-transition: 0.3s;\r\n  -o-transition: 0.3s;\r\n  transition: 0.3s;\r\n}\r\n#fh5co-offcanvas ul li input[type=text]:focus {\r\n  width: 100%;\r\n  outline: none;\r\n}\r\n#fh5co-offcanvas ul li button {\r\n  margin-top: 4px;\r\n  padding: 6px;\r\n  background: rgba(255, 255, 255, 0.1);\r\n  border: 1px solid rgba(255, 255, 255, 0.1);\r\n  margin-left: 1px;\r\n}\r\n#fh5co-offcanvas ul li button i {\r\n  color: rgba(255, 255, 255, 0.5);\r\n}\r\n#fh5co-offcanvas ul li button:hover, #fh5co-offcanvas ul li button:focus {\r\n  background: transparent !important;\r\n}\r\n#fh5co-offcanvas ul li button:hover i, #fh5co-offcanvas ul li button:focus i {\r\n  color: white;\r\n}\r\n#fh5co-offcanvas ul li.shopping-cart {\r\n  float: left;\r\n}\r\n#fh5co-offcanvas ul li a.cart {\r\n  display: block;\r\n  margin-top: 30px;\r\n  color: rgba(255, 255, 255, 0.5);\r\n}\r\n#fh5co-offcanvas ul li a.cart span {\r\n  position: relative;\r\n}\r\n#fh5co-offcanvas ul li a.cart span small {\r\n  position: absolute;\r\n  top: -20px;\r\n  right: -15px;\r\n  padding: 10px 6px;\r\n  line-height: 0;\r\n  font-size: 11px;\r\n  background: #d1c286;\r\n  color: white;\r\n  -webkit-border-radius: 50%;\r\n  -moz-border-radius: 50%;\r\n  -ms-border-radius: 50%;\r\n  border-radius: 50%;\r\n}\r\n#fh5co-offcanvas ul li > ul {\r\n  padding-left: 20px;\r\n  display: none;\r\n}\r\n#fh5co-offcanvas ul li.offcanvas-has-dropdown > a {\r\n  display: block;\r\n  position: relative;\r\n}\r\n#fh5co-offcanvas ul li.offcanvas-has-dropdown > a:after {\r\n  position: absolute;\r\n  right: 0px;\r\n  font-family: 'icomoon';\r\n  speak: none;\r\n  font-style: normal;\r\n  font-weight: normal;\r\n  font-variant: normal;\r\n  text-transform: none;\r\n  line-height: 1;\r\n  /* Better Font Rendering =========== */\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n  content: \"\\e921\";\r\n  font-size: 20px;\r\n  color: rgba(255, 255, 255, 0.2);\r\n  -webkit-transition: 0.5s;\r\n  -o-transition: 0.5s;\r\n  transition: 0.5s;\r\n}\r\n#fh5co-offcanvas ul li.offcanvas-has-dropdown.active a:after {\r\n  -webkit-transform: rotate(-180deg);\r\n  -moz-transform: rotate(-180deg);\r\n  -ms-transform: rotate(-180deg);\r\n  -o-transform: rotate(-180deg);\r\n  transform: rotate(-180deg);\r\n}\r\n\r\n.uppercase {\r\n  font-size: 14px;\r\n  color: #000;\r\n  margin-bottom: 10px;\r\n  font-weight: 700;\r\n  text-transform: uppercase;\r\n}\r\n\r\n.gototop {\r\n  position: fixed;\r\n  bottom: 20px;\r\n  right: 20px;\r\n  z-index: 999;\r\n  opacity: 0;\r\n  visibility: hidden;\r\n  -webkit-transition: 0.5s;\r\n  -o-transition: 0.5s;\r\n  transition: 0.5s;\r\n}\r\n.gototop.active {\r\n  opacity: 1;\r\n  visibility: visible;\r\n}\r\n.gototop a {\r\n  width: 50px;\r\n  height: 50px;\r\n  display: table;\r\n  background: rgba(0, 0, 0, 0.5);\r\n  color: #fff;\r\n  text-align: center;\r\n  -webkit-border-radius: 4px;\r\n  -moz-border-radius: 4px;\r\n  -ms-border-radius: 4px;\r\n  border-radius: 4px;\r\n}\r\n.gototop a i {\r\n  height: 50px;\r\n  display: table-cell;\r\n  vertical-align: middle;\r\n}\r\n.gototop a:hover, .gototop a:active, .gototop a:focus {\r\n  text-decoration: none;\r\n  outline: none;\r\n}\r\n\r\n.fh5co-nav-toggle {\r\n  width: 25px;\r\n  height: 25px;\r\n  cursor: pointer;\r\n  text-decoration: none;\r\n}\r\n.fh5co-nav-toggle.active i::before, .fh5co-nav-toggle.active i::after {\r\n  background: #444;\r\n}\r\n.fh5co-nav-toggle:hover, .fh5co-nav-toggle:focus, .fh5co-nav-toggle:active {\r\n  outline: none;\r\n  border-bottom: none !important;\r\n}\r\n.fh5co-nav-toggle i {\r\n  position: relative;\r\n  display: inline-block;\r\n  width: 25px;\r\n  height: 2px;\r\n  color: #252525;\r\n  font: bold 14px/.4 Helvetica;\r\n  text-transform: uppercase;\r\n  text-indent: -55px;\r\n  background: #252525;\r\n  transition: all .2s ease-out;\r\n}\r\n.fh5co-nav-toggle i::before, .fh5co-nav-toggle i::after {\r\n  content: '';\r\n  width: 25px;\r\n  height: 2px;\r\n  background: #252525;\r\n  position: absolute;\r\n  left: 0;\r\n  transition: all .2s ease-out;\r\n}\r\n.fh5co-nav-toggle.fh5co-nav-white > i {\r\n  color: #fff;\r\n  background: #000;\r\n}\r\n.fh5co-nav-toggle.fh5co-nav-white > i::before, .fh5co-nav-toggle.fh5co-nav-white > i::after {\r\n  background: #000;\r\n}\r\n\r\n.fh5co-nav-toggle i::before {\r\n  top: -7px;\r\n}\r\n\r\n.fh5co-nav-toggle i::after {\r\n  bottom: -7px;\r\n}\r\n\r\n.fh5co-nav-toggle:hover i::before {\r\n  top: -10px;\r\n}\r\n\r\n.fh5co-nav-toggle:hover i::after {\r\n  bottom: -10px;\r\n}\r\n\r\n.fh5co-nav-toggle.active i {\r\n  background: transparent;\r\n}\r\n\r\n.fh5co-nav-toggle.active i::before {\r\n  background: #fff;\r\n  top: 0;\r\n  -webkit-transform: rotateZ(45deg);\r\n  -moz-transform: rotateZ(45deg);\r\n  -ms-transform: rotateZ(45deg);\r\n  -o-transform: rotateZ(45deg);\r\n  transform: rotateZ(45deg);\r\n}\r\n\r\n.fh5co-nav-toggle.active i::after {\r\n  background: #fff;\r\n  bottom: 0;\r\n  -webkit-transform: rotateZ(-45deg);\r\n  -moz-transform: rotateZ(-45deg);\r\n  -ms-transform: rotateZ(-45deg);\r\n  -o-transform: rotateZ(-45deg);\r\n  transform: rotateZ(-45deg);\r\n}\r\n\r\n.fh5co-nav-toggle {\r\n  position: absolute;\r\n  right: 0px;\r\n  top: 10px;\r\n  z-index: 21;\r\n  padding: 6px 0 0 0;\r\n  display: block;\r\n  margin: 0 auto;\r\n  display: none;\r\n  height: 44px;\r\n  width: 44px;\r\n  z-index: 2001;\r\n  border-bottom: none !important;\r\n}\r\n@media screen and (max-width: 768px) {\r\n  .fh5co-nav-toggle {\r\n    display: block;\r\n  }\r\n}\r\n\r\n.btn {\r\n  margin-right: 4px;\r\n  margin-bottom: 4px;\r\n  font-family: \"Montserrat\", Arial, sans-serif;\r\n  font-size: 16px;\r\n  font-weight: 400;\r\n  -webkit-border-radius: 2px;\r\n  -moz-border-radius: 2px;\r\n  -ms-border-radius: 2px;\r\n  border-radius: 2px;\r\n  -webkit-transition: 0.5s;\r\n  -o-transition: 0.5s;\r\n  transition: 0.5s;\r\n  padding: 8px 20px;\r\n}\r\n.btn.btn-md {\r\n  padding: 8px 20px !important;\r\n}\r\n.btn.btn-lg {\r\n  padding: 18px 36px !important;\r\n}\r\n.btn:hover, .btn:active, .btn:focus {\r\n  box-shadow: none !important;\r\n  outline: none !important;\r\n}\r\n\r\n.btn-primary {\r\n  background: #d1c286;\r\n  color: #fff;\r\n  border: 2px solid #d1c286;\r\n}\r\n.btn-primary:hover, .btn-primary:focus, .btn-primary:active {\r\n  background: #d8cb98 !important;\r\n  border-color: #d8cb98 !important;\r\n}\r\n.btn-primary.btn-outline {\r\n  background: transparent;\r\n  color: #d1c286;\r\n  border: 2px solid #d1c286;\r\n}\r\n.btn-primary.btn-outline:hover, .btn-primary.btn-outline:focus, .btn-primary.btn-outline:active {\r\n  background: #d1c286;\r\n  color: #fff;\r\n}\r\n\r\n.btn-success {\r\n  background: #5cb85c;\r\n  color: #fff;\r\n  border: 2px solid #5cb85c;\r\n}\r\n.btn-success:hover, .btn-success:focus, .btn-success:active {\r\n  background: #4cae4c !important;\r\n  border-color: #4cae4c !important;\r\n}\r\n.btn-success.btn-outline {\r\n  background: transparent;\r\n  color: #5cb85c;\r\n  border: 2px solid #5cb85c;\r\n}\r\n.btn-success.btn-outline:hover, .btn-success.btn-outline:focus, .btn-success.btn-outline:active {\r\n  background: #5cb85c;\r\n  color: #fff;\r\n}\r\n\r\n.btn-info {\r\n  background: #5bc0de;\r\n  color: #fff;\r\n  border: 2px solid #5bc0de;\r\n}\r\n.btn-info:hover, .btn-info:focus, .btn-info:active {\r\n  background: #46b8da !important;\r\n  border-color: #46b8da !important;\r\n}\r\n.btn-info.btn-outline {\r\n  background: transparent;\r\n  color: #5bc0de;\r\n  border: 2px solid #5bc0de;\r\n}\r\n.btn-info.btn-outline:hover, .btn-info.btn-outline:focus, .btn-info.btn-outline:active {\r\n  background: #5bc0de;\r\n  color: #fff;\r\n}\r\n\r\n.btn-warning {\r\n  background: #f0ad4e;\r\n  color: #fff;\r\n  border: 2px solid #f0ad4e;\r\n}\r\n.btn-warning:hover, .btn-warning:focus, .btn-warning:active {\r\n  background: #eea236 !important;\r\n  border-color: #eea236 !important;\r\n}\r\n.btn-warning.btn-outline {\r\n  background: transparent;\r\n  color: #f0ad4e;\r\n  border: 2px solid #f0ad4e;\r\n}\r\n.btn-warning.btn-outline:hover, .btn-warning.btn-outline:focus, .btn-warning.btn-outline:active {\r\n  background: #f0ad4e;\r\n  color: #fff;\r\n}\r\n\r\n.btn-danger {\r\n  background: #d9534f;\r\n  color: #fff;\r\n  border: 2px solid #d9534f;\r\n}\r\n.btn-danger:hover, .btn-danger:focus, .btn-danger:active {\r\n  background: #d43f3a !important;\r\n  border-color: #d43f3a !important;\r\n}\r\n.btn-danger.btn-outline {\r\n  background: transparent;\r\n  color: #d9534f;\r\n  border: 2px solid #d9534f;\r\n}\r\n.btn-danger.btn-outline:hover, .btn-danger.btn-outline:focus, .btn-danger.btn-outline:active {\r\n  background: #d9534f;\r\n  color: #fff;\r\n}\r\n\r\n.btn-outline {\r\n  background: none;\r\n  border: 2px solid gray;\r\n  font-size: 16px;\r\n  -webkit-transition: 0.3s;\r\n  -o-transition: 0.3s;\r\n  transition: 0.3s;\r\n}\r\n.btn-outline:hover, .btn-outline:focus, .btn-outline:active {\r\n  box-shadow: none;\r\n}\r\n\r\n.btn.with-arrow {\r\n  position: relative;\r\n  -webkit-transition: 0.3s;\r\n  -o-transition: 0.3s;\r\n  transition: 0.3s;\r\n}\r\n.btn.with-arrow i {\r\n  visibility: hidden;\r\n  opacity: 0;\r\n  position: absolute;\r\n  right: 0px;\r\n  top: 50%;\r\n  margin-top: -8px;\r\n  -webkit-transition: 0.2s;\r\n  -o-transition: 0.2s;\r\n  transition: 0.2s;\r\n}\r\n.btn.with-arrow:hover {\r\n  padding-right: 50px;\r\n}\r\n.btn.with-arrow:hover i {\r\n  color: #fff;\r\n  right: 18px;\r\n  visibility: visible;\r\n  opacity: 1;\r\n}\r\n\r\n.form-control {\r\n  box-shadow: none;\r\n  background: transparent;\r\n  border: 2px solid rgba(0, 0, 0, 0.1);\r\n  height: 54px;\r\n  font-size: 18px;\r\n  font-weight: 300;\r\n}\r\n.form-control:active, .form-control:focus {\r\n  outline: none;\r\n  box-shadow: none;\r\n  border-color: #d1c286;\r\n}\r\n\r\n.row-pb-md {\r\n  padding-bottom: 4em !important;\r\n}\r\n\r\n.row-pb-sm {\r\n  padding-bottom: 2em !important;\r\n}\r\n\r\n.fh5co-loader {\r\n  position: fixed;\r\n  left: 0px;\r\n  top: 0px;\r\n  width: 100%;\r\n  height: 100%;\r\n  z-index: 9999;\r\n  background: url(../images/loader.gif) center no-repeat #fff;\r\n}\r\n\r\n.js .animate-box {\r\n  opacity: 0;\r\n}\r\n\r\n/*# sourceMappingURL=style.css.map */\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/static/main_app/css/style.css b/static/main_app/css/style.css
+--- a/static/main_app/css/style.css	(revision 4f2b24ddc43998fc82b62dd047024bc90f67dc1a)
++++ b/static/main_app/css/style.css	(date 1640869620865)
+@@ -712,6 +712,15 @@
+   background: rgba(0, 0, 0, 0.05);
+ }
+ 
++#fh5co-product{
++  margin-top: 7em;
++}
++
++#search_header{
++  padding: 18px 0 0 0;
++  clear: both;
++}
++
+ #fh5co-services,
+ #fh5co-started,
+ #fh5co-testimonial,
+@@ -720,8 +729,9 @@
+ #fh5co-about,
+ #fh5co-contact,
+ #fh5co-footer {
+-  padding: 7em 0;
++  padding: 18px 0 0 0;
+   clear: both;
++
+ }
+ @media screen and (max-width: 768px) {
+   #fh5co-services,
+@@ -732,7 +742,7 @@
+   #fh5co-about,
+   #fh5co-contact,
+   #fh5co-footer {
+-    padding: 3em 0;
++    padding: 20px 0 0 0;
+   }
+ }
+ 
+@@ -841,13 +851,18 @@
+   font-size: 14px;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+-  margin-bottom: 5px;
++  margin-bottom: 10px;
+   font-weight: bold;
+   line-height: 24px;
+ }
+ .product .desc h3 a {
+   color: #000;
+ }
++
++.product .desc h4{
++  margin-bottom: 10px;
++}
++
+ .product .desc .price {
+   letter-spacing: 2px;
+   text-transform: uppercase;
+@@ -867,7 +882,7 @@
+ }
+ 
+ .product-carousel {
+-  margin-bottom: 7em;
++  margin-bottom: 2em;
+ }
+ 
+ .fh5co-tabs .fh5co-tab-nav {
+@@ -937,6 +952,7 @@
+   display: inline-block;
+   margin-bottom: 20px;
+   padding: 7px 20px 10px 20px;
++  margin-left: 20px;
+ }
+ .fh5co-tabs .fh5co-tab-content-wrap ul {
+   padding: 0;
+@@ -1684,4 +1700,77 @@
+   opacity: 0;
+ }
+ 
++
++.search_inline{
++      display: flex;
++    justify-content: space-between;
++  background-color: #d1c286;
++  align-items: center;
++   border: 3px solid #d1c286;
++  border-radius: 2px;
++}
++.search_inline .form-group{
++  margin: 0;
++
++
++}
++
++.search_inline .form-group label{
++  margin-bottom: 0;
++    padding: 2px 0px;
++}
++.search_main{
++  width: 65%;
++}
++.search_main input{
++      border: 0;
++      width: 100%;
++      padding: 2px;
++}
++.btn_search_form input{
++      border: 0;
++  background-color: #d1c286;
++  color: white;
++}
++.search_form_cat{
++    background-color: white;
++    /* padding: 0 30px; */
++    min-width: 236px;
++    border: solid #d1c286;
++    border-width: 0px 0px 0px 4px;
++
++}
++
++.footer_back{
++  min-height: 100px;
++  background-color:  #d1c286;
++}
++.wrapper{
++  display: flex;
++  flex-direction: column;
++}
++.wrapper_grow{
++  flex-grow: 1;
++  min-height: 100vh;
++}
++
++.product_card{
++
++  padding: 1em 1em 0 1em;
++
++  border:  8px solid #F2F2F2;
++}
++
++.img_single_owl{
++  height: 100%;
++
++
++}
++.img_single_owl_cont{
++  height: 600px;
++  background-size: contain;
++  background-repeat: no-repeat;
++  background-position: top center;
++  position: relative;
++}
+ /*# sourceMappingURL=style.css.map */
+Index: .idea/dataSources.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DataSourceManagerImpl\" format=\"xml\" multifile-model=\"true\">\r\n    <data-source source=\"LOCAL\" name=\"db\" uuid=\"fa6684e5-119a-4521-bb00-95f5ad0f2f02\">\r\n      <driver-ref>sqlite.xerial</driver-ref>\r\n      <synchronize>true</synchronize>\r\n      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>\r\n      <jdbc-url>jdbc:sqlite:C:\\Users\\lama1ftl\\PycharmProjects\\avito2_0\\db.sqlite3</jdbc-url>\r\n      <working-dir>$ProjectFileDir$</working-dir>\r\n      <libraries>\r\n        <library>\r\n          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.34.0/sqlite-jdbc-3.34.0.jar</url>\r\n        </library>\r\n      </libraries>\r\n    </data-source>\r\n    <data-source source=\"LOCAL\" name=\"db [2]\" uuid=\"2ddbcaa1-768f-44e2-b816-d007efb28ad6\">\r\n      <driver-ref>sqlite.xerial</driver-ref>\r\n      <synchronize>true</synchronize>\r\n      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>\r\n      <jdbc-url>jdbc:sqlite:A:\\работенка\\avito2_0\\db.sqlite3</jdbc-url>\r\n      <working-dir>$ProjectFileDir$</working-dir>\r\n      <libraries>\r\n        <library>\r\n          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.34.0/sqlite-jdbc-3.34.0.jar</url>\r\n        </library>\r\n      </libraries>\r\n    </data-source>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/dataSources.xml b/.idea/dataSources.xml
+--- a/.idea/dataSources.xml	(revision 4f2b24ddc43998fc82b62dd047024bc90f67dc1a)
++++ b/.idea/dataSources.xml	(date 1640869620740)
+@@ -5,7 +5,7 @@
+       <driver-ref>sqlite.xerial</driver-ref>
+       <synchronize>true</synchronize>
+       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+-      <jdbc-url>jdbc:sqlite:C:\Users\lama1ftl\PycharmProjects\avito2_0\db.sqlite3</jdbc-url>
++      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db.sqlite3</jdbc-url>
+       <working-dir>$ProjectFileDir$</working-dir>
+       <libraries>
+         <library>
+@@ -18,6 +18,18 @@
+       <synchronize>true</synchronize>
+       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+       <jdbc-url>jdbc:sqlite:A:\работенка\avito2_0\db.sqlite3</jdbc-url>
++      <working-dir>$ProjectFileDir$</working-dir>
++      <libraries>
++        <library>
++          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.34.0/sqlite-jdbc-3.34.0.jar</url>
++        </library>
++      </libraries>
++    </data-source>
++    <data-source source="LOCAL" name="db [3]" uuid="e708407a-0ad7-44f1-b3ba-c70bc084ccc1">
++      <driver-ref>sqlite.xerial</driver-ref>
++      <synchronize>true</synchronize>
++      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
++      <jdbc-url>jdbc:sqlite:C:\Users\User\PycharmProjects\avito\db.sqlite3</jdbc-url>
+       <working-dir>$ProjectFileDir$</working-dir>
+       <libraries>
+         <library>

@@ -1,76 +1,48 @@
-{% extends 'main_app/base.html' %}
-{% load static %}
 
-{% block title %}{% endblock %}
+{% extends 'main_app/base.html' %}
+
+
+{% block title %}BIO{% endblock %}
 
 {% block content %}
 
 
-    <section  id="fh5co-product" class="registration">
-      <div class="container">
+<section  id="fh5co-product" class="registration">
+    <div class="container">
         <div class="row">
-          <div class="reg-title-h1 col-md-12">
-             <h1>Редактирование профиля</h1>
-          </div>
-          <form id="reg_form" class="form-horizontal col-md-8 reg-form">
-            <fieldset>
-              <div class="form-group reg-form-group row">
-                <label for="email" class="col-md-5">Адрес эл.почты:*</label>
-                <input class="col-md-7" type="text" id="email" name="email">
-              </div>
-               <div class="form-group reg-form-group row">
-                <label for="name" class="col-md-5">Имя:</label>
-                <input class="col-md-7" type="text" id="name" name="name">
-              </div>
-              <div class="form-group reg-form-group row">
-                <label for="surname" class="col-md-5">Фамилия:</label>
-                <input class="col-md-7" type="text" id="surname" name="surname">
-              </div>
-              <div class="form-group reg-form-group row">
-                <label for="patronymic" class="col-md-5">Отчество:</label>
-                <input class="col-md-7" type="text" id="patronymic" name="patronymic">
-              </div>
-              <div class="form-group reg-form-group row">
-                <label class="col-md-5">Пол:</label>
-                <div class="col-md-7">
-                  <label class="radio-inline"><input type="radio" name="sex" value="male">М</label>
-                  <label class="radio-inline"><input type="radio" name="sex" value="female">Ж</label>
-                </div>
-              </div>
-               <div class="form-group reg-form-group row">
-                <label for="birth" class="col-md-5">Дата рождения:</label>
-                <input class="col-md-7" type="date" id="birth" name="birth">
-              </div>
-              <div class="form-group reg-form-group row">
-                <label for="city" class="col-md-5">Город:</label>
-                <input class="col-md-7" type="text" id="city" name="city">
-              </div>
-              <div class="form-group reg-form-group row">
-                <label for="work" class="col-md-5">Род деятельности:</label>
-                <input class="col-md-7" type="text" id="work" name="work">
-              </div>
-            </fieldset>
-            <fieldset>
-              <div class="form-group reg-form-group row">
-                <label class="col-md-5">Ссылки:</label>
-                <input class="col-md-7" type="text" id="social_1" name="social_1">
-              </div>
-              <div class="form-group reg-form-group row">
-                <label class="col-md-5"></label>
-                <input class="col-md-7" type="text" id="social_2" name="social_2">
-               </div>
-            </fieldset>
-            <input class="button" type="submit" value="Сохранить">
-          </form>
-          <div class="reg-photo col-md-4">
-             <p class="">Фото:</p>
-             <div class="user-photo">
-              <img src="../static/img/user.jpg" alt="Фото">
-             </div>
-          </div>
+            <div class="reg-title-h1 col-md-12">
+                <h1>Редактирование профиля</h1>
+            </div>
+            <di class="row user-info-inner text-left reg_form_cont">
+                <form method="post" action="{% url 'redaction' %}" enctype="multipart/form-data"  class="form-horizontal col-md-8 reg-form">
+                {% csrf_token %}
+                    <fieldset>
+                        <div class="form-group reg-form-group row">
+                            <label for="email" class="col-sm-5">Адрес эл.почты:*</label>
+                            <input class="col-sm-7" type="text" id="email" name="email" value="{{ user.email }}">
+                        </div>
+                        <div class="form-group reg-form-group row">
+                            <label for="name" class="col-sm-5">Имя:</label>
+                            <input class="col-sm-7" type="text" id="name" name="name" value="{{ user.name }}">
+                        </div>
+                        <div class="form-group reg-form-group row">
+                            <label for="surname" class="col-sm-5">Фамилия:</label>
+                            <input class="col-sm-7" type="text" id="surname" name="surname" value="{{ user.last_name }}">
+                        </div>
+                        <div class="form-group reg-form-group row">
+                            <label for="city" class="col-sm-5">Город:</label>
+                            <input class="col-sm-7" type="text" id="city" name="city" value="{{ user.city }}">
+                        </div>
+                        <div class="form-group reg-form-group row">
+                            <label for="work" class="col-sm-5">Телефон:</label>
+                            <input class="col-sm-7" type="text" id="phone" name="phone" value="{{ user.phone }}">
+                        </div>
+                    </fieldset>
+                    <input class="button" type="submit" value="Сохранить">
+                </form>
+            </div>
         </div>
-      </div>
-    </section>
-
+    </div>
+</section>
 
 {% endblock %}

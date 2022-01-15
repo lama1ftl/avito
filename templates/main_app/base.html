@@ -57,39 +57,20 @@
 
 
         <!--МЕНЮШКА-->
-    <nav class="fh5co-nav navbar-fixed-top" role="navigation">
+{% comment %}    <nav class="fh5co-nav navbar-fixed-top" role="navigation">
+
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-xs-2">
+                <div class="col-md-3 col-xs-4">
                     <div id="fh5co-logo"><a href="{% url 'home' %}">Shop.</a></div>
                 </div>
-
-                <!--ПОИСК-->
-{#                    <div class="col-md-3 col-xs-4 text-right hidden-xs menu-2">#}
-{#                        <ul>#}
-{#                            <li class="search">#}
-{#                                <div class="input-group">#}
-{#                                    <input type="text" placeholder="Поиск">#}
-{#                                    <span class="input-group-btn">#}
-{#        						        <button class="btn btn-primary" type="button"><i class="icon-search"></i></button>#}
-{#        						      </span>#}
-{#                                </div>#}
-{#                            </li>#}
-{##}
-{#                        </ul>#}
-{#                    </div>#}
-                <div class="col-md-9  col-xs-6 text-right menu-1">
+                <div class="col-md-9  col-xs-8 text-right menu-1">
                     <ul>
+                        <div class="menu_small_flex">
                         {% if request.user.is_authenticated %}
                             {% if request.user.role == 2 %}
                                 <li><a href="{% url 'mem_bio' %}">Профиль</a></li>
                                 <li><a href="{% url 'add_item' %}">Разместить объяву</a></li>
-                               {% comment %} <li class="has-dropdown">
-                                    <ul class="dropdown">
-                                        <li><a href="{% url 'mem_bio' %}">Профиль</a></li>
-                                        <li><a href="{% url 'add_item' %}">Разместить объяву</a></li>
-                                    </ul>
-                                </li>{% endcomment %}
                             {% else %}
                                 <li><a href="{% url 'mem_bio' %}">Профиль</a></li>
                             {% endif %}
@@ -100,11 +81,78 @@
                             <li data-toggle="modal" data-target="#loginModal">Войти</li>
                             <li class="reg"><a href="{% url 'reg' %}" class="menu">Регистрация</a></li>
                         {% endif %}
-                        <li class="shopping-cart"><a href={% url 'cart' %} class="cart"><span><small></small><i
-                                class="icon-shopping-cart"></i></span></a></li>
+                        {% if request.user.is_authenticated %}
+                            <li class="shopping-cart">
+                                <a href={% url 'cart' %} class="cart"><span>
+                                    <small>
+                                        {% if not count %}0{% else %}{{ count }}{% endif %}
+                                    </small><i class="icon-shopping-cart"></i></span>
+                                </a>
+                             </li>
+                        {% else %}
+                            <li class="shopping-cart" data-toggle="modal" data-target="#loginModal">
+                                <a  class="cart"><span>
+                                    <small>0
+                                    </small><i class="icon-shopping-cart"></i></span>
+                                </a>
+                            </li>
+                        {% endif %}
+                        </div>
                     </ul>
                 </div>
             </div>
+        </div>
+
+    </nav>{% endcomment %}
+
+    <nav class="navbar navbar-default fh5co-nav navbar-fixed-top" role="navigation">
+        <div class="container">
+             <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+             <div id="fh5co-logo"><a href="{% url 'home' %}">Shop.</a></div>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse menu-1" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                {% if request.user.is_authenticated %}
+                    {% if request.user.role == 2 %}
+                        <li><a href="{% url 'mem_bio' %}">Профиль</a></li>
+                        <li><a href="{% url 'add_item' %}">Разместить объяву</a></li>
+                    {% else %}
+                        <li><a href="{% url 'mem_bio' %}">Профиль</a></li>
+                    {% endif %}
+                {% endif %}
+                {% if request.user.is_authenticated %}
+                    <li><a href="{% url 'logout' %}">Выйти</a></li>
+                {% else %}
+                    <li class="li_login_padding" data-toggle="modal" data-target="#loginModal">Войти</li>
+                    <li class="reg"><a href="{% url 'reg' %}" class="menu">Регистрация</a></li>
+                {% endif %}
+                {% if request.user.is_authenticated %}
+                    <li class="shopping-cart">
+                        <a href={% url 'cart' %} class="cart"><span>
+                            <small>
+                                {% if not count %}0{% else %}{{ count }}{% endif %}
+                            </small><i class="icon-shopping-cart"></i></span>
+                        </a>
+                     </li>
+                {% else %}
+                    <li class="shopping-cart" data-toggle="modal" data-target="#loginModal">
+                        <a  class="cart"><span>
+                            <small>0
+                            </small><i class="icon-shopping-cart"></i></span>
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+          </div><!-- /.navbar-collapse -->
         </div>
     </nav>
 
@@ -114,37 +162,37 @@
          aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-
-                <div class="container">
-                    <div class="col-md-6 animate-box">
-
-                <div class="modal-header">
-                    <h4 class="modal-title" id="loginModalLabel">Вход</h4>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-content">
-                    <form method="post" class="form-horizontal col-md-8 reg-form">
-                        {% csrf_token %}
-                        <fieldset>
-                            <input type="hidden" name="form_type" value="login_form">
-                            <div class="form-group reg-form-group row">
-                                <label for="login" class="col-md-5">Логин:</label>
-                                <input class="col-md-7" type="text" id="login" name="login">
+                {% comment %}<div class="container">{% endcomment %}
+                    {% comment %}<div class="col-md-6 animate-box login_cont">{% endcomment %}
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="loginModalLabel">Вход</h4>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <form method="post" class="form-horizontal col-md-8 reg-form login_form">
+                                {% csrf_token %}
+                                <fieldset>
+                                    <input type="hidden" name="form_type" value="login_form">
+                                    <div class="form-group reg-form-group row">
+                                        <label for="login" class="col-sm-5">Логин:</label>
+                                        <div class="col-sm-7 login_input_row"><input  type="text" id="login" name="login"></div>
+                                    </div>
+                                    <div class="form-group reg-form-group row">
+                                        <label for="pwd" class="col-sm-5">Пароль:</label>
+                                        <div class="col-sm-7 login_input_row"><input  type="password" id="pwd" name="pwd"></div>
+                                    </div>
+                                </fieldset>
+                                <input class=" button btn btn-secondary" type="submit" {% comment %}type="button" class="btn btn-secondary"{% endcomment %} value="Войти">
+                            </form>
                             </div>
-                            <div class="form-group reg-form-group row">
-                                <label for="pwd" class="col-md-5">Пароль:</label>
-                                <input class="col-md-7" type="password" id="pwd" name="pwd">
-                            </div>
-                        </fieldset>
-                        <input class="col-md-3 button" type="submit" value="Войти">
-                    </form>
-                </div>
-
-                </div>
-                </div>
-
+                        </div>
+                        <div class="modal-footer">
+                        </div>
+                    {% comment %}</div>{% endcomment %}
+                {% comment %}</div>{% endcomment %}
             </div>
         </div>
     </div>
