@@ -2,21 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8264adaf-bb0d-40b5-b4f0-77c04c169b7e" name="Changes" comment="mes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_app/main_app/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/main_app/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_app/main_app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/main_app/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_app/main_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/main_app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_app/main_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/main_app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_app/main_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/main_app/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/main_app/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main_app/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main_app/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/main_app/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main_app/add_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_app/add_item.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main_app/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_app/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main_app/bio.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_app/bio.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main_app/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_app/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main_app/cat.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main_app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_app/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main_app/redaction.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_app/redaction.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main_app/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_app/registration.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main_app/single.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_app/single.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +29,7 @@
       <list>
         <option value="Python Script" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -55,6 +53,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/main_app/main_app/models.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -69,7 +70,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/dishop-master/src" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
@@ -135,6 +136,14 @@
       <workItem from="1641962065429" duration="64000" />
       <workItem from="1642054869280" duration="8493000" />
       <workItem from="1642234124770" duration="490000" />
+      <workItem from="1642235505358" duration="377000" />
+      <workItem from="1642243928933" duration="120000" />
+      <workItem from="1642321846907" duration="22725000" />
+      <workItem from="1642391082904" duration="23524000" />
+      <workItem from="1642479473175" duration="18277000" />
+      <workItem from="1642517715097" duration="382000" />
+      <workItem from="1642519274931" duration="1083000" />
+      <workItem from="1642696140246" duration="2500000" />
     </task>
     <task id="LOCAL-00001" summary="mes">
       <created>1640859963939</created>
@@ -143,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640859963939</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="mes">
+      <created>1642235739838</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1642235739838</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

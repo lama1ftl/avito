@@ -26,15 +26,27 @@ class User(AbstractUser):
         verbose_name_plural = 'Пользователи'
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+    parent = models.ForeignKey('self',  blank=True, null=True, on_delete=models.CASCADE)
+    level = models.IntegerField(default=0, db_index=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Категория'
+        verbose_name_plural = 'категории'
+
+
 class Item(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
                              on_delete=models.CASCADE, verbose_name='user', default='1')
-
     name = models.CharField('name', max_length=30)
     text = models.TextField('text', max_length=320)
     price = models.CharField('price', max_length=10)
     status = models.CharField('status', max_length=15)
-    category = models.CharField('category', max_length=30, default='cat1')
+    category = models.ForeignKey(Category, null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
         return self.name
@@ -53,19 +65,6 @@ class CartItem(models.Model):
     item = models.ForeignKey(Item, on_delete=models.CASCADE)
     qty = models.PositiveIntegerField(default=1)
     item_total_price = models.DecimalField(max_digits=9, decimal_places=2)
-
-
-class Category(models.Model):
-    name = models.CharField(max_length=100)
-    parent = models.ForeignKey('self',  blank=True, null=True, on_delete=models.CASCADE)
-    level = models.IntegerField(default=0, db_index=True)
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        verbose_name = 'Категория'
-        verbose_name_plural = 'категории'
 
 
 # class Cart(models.Model):

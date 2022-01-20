@@ -26,11 +26,12 @@
                             <input class="col-sm-9" id="form.price" name="price">
                         </div>
                         <div class="form-group reg-form-group row ">
-                            <label for="form.category" class="col-sm-3">Категория:</label>
-                            <select id="form.category" name="category" class="col-sm-9">
+                            <label for="form" class="col-sm-3">Категория:</label>
+                            {{ form.category }}
+{% comment %}                            <select id="form.category" name="category" class="col-sm-9">
                                 <option value="cat1">cat1</option>
                                 <option value="cat1">cat2</option>
-                            </select>
+                            </select>{% endcomment %}
                         </div>
                         <div class="form-group reg-form-group row ">
                             <label for="form.description" class="col-sm-3">Описание:</label>

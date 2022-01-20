@@ -16,6 +16,60 @@ from .models import *
 import main_app.main_app.forms
 
 
+@csrf_exempt
+def index(request):
+    if request.method == 'POST':
+        cat_1 = Category.objects.filter(level=0)
+        if request.POST.get('form_type') == 'login_form':
+            login_form = main_app.main_app.forms.LoginForm(request.POST)
+            if login_form.is_valid():
+                login = request.POST.get('login', None)
+                pwd = request.POST.get('pwd', None)
+                user = authenticate(username=login, password=pwd)
+                if user is not None:
+                    if user.is_active:
+                        django.contrib.auth.login(request, user)
+                        return HttpResponseRedirect("/")
+                    else:
+                        return HttpResponse("disabled account")
+                else:
+                    return HttpResponse("user none")
+            else:
+                return HttpResponse("Invalid data form")
+
+        if request.POST.get('form_type') == 'search_form':
+            search_form = main_app.main_app.forms.SearchForm(request.POST)
+
+            if search_form.is_valid():
+                search_text = request.POST.get('search_text')
+                category = request.POST.get('category')
+                item_all = list()
+                item_search = Item.objects.all()
+                for i in item_search:
+                    # if search_text.upper().lower() in i.name.upper().lower() or search_text.upper().lower() in i.text.upper().lower():
+                    if search_text.upper().lower() in i.name.upper().lower():
+                        item_all.append(i)
+
+                image_all = Image.objects.all()
+                user_all = User.objects.all()
+                template = loader.get_template('../templates/main_app/index.html')
+                return HttpResponse(template.render(locals()))
+            else:
+                print(search_form.errors)
+                return HttpResponse("Invalid form")
+    else:
+        image_all = Image.objects.all()
+        item_all = Item.objects.all()
+        login_form = main_app.main_app.forms.LoginForm()
+        search_form = main_app.main_app.forms.SearchForm()
+
+        cat_1 = Category.objects.filter(level=0)
+
+        return render(request, '../templates/main_app/index.html',
+                      {'login_form': login_form, 'search_form': search_form, 'item_all': item_all,
+                       'image_all': image_all, 'cat_1': cat_1})
+
+
 # @csrf_exempt
 # def index(request):
 #     # item_all = Item.objects.all()
@@ -60,55 +114,55 @@ import main_app.main_app.forms
 #         return render(request, '../templates/main_app/index.html',
 #                       {'login_form': login_form, 'search_form': search_form})
 #
-@csrf_exempt
-def index(request):
-    if request.method == 'POST':
-        if request.POST.get('form_type') == 'login_form':
-            login_form = main_app.main_app.forms.LoginForm(request.POST)
-            if login_form.is_valid():
-                login = request.POST.get('login', None)
-                pwd = request.POST.get('pwd', None)
-                user = authenticate(username=login, password=pwd)
-                if user is not None:
-                    if user.is_active:
-                        django.contrib.auth.login(request, user)
-                        return HttpResponseRedirect("/")
-                    else:
-                        return HttpResponse("disabled account")
-                else:
-                    return HttpResponse("user none")
-            else:
-                return HttpResponse("Invalid data form")
-
-        if request.POST.get('form_type') == 'search_form':
-            search_form = main_app.main_app.forms.SearchForm(request.POST)
-
-            if search_form.is_valid():
-                search_text = request.POST.get('search_text')
-                category = request.POST.get('category')
-                item_all = list()
-                item_search = Item.objects.all()
-                for i in item_search:
-                    if search_text.upper().lower() in i.name.upper().lower() or search_text.upper().lower() in i.text.upper().lower():
-                        item_all.append(i)
-
-                # item_all = Item.objects.filter(category=category, name=search_text)
-                image_all = Image.objects.all()
-                user_all = User.objects.all()
-                template = loader.get_template('../templates/main_app/index.html')
-                return HttpResponse(template.render(locals()))
-            else:
-                print(search_form.errors)
-                return HttpResponse("Invalid form")
-    else:
-        image_all = Image.objects.all()
-        item_all = Item.objects.all()
-        login_form = main_app.main_app.forms.LoginForm()
-        search_form = main_app.main_app.forms.SearchForm()
-
-        return render(request, '../templates/main_app/index.html',
-                      {'login_form': login_form, 'search_form': search_form, 'item_all': item_all,
-                       'image_all': image_all})
+# @csrf_exempt
+# def index(request):
+#     if request.method == 'POST':
+#         if request.POST.get('form_type') == 'login_form':
+#             login_form = main_app.main_app.forms.LoginForm(request.POST)
+#             if login_form.is_valid():
+#                 login = request.POST.get('login', None)
+#                 pwd = request.POST.get('pwd', None)
+#                 user = authenticate(username=login, password=pwd)
+#                 if user is not None:
+#                     if user.is_active:
+#                         django.contrib.auth.login(request, user)
+#                         return HttpResponseRedirect("/")
+#                     else:
+#                         return HttpResponse("disabled account")
+#                 else:
+#                     return HttpResponse("user none")
+#             else:
+#                 return HttpResponse("Invalid data form")
+#
+#         if request.POST.get('form_type') == 'search_form':
+#             search_form = main_app.main_app.forms.SearchForm(request.POST)
+#
+#             if search_form.is_valid():
+#                 search_text = request.POST.get('search_text')
+#                 category = request.POST.get('category')
+#                 item_all = list()
+#                 item_search = Item.objects.all()
+#                 for i in item_search:
+#                     if search_text.upper().lower() in i.name.upper().lower() or search_text.upper().lower() in i.text.upper().lower():
+#                         item_all.append(i)
+#
+#                 # item_all = Item.objects.filter(category=category, name=search_text)
+#                 image_all = Image.objects.all()
+#                 user_all = User.objects.all()
+#                 template = loader.get_template('../templates/main_app/index.html')
+#                 return HttpResponse(template.render(locals()))
+#             else:
+#                 print(search_form.errors)
+#                 return HttpResponse("Invalid form")
+#     else:
+#         image_all = Image.objects.all()
+#         item_all = Item.objects.all()
+#         login_form = main_app.main_app.forms.LoginForm()
+#         search_form = main_app.main_app.forms.SearchForm()
+#
+#         return render(request, '../templates/main_app/index.html',
+#                       {'login_form': login_form, 'search_form': search_form, 'item_all': item_all,
+#                        'image_all': image_all})
 
 
 def member_bio(request):
@@ -132,6 +186,7 @@ def member_bio(request):
 def add_item(request):
     if request.user.is_authenticated:
         if request.method == 'POST':
+            # if request.POST.get('form_type') == 'add_item_form':
             form = main_app.main_app.forms.AddItemForm(request.POST, request.FILES)
             if form.is_valid():
                 name = request.POST.get('name')
@@ -143,7 +198,7 @@ def add_item(request):
                     user_id=request.user.id,
                     name=name,
                     price=price,
-                    category=category,
+                    category_id=category,
                     text=text,
                     status=status)
                 for f in request.FILES.getlist('image'):
@@ -213,26 +268,6 @@ def logout(request):
     return HttpResponseRedirect("/")
 
 
-# @csrf_protect
-# def search(request):
-#     if request.method == 'POST':
-#         form = main_app.main_app.forms.SearchForm(request.POST)
-#         if form.is_valid():
-#             search_text = request.POST.get('search_text')
-#             category = request.POST.get('category')
-#             item_all = Item.objects.all()
-#             image_all = Image.objects.all()
-#             user_all = User.objects.all()
-#             template = loader.get_template('../templates/main_app/index.html')
-#             return render(request, template, locals())
-#         else:
-#             print(form.errors)
-#             return HttpResponse("Invalid form")
-#     else:
-#         form = main_app.main_app.forms.SearchForm()
-#         return render(request, '../templates/main_app/index.html', {'form': form})
-
-
 @csrf_protect
 def redaction(request):
     user = User.objects.all()
@@ -253,11 +288,6 @@ def redaction(request):
     else:
         form = main_app.main_app.forms.RedactForm()
         return render(request, '../templates/main_app/redaction.html', {'form': form})
-
-    # form = main_app.main_app.forms.RedactForm()
-    # items = Item.objects.filter(user_id=request.user.id)
-    # template = loader.get_template('../templates/main_app/bio.html')
-    # return HttpResponse(template.render(locals()))
     return HttpResponseRedirect('/bio')
 
 
@@ -279,18 +309,6 @@ def single(request, id):
     return HttpResponse(template.render(locals()))
 
 
-# def cart(request):
-#     cart_items = list()
-#     if 'cart' not in request.session:
-#         request.session['cart'] = list()
-#     if request.user.is_authenticated:
-#         for c in request.session['cart']:
-#             cart_items.append(Item.objects.get(id=c))
-#     else:
-#         return HttpResponse('user not auth')
-#     image_all = Image.objects.all()
-#     template = loader.get_template('../templates/main_app/cart.html')
-#     return HttpResponse(template.render(locals()))
 def cart(request):
     count = 0
     total = 0
@@ -345,8 +363,6 @@ def add_to_cart(request, id):
                     cart_items.append(Item.objects.get(id=c))
     else:
         return HttpResponse('user not auth')
-    # template = loader.get_template('../templates/main_app/cart.html')
-    # return HttpResponse(template.render(locals()))
     return HttpResponse(cart(request))
 
 
@@ -358,8 +374,6 @@ def del_item_cart(request, id):
         request.session.save()
         for c in request.session['cart']:
             cart_items.append(Item.objects.get(id=c))
-    # template = loader.get_template('../templates/main_app/cart.html')
-    # return HttpResponse(template.render(locals()))
     return HttpResponse(cart(request))
 
 
@@ -369,17 +383,126 @@ def make_order(request):
     return HttpResponse(template.render(locals()))
 
 
-def cat(request):
+# @csrf_protect
+# def cat(request):
+#     if request.method == 'POST':
+#         cat_1 = Category.objects.filter(level=0)
+#         if request.POST.get('form_type') == 'login_form':
+#             login_form = main_app.main_app.forms.LoginForm(request.POST)
+#             if login_form.is_valid():
+#                 login = request.POST.get('login', None)
+#                 pwd = request.POST.get('pwd', None)
+#                 user = authenticate(username=login, password=pwd)
+#                 if user is not None:
+#                     if user.is_active:
+#                         django.contrib.auth.login(request, user)
+#                         return HttpResponseRedirect("/")
+#                     else:
+#                         return HttpResponse("disabled account")
+#                 else:
+#                     return HttpResponse("user none")
+#             else:
+#                 return HttpResponse("Invalid data form")
+#
+#         if request.POST.get('form_type') == 'search_form':
+#             search_form = main_app.main_app.forms.SearchForm(request.POST)
+#
+#             if search_form.is_valid():
+#                 search_text = request.POST.get('search_text')
+#                 category = request.POST.get('category')
+#                 item_all = list()
+#                 item_search = Item.objects.all()
+#                 for i in item_search:
+#                     # if search_text.upper().lower() in i.name.upper().lower() or search_text.upper().lower() in i.text.upper().lower():
+#                     if search_text.upper().lower() in i.name.upper().lower():
+#                         item_all.append(i)
+#
+#                 image_all = Image.objects.all()
+#                 user_all = User.objects.all()
+#                 template = loader.get_template('../templates/main_app/cat.html')
+#                 return HttpResponse(template.render(locals()))
+#             else:
+#                 print(search_form.errors)
+#                 return HttpResponse("Invalid form")
+#     else:
+#         image_all = Image.objects.all()
+#         item_all = Item.objects.all()
+#         login_form = main_app.main_app.forms.LoginForm()
+#         search_form = main_app.main_app.forms.SearchForm()
+#
+#         cat_1 = Category.objects.filter(level=0)
+#
+#         return render(request, '../templates/main_app/cat.html',
+#                       {'login_form': login_form, 'search_form': search_form, 'item_all': item_all,
+#                        'image_all': image_all, 'cat_1': cat_1})
 
+
+@csrf_protect
+def show_cat(request, id):
+    cat1 = Category.objects.filter(level=0)
     cat_1 = list()
+    cat2 = Category.objects.filter(level=1)
     cat_2 = list()
-    cat_3 = list()
-    # cat_4 = list()
-
-    cat_1 = Category.objects.filter(level=0)
-    cat_2 = Category.objects.filter(level=1)
     cat_3 = Category.objects.filter(level=2)
-    # cat_4 = Category.objects.filter(level=3)
+    cat3 = Category.objects.filter(level=2, id=id)
+    item_all = list()
+    items = Item.objects.all()
+    category = Category.objects.filter(level=2, id=id)
+    category2 = list()
 
-    template = loader.get_template('../templates/main_app/cat.html')
-    return HttpResponse(template.render(locals()))
+    for cat3 in cat3:
+        for it in items:
+            if cat3.id == it.category_id:
+                item_all.append(it)
+
+    for cat1 in cat1:
+        for c2 in cat2:
+            for cat3 in cat_3:
+                if cat3.id == id:
+                    if cat3.parent_id == c2.id:
+                        if c2.parent_id == cat1.id:
+                            cat_1.append(cat1)
+
+    for c in cat2:
+        for c3 in cat_3:
+            if c3.id == id:
+                if c3.parent_id == c.id:
+                    category2.append(c)
+                    break
+
+    for cat3 in cat_3:
+        if cat3.id == id:
+            for cat in cat2:
+                if cat3.parent_id == cat.id:
+                    cat_2.append(cat)
+
+    image_all = Image.objects.all()
+
+    return render(request, '../templates/main_app/index.html',
+                  {'item_all': item_all, 'image_all': image_all, 'cat_2': cat_2,
+                   'cat_3': cat_3, 'category': category, 'category2': category2, 'cat_1': cat_1})
+
+
+@csrf_protect
+def show_categories(request, id):
+    cat_1 = Category.objects.filter(level=0, id=id)
+    cat2 = Category.objects.filter(level=1)
+    cat_3 = Category.objects.filter(level=2)
+    cat_2 = list()
+    item_all = list()
+    items = Item.objects.all()
+
+    for cat2 in cat2:
+        if cat2.parent_id == id:
+            cat_2.append(cat2)
+
+    for cat2 in cat_2:
+        for cat3 in cat_3:
+            if cat3.parent_id == cat2.id:
+                for it in items:
+                    if cat3.id == it.category_id:
+                        item_all.append(it)
+
+    image_all = Image.objects.all()
+    return render(request, '../templates/main_app/index.html',
+                  {'item_all': item_all, 'image_all': image_all, 'cat_2': cat_2, 'cat_3': cat_3})

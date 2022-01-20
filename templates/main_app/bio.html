@@ -48,10 +48,10 @@
                     <h1 style="margin-top: 40px;">Объявления:</h1>
                     {% for i in items %}
                         {% if i.user_id == request.user.id %}
-                            <section class="container"style="    box-shadow: 0 0 10px 5px #ebebeb;border-radius: 4px;margin-top: 48px;">
+                            <section class="container"style="box-shadow: 0 0 10px 5px #ebebeb;border-radius: 4px;margin-top: 48px;padding: 14px 0 0px 20px;">
                                 <div class="animate-box">
                                     <div class="row">
-                                        <div class="project-text col-md-2">
+                                        <div class="project-text col-md-2 col-xs-3 xs-3-width" >
                                             <div class="img_single_cont">
                                                 {% for im in image_item %}
                                                     {% if im.item_id == i.id %}
@@ -60,14 +60,14 @@
                                                 {% endfor %}
                                             </div>
                                         </div>
-                                        <div class="project-text col-md-10">
-                                            <h2 style="margin-top: 11px;">{{ i.name }}</h2>
-                                            <p style="margin-bottom: 0;padding-left:30px;"><b>{{ i.category }}</b></p>
-                                            <p style="padding-left:30px;">{{ i.text }}</p>
+                                        <div class="project-text col-md-10 col-xs-9 xs-9-width">
+                                            <h2 style="margin-top: 11px;margin-bottom: 10px;overflow: hidden;white-space: nowrap;text-overflow:ellipsis;">{{ i.name }}</h2>
+                                            <p style="margin-bottom: 0;"><b>{{ i.category }}</b></p>
+                                            <p style="overflow: hidden;white-space: nowrap;text-overflow:ellipsis;padding-right: 18px;">{{ i.text }}</p>
                                         </div>
                                     </div>
-                                    <div>
-                                        <a href="{% url 'del_item' i.id %}">Удалить</a>
+                                    <div style="padding-bottom: 15px">
+                                        <a style="margin-right: 15px;" href="{% url 'del_item' i.id %}">Удалить</a>
                                         <a href="{% url 'single' i.id %}">Подробнее</a>
                                     </div>
                                 </div>
@@ -75,7 +75,7 @@
                         {% endif %}
                     {% endfor %}
                     <section class="end">
-                    <div class="button"><a href="{% url 'add_item' %}" class="button_in">Добавить</a></div>
+                    <div class="button" style="margin: 15px;"><a href="{% url 'add_item' %}" class="button_in">Добавить</a></div>
                     </section>
                 </div>
             </section>

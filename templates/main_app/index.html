@@ -5,30 +5,24 @@
 
 {% block content %}
 
-    <!-- ВСПЛЫВАЮЩЕЕ ОКНО -->
-    <div id="zatemnenie">
-      <div id="okno">
-        Всплывающее окошко!<br>
-        <a href="#" class="close">Закрыть окно</a>
-      </div>
-    </div>
     <!--ПОИСК ТОВАРОВ-->
-    <div id="fh5co-product">
+    <div id="fh5co-product" xmlns="http://www.w3.org/1999/html">
         <div class="container">
             <div class="row animate-box">
-                <section class="col-md-8 col-md-offset-2 text-center fh5co-heading search_section">
+                <section class="col-md-8 col-md-offset-2 text-center fh5co-heading search_section" style="margin-bottom: 1em;">
                     <form method="post" enctype="multipart/form-data" id="SearchForm">
+                        {% csrf_token %}
                         <div class="search_inline">
                             <div><input type="hidden" name="form_type" value="search_form"></div>
                             <div class="form-group reg-form-group row search_main  ">
                                 <input class="" type="search" id="search_text" name="search_text"
                                        placeholder="     Поиск товаров...">
                             </div>
-                            <div class="form-group reg-form-group row search_form_cat ">
+                            <div class="form-group reg-form-group row search_form_cat search_form_cat_top">
                                 <label for="search_form" class="">Категория:</label>
                                 {{ search_form.category }}
                             </div>
-                            <div class=" form-group fh5co-heading btn_search_form ">
+                            <div class=" form-group fh5co-heading btn_search_form btn_search_form_media ">
                                 <input class="" type="submit" value="Поиск">
                             </div>
                         </div>
@@ -38,48 +32,113 @@
         </div>
     </div>
 
-        <!--КАРТОЧКИ ТОВАРОВ-->
     <div class="container">
         <div class="row">
-            {% if not item_all %}
-                <h3>По вашему запросу ничего не найдено</h3>
-            {% else %}
-            {% for i in item_all %}
-            <div class="col-md-4 col-xs-6 text-center animate-box product_card">
-                <div class="product">
-                    <div class="owl-carousel owl-carousel-fullwidth product-carousel">
-                        {% for im in image_all %}
-                            {% if im.item_id == i.id %}
-                                <div class="item">
-                                    <div class="product-grid"
-                                         style="background-image:url({{ MEDIA_URL }}{{ im.image.url }});">
-                                        <div class="inner">
-                                            <p>
-                                                <input class="hidden" value="{{ i.id }}">
-                                                {% if request.user.is_authenticated %}
-                                                   <a href='{% url 'add_to_cart' i.id%}' class="icon"><i class="icon-shopping-cart"></i></a>
-                                                {% else %}
-                                                    <a  data-toggle="modal" data-target="#loginModal" class="icon"><i class="icon-shopping-cart"></i></a>
-                                                {% endif %}
-                                                <a href='{% url 'single' i.id %}' class="icon"><i class="icon-eye"></i></a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            {% endif %}
+            <div class="col-md-12 cat_full">
+                {% if not cat_2 and not cat_3  %}
+                    {% comment %}<div>
+                        <ul class="cat_tree_first">
+                        {% for cat1 in cat_1 %}
+                            <li class="li_first_cat"><a href="{% url 'show_categories' cat1.id %}">{{ cat1.name }}</a></li>
                         {% endfor %}
-                    </div>
-                    <div class="desc">
-                        <h3><a>{{ i.name }}</a></h3>
-                        {% if i.price == '' %}
-                            <h4>  - - -  </h4>
-                        {% endif %}
-                        <h4>{{ i.price }}</h4>
-                        {% comment %}<h4>{{ i.status }}</h4>{% endcomment %}
-                    </div>
-                </div>
+                        </ul>
+                    </div>{% endcomment %}
+                {% else %}
+                    <p class="bread_text">
+                        <span><a href="{% url 'home' %}">Все категории</a></span>
+                        <span class="sp"> / </span>
+                    {% for cat in cat_1%}
+                        <span>{{ cat.name }}</span>
+                    {% endfor %}
+                    {% for cat in category2%}
+                        <span class="sp"> / </span>
+                        <span>{{ cat.name }}</span>
+                        <span class="sp"> / </span>
+                    {% endfor %}
+                    {% for cat in category%}
+                        <span>{{ cat.name }}</span>
+                    {% endfor %}
+                    </p>
+                {% endif %}
             </div>
-            {% endfor %}
+        </div>
+        <div class="row">
+            {% if not cat_2 and not cat_3  %}
+                <div class="col-md-3">
+                    <h1>Категории:</h1>
+                    <ul class="cat_tree_first">
+                    {% for cat1 in cat_1 %}
+                        <li class="li_first_cat"><a href="{% url 'show_categories' cat1.id %}">{{ cat1.name }}</a></li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+            {% if cat_2 and cat_3  %}
+                <div class="col-md-3">
+                    <ul class="cat_tree_second">
+                    {% if cat_2 and cat_3 %}
+                    {% for cat2 in cat_2 %}
+                        <li class="sec_li">{{ cat2.name }}
+                            <ul>
+                                {% for cat3 in cat_3 %}
+                                    {% if cat3.parent_id == cat2.id%}
+                                        <li><a href="{% url 'show_cat' cat3.id %}">{{ cat3.name }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    {% endfor %}
+                    {% endif %}
+                    </ul>
+                </div>
+            {% endif %}
+
+            <!--КАРТОЧКИ ТОВАРОВ-->
+            <div class="col-md-9">
+                <div class="row">
+                    {% if not item_all %}
+                        <h3>По вашему запросу ничего не найдено</h3>
+                    {% else %}
+                    {% for i in item_all %}
+                    <div class="col-md-4 col-xs-6 text-center animate-box product_card">
+                        <div class="product">
+                            <div class="owl-carousel owl-carousel-fullwidth product-carousel">
+                                {% for im in image_all %}
+                                    {% if im.item_id == i.id %}
+                                        <div class="item">
+                                            <div class="product-grid"
+                                                 style="background-image:url({{ MEDIA_URL }}{{ im.image.url }});">
+        {#                                        <div class="inner">#}
+        {#                                            <p>#}
+        {#                                                <input class="hidden" value="{{ i.id }}">#}
+        {#                                                {% if request.user.is_authenticated %}#}
+        {#                                                   <a href='{% url 'add_to_cart' i.id%}' class="icon"><i class="icon-shopping-cart"></i></a>#}
+        {#                                                {% else %}#}
+        {#                                                    <a  data-toggle="modal" data-target="#loginModal" class="icon"><i class="icon-shopping-cart"></i></a>#}
+        {#                                                {% endif %}#}
+        {#                                                <a href='{% url 'single' i.id %}' class="icon"><i class="icon-eye"></i></a>#}
+        {#                                            </p>#}
+        {#                                        </div>#}
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            <div class="desc">
+                                <h3><a href='{% url 'single' i.id %}'>{{ i.name }}</a></h3>
+                                {% if i.price == '' %}
+                                    <h4>  - - -  </h4>
+                                {% endif %}
+                                <h4>{{ i.price }}</h4>
+                                {% comment %}<h4>{{ i.status }}</h4>{% endcomment %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            {% if cat_2 and cat_3  %}
+            </div>
             {% endif %}
         </div>
     </div>

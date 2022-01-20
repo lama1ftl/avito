@@ -1,5 +1,5 @@
 from django import forms
-
+from .models import *
 
 
 class LoginForm(forms.Form):
@@ -21,8 +21,9 @@ class RegForm(forms.Form):
 class AddItemForm(forms.Form):
     name = forms.CharField(label='name')
     price = forms.CharField(label='price')
-    category = forms.ChoiceField(label='category', choices=(('cat1', 'cat1'),
-                                                            ('cat2', 'cat2')))
+    # category = forms.ChoiceField(label='category', choices=(('cat1', 'cat1'),
+    #                                                         ('cat2', 'cat2')))
+    category = forms.ModelChoiceField(queryset=Category.objects.filter(level=2))
     text = forms.CharField(label='text')
     status = forms.ChoiceField(label='status', choices=(('yes', 'yes'),
                                                         ('no', 'no')))
@@ -37,6 +38,10 @@ class SearchForm(forms.Form):
     category = forms.ChoiceField(label='category', choices=(('cat1', 'cat1'),
                                                             ('cat2', 'cat2')))
 
+# class SearchForm(forms.Form):
+#     search_text = forms.CharField(label='search_text')
+#     category = forms.CharField(label='category')
+
 
 class RedactForm(forms.Form):
     email = forms.EmailField(label='email')
@@ -44,7 +49,3 @@ class RedactForm(forms.Form):
     surname = forms.CharField(label='surname')
     city = forms.CharField(label='city')
     phone = forms.CharField(label='phone')
-
-
-
-

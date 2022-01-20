@@ -119,10 +119,10 @@ h1, h2, h3, h4, h5, h6, figure {
     order: -1;
   }
   #fh5co-product {
-    margin-top: 1em !important;
+    /*margin-top: 1em !important;*/
 }
    .navbar-fixed-top{
-    position: unset;
+    /*position: unset;*/
   }
 
 }
@@ -835,7 +835,7 @@ h1, h2, h3, h4, h5, h6, figure {
   background-position: top center;
   background-repeat: no-repeat;
   position: relative;
-  height: 350px;
+  height: 210px;
   margin-bottom: 20px;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
@@ -957,6 +957,9 @@ h1, h2, h3, h4, h5, h6, figure {
 .product-carousel {
   margin-bottom: 2em;
 }
+.desc_single_ul{
+      margin: 0px !important;
+}
 
 .fh5co-tabs .fh5co-tab-nav {
   clear: both;
@@ -1006,6 +1009,11 @@ h1, h2, h3, h4, h5, h6, figure {
   clear: both;
   position: relative;
   top: 70px;
+}
+.fh5co-tabs .fh5co-tab-content-wrap-change {
+  clear: both;
+  position: relative;
+  top: 20px;
 }
 .fh5co-tabs .fh5co-tab-content-wrap .tab-content {
   position: absolute;
@@ -1814,7 +1822,7 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 .search_form_cat{
   background-color: white;
-  /* padding: 0 30px; */
+  /*padding: 1px 0px;*/
   min-width: 236px;
   border: solid #d1c286;
   border-width: 0px 0px 0px 4px;
@@ -1886,8 +1894,8 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 .search_form_cat{
   background-color: white;
-  /* padding: 0 30px; */
-     margin: 14px 0 !important;
+  padding: 1px 0px;
+  margin: 14px 0 !important;
  }
 .search_section{
   margin-bottom: 2em;
@@ -2059,6 +2067,9 @@ h1, h2, h3, h4, h5, h6, figure {
   .reg_form_cont input{
     width: 100%;
   }
+  .reg_form_cont textarea{
+    width: 100%;
+  }
   .btn_reg_group{
     max-width: 160px;
   }
@@ -2091,7 +2102,32 @@ h1, h2, h3, h4, h5, h6, figure {
     width: 100px;
     height: 100px;
   }
-
+  .label_password_padding{
+    padding-left: 6px; !important;
+    padding-right: 15px; !important;
+  }
+  .btn_search_form_media{
+    width: 40%;
+    margin: 0 auto !important;
+  }
+  .btn_search_form_media input{
+    width: 100%;
+  }
+  /*.search_form_cat_top{*/
+  /*  margin-top: 13px !important;*/
+  /*}*/
+/*  .items_bio_flex{
+  display: flex;
+}*/
+  .xs-9-width{
+    width: 30%;
+  }
+  .xs-3-width{
+    min-width: 170px;
+  }
+  .img_single_owl_cont{
+    height: 300px;
+  }
 }
 
 @media screen and (min-width: 769px) and (max-width: 992px) {
@@ -2108,6 +2144,9 @@ h1, h2, h3, h4, h5, h6, figure {
   }
   .login_form .reg-form-group{
     display: flex;
+  }
+  .img_single_owl_cont{
+    height: 300px;
   }
 
 }
@@ -2214,6 +2253,111 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 }
 /*   ----   404   ----    */
+
+.first {
+    position:relative;
+}
+
+.first:hover ~.second {
+    display:block;
+}
+.second:hover ~.third {
+    display:block;
+}
+.second {
+    display:none;
+}
+.third {
+    display:none;
+}
+
+.categories ul,
+.categories ol{
+ list-style: none;
+}
+
+.cat_full{
+  margin-bottom: 1em;
+}
+.cat_tree_first  {
+  padding: 0;
+  margin-left: 15px;
+}
+.cat_tree_first li{
+  list-style: none;
+  margin-top: 0.5em;
+}
+.cat_tree_first  li a{
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #828282;
+}
+.cat_tree_first  li a:hover{
+    color: #d1c286;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  font-weight: 700;
+}
+.cat_tree_second{
+  padding: 0;
+  margin-left: 15px;
+}
+.cat_tree_second li{
+  list-style: none;
+}
+.cat_tree_second li  a{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #828282;
+}
+.cat_tree_second > li{
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #828282;
+}
+.cat_tree_second li  a:hover{
+    color: #d1c286;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.cat_tree_second li ul{
+  padding: 0;
+  margin-left: 15px;
+}
+.bread_text span a,
+.bread_text span {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #828282;
+}
+.bread_text span a:hover{
+      color: #d1c286;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.bread_text .sp{
+  margin: 0 2px;
+}
+
+.price_up{
+  letter-spacing: 2px !important;
+    border: 2px solid #d1c286;
+    display: inline-block !important;
+    margin-bottom: 20px !important;
+    padding: 7px 20px 10px 20px;
+    margin-left: 20px;
+  margin-bottom: 0 !important;
+  font-family: "Playfair Display", serif !important;
+  font-size: 16px !important;
+}
 
 
 /*# sourceMappingURL=style.css.map */

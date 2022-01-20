@@ -36,7 +36,9 @@ urlpatterns = [
     path(r'^del_item_cart/(?P<int:id>\d+)$', views.del_item_cart, name='del_item_cart'),
     path(r'make_order', views.make_order, name='make_order'),
 
-    path('cat', views.cat, name='cat'),
+    # path('cat', views.index, name='cat'),
+    path(r'^show_cat/(?P<int:id>\d+)$', views.show_cat, name='show_cat'),
+    path(r'^show_categories/(?P<int:id>\d+)$', views.show_categories, name='show_categories'),
 
 ]
 if settings.DEBUG:

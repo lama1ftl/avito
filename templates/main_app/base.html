@@ -124,7 +124,7 @@
                 {% if request.user.is_authenticated %}
                     {% if request.user.role == 2 %}
                         <li><a href="{% url 'mem_bio' %}">Профиль</a></li>
-                        <li><a href="{% url 'add_item' %}">Разместить объяву</a></li>
+                        <li><a href="{% url 'add_item' %}">Разместить объявление</a></li>
                     {% else %}
                         <li><a href="{% url 'mem_bio' %}">Профиль</a></li>
                     {% endif %}
@@ -135,7 +135,7 @@
                     <li class="li_login_padding" data-toggle="modal" data-target="#loginModal">Войти</li>
                     <li class="reg"><a href="{% url 'reg' %}" class="menu">Регистрация</a></li>
                 {% endif %}
-                {% if request.user.is_authenticated %}
+{% comment %}                {% if request.user.is_authenticated %}
                     <li class="shopping-cart">
                         <a href={% url 'cart' %} class="cart"><span>
                             <small>
@@ -150,7 +150,7 @@
                             </small><i class="icon-shopping-cart"></i></span>
                         </a>
                     </li>
-                {% endif %}
+                {% endif %}{% endcomment %}
             </ul>
           </div><!-- /.navbar-collapse -->
         </div>
@@ -181,7 +181,7 @@
                                         <div class="col-sm-7 login_input_row"><input  type="text" id="login" name="login"></div>
                                     </div>
                                     <div class="form-group reg-form-group row">
-                                        <label for="pwd" class="col-sm-5">Пароль:</label>
+                                        <label for="pwd" class="col-sm-5 label_password_padding">Пароль:</label>
                                         <div class="col-sm-7 login_input_row"><input  type="password" id="pwd" name="pwd"></div>
                                     </div>
                                 </fieldset>
@@ -216,6 +216,8 @@
 	<script src="../../static/main_app/js/jquery.countTo.js"></script>
 	<!-- Flexslider -->
 	<script src="../../static/main_app/js/jquery.flexslider-min.js"></script>
+    <!-- Categories -->
+	<script src="../../static/main_app/js/hidden_cat.js.js"></script>
 	<!-- Main -->
 	<script src="../../static/main_app/js/main.js"></script>
 
