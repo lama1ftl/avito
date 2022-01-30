@@ -37,6 +37,9 @@
 	<!-- Owl Carousel  -->
 	<link rel="stylesheet" href="../../static/main_app/css/owl.carousel.min.css">
 	<link rel="stylesheet" href="../../static/main_app/css/owl.theme.default.min.css">
+    <!-- Подключаем CSS слайдера SIMPLE.HTML -->
+    <link rel="stylesheet" href="../../static/main_app/css/simple-adaptive-slider.min.css">
+
 
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="../../static/main_app/css/style.css">
@@ -47,6 +50,8 @@
 	<!--[if lt IE 9]>
 	<script src="../../static/main_app/js/respond.min.js"></script>
 	<![endif]-->
+    <!-- Подключаем JS слайдера SINGLE.HTML -->
+    <script defer src="../../static/main_app/js/simple-adaptive-slider.min.js"></script>
 
 	</head>
 	<body>
@@ -57,55 +62,8 @@
 
 
         <!--МЕНЮШКА-->
-{% comment %}    <nav class="fh5co-nav navbar-fixed-top" role="navigation">
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-xs-4">
-                    <div id="fh5co-logo"><a href="{% url 'home' %}">Shop.</a></div>
-                </div>
-                <div class="col-md-9  col-xs-8 text-right menu-1">
-                    <ul>
-                        <div class="menu_small_flex">
-                        {% if request.user.is_authenticated %}
-                            {% if request.user.role == 2 %}
-                                <li><a href="{% url 'mem_bio' %}">Профиль</a></li>
-                                <li><a href="{% url 'add_item' %}">Разместить объяву</a></li>
-                            {% else %}
-                                <li><a href="{% url 'mem_bio' %}">Профиль</a></li>
-                            {% endif %}
-                        {% endif %}
-                        {% if request.user.is_authenticated %}
-                            <li><a href="{% url 'logout' %}">Выйти</a></li>
-                        {% else %}
-                            <li data-toggle="modal" data-target="#loginModal">Войти</li>
-                            <li class="reg"><a href="{% url 'reg' %}" class="menu">Регистрация</a></li>
-                        {% endif %}
-                        {% if request.user.is_authenticated %}
-                            <li class="shopping-cart">
-                                <a href={% url 'cart' %} class="cart"><span>
-                                    <small>
-                                        {% if not count %}0{% else %}{{ count }}{% endif %}
-                                    </small><i class="icon-shopping-cart"></i></span>
-                                </a>
-                             </li>
-                        {% else %}
-                            <li class="shopping-cart" data-toggle="modal" data-target="#loginModal">
-                                <a  class="cart"><span>
-                                    <small>0
-                                    </small><i class="icon-shopping-cart"></i></span>
-                                </a>
-                            </li>
-                        {% endif %}
-                        </div>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-    </nav>{% endcomment %}
-
-    <nav class="navbar navbar-default fh5co-nav navbar-fixed-top" role="navigation">
+    <nav id="nav_hidden" class="navbar navbar-default fh5co-nav navbar-fixed-top" role="navigation">
         <div class="container">
              <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
@@ -121,6 +79,11 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse menu-1" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
+                {% if  request.user.is_authenticated %}
+                {% else %}
+                    <li><a data-toggle="modal" data-target="#loginModal">Разместить объявление</a></li>
+                {% endif %}
+
                 {% if request.user.is_authenticated %}
                     {% if request.user.role == 2 %}
                         <li><a href="{% url 'mem_bio' %}">Профиль</a></li>
@@ -185,7 +148,8 @@
                                         <div class="col-sm-7 login_input_row"><input  type="password" id="pwd" name="pwd"></div>
                                     </div>
                                 </fieldset>
-                                <input class=" button btn btn-secondary" type="submit" {% comment %}type="button" class="btn btn-secondary"{% endcomment %} value="Войти">
+                                <input class=" button btn btn-secondary" type="submit" value="Войти">
+                                <a href="{% url 'reg' %}" class="menu">Регистрация</a>
                             </form>
                             </div>
                         </div>
@@ -218,8 +182,12 @@
 	<script src="../../static/main_app/js/jquery.flexslider-min.js"></script>
     <!-- Categories -->
 	<script src="../../static/main_app/js/hidden_cat.js.js"></script>
+
+    <script src="../../static/main_app/js/jquery.maskedinput.js"></script>
+    <script src="../../static/main_app/js/common.js"></script>
 	<!-- Main -->
 	<script src="../../static/main_app/js/main.js"></script>
+
 
 	</body>
 </html>

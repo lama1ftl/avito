@@ -45,8 +45,9 @@ class Item(models.Model):
     name = models.CharField('name', max_length=30)
     text = models.TextField('text', max_length=320)
     price = models.CharField('price', max_length=10)
-    status = models.CharField('status', max_length=15)
+    status = models.CharField('status', blank=True, null=True, max_length=15)
     category = models.ForeignKey(Category, null=True, on_delete=models.SET_NULL)
+    address = models.TextField('address', max_length=320, null=True, blank=True,)
 
     def __str__(self):
         return self.name

@@ -13,7 +13,7 @@
             <div class="reg-title-h1 col-md-12">
                 <h1>Редактирование профиля</h1>
             </div>
-            <di class="row user-info-inner text-left reg_form_cont">
+            <div class="row user-info-inner text-left reg_form_cont">
                 <form method="post" action="{% url 'redaction' %}" enctype="multipart/form-data"  class="form-horizontal col-md-8 reg-form">
                 {% csrf_token %}
                     <fieldset>
@@ -35,7 +35,7 @@
                         </div>
                         <div class="form-group reg-form-group row">
                             <label for="work" class="col-sm-5">Телефон:</label>
-                            <input class="col-sm-7" type="text" id="phone" name="phone" value="{{ user.phone }}">
+                            <input class="col-sm-7" type="text" id="phone" name="phone"   value="{{ user.phone }}">
                         </div>
                     </fieldset>
                     <input class="button" type="submit" value="Сохранить">

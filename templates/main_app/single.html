@@ -16,9 +16,9 @@
                             {% if i.item_id == s.id %}
                         <div class="item">
                             <div class="active text-center">
-                                <div class="img_single_owl_cont" style="background-image:url({{ MEDIA_URL }}{{ i.image.url }});">
-                                   {% comment %} <img class="img_single_owl" src="{{ MEDIA_URL }}{{ i.image.url }}" alt="{{ i.item_id }}{{ s.id }}">{% endcomment %}
-                                </div>
+                                <a data-toggle="modal" data-target="#hidden_slider" class="">
+                                    <div class="img_single_owl_cont" style="background-image:url({{ MEDIA_URL }}{{ i.image.url }});"></div>
+                                </a>
                             </div>
                         </div>
                         {% endif %}{% endfor %}
@@ -26,12 +26,11 @@
                 </div>
 
                 <div class="col-md-5">
-
                     <!--НАЗВАНИЕ И КНОПКА КОРЗИНЫ-->
                     <div class="row animate-box">
                         <div class="col-md-8 col-md-offset-2 text-center fh5co-heading" style="margin-bottom: 0 !important;">
                             <h2>{{ s.name }}</h2>
-                            <p style="margin-bottom: 0;">Цена<span  class="price price_up">{{ s.price }}</span></p>
+{#                            <p style="margin-bottom: 0;">Цена<span  class="price price_up">{{ s.price }}</span></p>#}
                             {% comment %}<h2>{{ s.id }}</h2>{% endcomment %}
 {#                                {% if s.id in cart_id %}#}
 {#                                    <p><a {% comment %}href="{% url 'cart' %}"{% endcomment %} class="btn btn-primary btn-outline btn-lg">Товар в корзине</a></p>#}
@@ -51,19 +50,58 @@
                         <div class="fh5co-tab-content-wrap fh5co-tab-content-wrap-change">
                             <div class="fh5co-tab-content tab-content active" data-tab-content="1">
                                 <div class="col-md-10 col-md-offset-1">
-                                    <p>{{ s.text }}</p>
+                                    <p style="margin-bottom: 1em;">Цена<span  class="price price_up">{{ s.price }}</span></p>
                                     <p>Категория: {{ s.category.name }}</p>
+                                    <p>{{ s.text }}</p>
 {#                                    <p >Цена<span class="price">{{ s.price }}</span></p>#}
-
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
 
             </div>
         </div>
     </div>
+
+    {#  слайдер модальное окно   #}
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // инициализация слайдера
+      var slider = new SimpleAdaptiveSlider('.slider', {
+        autoplay: false,
+        interval: 5000,
+        swipe: true,
+      });
+    });
+  </script>
+
+
+     <div class="modal fade" data-method="post" id="hidden_slider" tabindex="-1" role="dialog" aria-labelledby="loginModal"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="slider">
+                    <div class="slider__wrapper">
+                      <div class="slider__items">
+                           {% for i in image_all %}
+                                {% if i.item_id == s.id %}
+                                <div class="slider__item">
+                                        <div class="img_single_slider_hidden" style="background-image:url({{ MEDIA_URL }}{{ i.image.url }});"></div>
+                                </div>
+                            {% endif %}{% endfor %}
+                      </div>
+                    </div>
+                    <a class="slider__control slider__control_prev" href="#" role="button" data-slide="prev"></a>
+                    <a class="slider__control slider__control_next" href="#" role="button" data-slide="next"></a>
+               </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
     {% endfor %}
 {% endblock %}

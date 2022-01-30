@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8264adaf-bb0d-40b5-b4f0-77c04c169b7e" name="Changes" comment="mes">
+    <list default="true" id="8264adaf-bb0d-40b5-b4f0-77c04c169b7e" name="Changes" comment="categories">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_app/main_app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/main_app/forms.py" afterDir="false" />
@@ -9,11 +9,13 @@
       <change beforePath="$PROJECT_DIR$/main_app/main_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/main_app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_app/main_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/main_app/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/main_app/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main_app/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/main_app/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/main_app/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main_app/add_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_app/add_item.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main_app/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_app/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main_app/bio.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_app/bio.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main_app/cat.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main_app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_app/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main_app/redaction.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_app/redaction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main_app/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_app/registration.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main_app/single.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_app/single.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -144,6 +146,15 @@
       <workItem from="1642517715097" duration="382000" />
       <workItem from="1642519274931" duration="1083000" />
       <workItem from="1642696140246" duration="2500000" />
+      <workItem from="1642699093303" duration="1216000" />
+      <workItem from="1643050980941" duration="76000" />
+      <workItem from="1643200950720" duration="23868000" />
+      <workItem from="1643260884090" duration="4678000" />
+      <workItem from="1643348905372" duration="8221000" />
+      <workItem from="1643362337641" duration="9031000" />
+      <workItem from="1643383693095" duration="2079000" />
+      <workItem from="1643389387865" duration="732000" />
+      <workItem from="1643518876648" duration="6417000" />
     </task>
     <task id="LOCAL-00001" summary="mes">
       <created>1640859963939</created>
@@ -159,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642235739838</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="categories">
+      <created>1642699152835</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1642699152835</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,6 +235,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="mes" />
-    <option name="LAST_COMMIT_MESSAGE" value="mes" />
+    <MESSAGE value="categories" />
+    <option name="LAST_COMMIT_MESSAGE" value="categories" />
   </component>
 </project>

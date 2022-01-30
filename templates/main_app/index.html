@@ -33,65 +33,77 @@
     </div>
 
     <div class="container">
+{#        <div class="row">#}
+{#            <div class="col-md-12 cat_full">#}
+{#                {% if not cat_2 and not cat_3  %}#}
+{##}
+{#                {% else %}#}
+{#                    <p class="bread_text">#}
+{#                        <span><a href="{% url 'home' %}">Все категории</a></span>#}
+{#                        <span class="sp"> / </span>#}
+{#                    {% for cat in cat_1%}#}
+{#                        <span>{{ cat.name }}</span>#}
+{#                    {% endfor %}#}
+{#                    {% for cat in category2%}#}
+{#                        <span class="sp"> / </span>#}
+{#                        <span>{{ cat.name }}</span>#}
+{#                        <span class="sp"> / </span>#}
+{#                    {% endfor %}#}
+{#                    {% for cat in category%}#}
+{#                        <span>{{ cat.name }}</span>#}
+{#                    {% endfor %}#}
+{#                    </p>#}
+{#                {% endif %}#}
+{#            </div>#}
+{#        </div>#}
         <div class="row">
-            <div class="col-md-12 cat_full">
-                {% if not cat_2 and not cat_3  %}
-                    {% comment %}<div>
-                        <ul class="cat_tree_first">
-                        {% for cat1 in cat_1 %}
-                            <li class="li_first_cat"><a href="{% url 'show_categories' cat1.id %}">{{ cat1.name }}</a></li>
-                        {% endfor %}
-                        </ul>
-                    </div>{% endcomment %}
-                {% else %}
-                    <p class="bread_text">
-                        <span><a href="{% url 'home' %}">Все категории</a></span>
-                        <span class="sp"> / </span>
-                    {% for cat in cat_1%}
-                        <span>{{ cat.name }}</span>
-                    {% endfor %}
-                    {% for cat in category2%}
-                        <span class="sp"> / </span>
-                        <span>{{ cat.name }}</span>
-                        <span class="sp"> / </span>
-                    {% endfor %}
-                    {% for cat in category%}
-                        <span>{{ cat.name }}</span>
-                    {% endfor %}
-                    </p>
-                {% endif %}
-            </div>
-        </div>
-        <div class="row">
-            {% if not cat_2 and not cat_3  %}
+            {% if cat_1  %}
                 <div class="col-md-3">
-                    <h1>Категории:</h1>
+                    <p class="main_cat_text"><a href="{% url 'home' %}">Все категории</a></p>
                     <ul class="cat_tree_first">
                     {% for cat1 in cat_1 %}
-                        <li class="li_first_cat"><a href="{% url 'show_categories' cat1.id %}">{{ cat1.name }}</a></li>
+                        <li class="li_first_cat"><a href="{% url 'show_second_cat' cat1.id %}">{{ cat1.name }}</a></li>
                     {% endfor %}
                     </ul>
                 </div>
             {% endif %}
-            {% if cat_2 and cat_3  %}
+            {% if cat_2 %}
                 <div class="col-md-3">
+                    <p class="main_cat_text"><a href="{% url 'home' %}">Все категории</a></p>
+                    <p class="main_cat_text"><a href="#">{{ main_cat }}</a></p>
                     <ul class="cat_tree_second">
-                    {% if cat_2 and cat_3 %}
-                    {% for cat2 in cat_2 %}
-                        <li class="sec_li">{{ cat2.name }}
-                            <ul>
-                                {% for cat3 in cat_3 %}
-                                    {% if cat3.parent_id == cat2.id%}
-                                        <li><a href="{% url 'show_cat' cat3.id %}">{{ cat3.name }}</a></li>
-                                    {% endif %}
-                                {% endfor %}
-                            </ul>
-                        </li>
-                    {% endfor %}
+                    {% if cat_2  %}
+                        {% for cat2 in cat_2 %}
+                            <li class="sec_li"><a href="{% url 'show_third_cat' cat2.id %}">{{ cat2.name }}</a></li>
+                        {% endfor %}
                     {% endif %}
                     </ul>
                 </div>
             {% endif %}
+            {% if cat_3 %}
+               <div class="col-md-3">
+                <p class="main_cat_text"><a href="{% url 'home' %}">Все категории</a></p>
+                {% for m in main_cat1 %}<p class="main_cat_text"><a href="{% url 'show_second_cat' m.id %}">{{ m.name }}</a></p>{% endfor %}
+                <p class="main_cat_text"><a href="">{{ main_cat2 }}</a></p>
+                   <ul class="cat_tree_second">
+                    {% if cat_3  %}
+                        {% for cat3 in cat_3 %}
+                            <li class="sec_li"><a href="{% url 'chose_cat' cat3.id  %}">{{ cat3.name }}</a></li>
+                        {% endfor %}
+                    {% endif %}
+                   </ul>
+               </div>
+            {% endif%}
+            {% if main_cat1 and main_cat2 and main_cat3 %}
+                <div class="col-md-3">
+                    <p class="main_cat_text"><a href="{% url 'home' %}">Все категории</a></p>
+                    {% for m in main_cat1 %}<p class="main_cat_text"><a href="{% url 'show_second_cat' m.id %}">{{ m.name }}</a></p>{% endfor %}
+                    {% for m in main_cat2 %}<p class="main_cat_text"><a href="{% url 'show_third_cat' m.id %}">{{ m.name }}</a></p>{% endfor %}
+                    <ul class="cat_tree_second">
+                        {% for m in main_cat3 %}<li class="sec_li">{{ m.name }}</li>{% endfor %}
+                   </ul>
+               </div>
+           {% endif %}
 
             <!--КАРТОЧКИ ТОВАРОВ-->
             <div class="col-md-9">
@@ -106,20 +118,9 @@
                                 {% for im in image_all %}
                                     {% if im.item_id == i.id %}
                                         <div class="item">
-                                            <div class="product-grid"
-                                                 style="background-image:url({{ MEDIA_URL }}{{ im.image.url }});">
-        {#                                        <div class="inner">#}
-        {#                                            <p>#}
-        {#                                                <input class="hidden" value="{{ i.id }}">#}
-        {#                                                {% if request.user.is_authenticated %}#}
-        {#                                                   <a href='{% url 'add_to_cart' i.id%}' class="icon"><i class="icon-shopping-cart"></i></a>#}
-        {#                                                {% else %}#}
-        {#                                                    <a  data-toggle="modal" data-target="#loginModal" class="icon"><i class="icon-shopping-cart"></i></a>#}
-        {#                                                {% endif %}#}
-        {#                                                <a href='{% url 'single' i.id %}' class="icon"><i class="icon-eye"></i></a>#}
-        {#                                            </p>#}
-        {#                                        </div>#}
-                                            </div>
+                                            <a href="{% url 'single' i.id %}">
+                                             <div class="product-grid" style="background-image:url({{ MEDIA_URL }}{{ im.image.url }});"></div>
+                                            </a>
                                         </div>
                                     {% endif %}
                                 {% endfor %}
@@ -129,17 +130,16 @@
                                 {% if i.price == '' %}
                                     <h4>  - - -  </h4>
                                 {% endif %}
-                                <h4>{{ i.price }}</h4>
-                                {% comment %}<h4>{{ i.status }}</h4>{% endcomment %}
+                                <h4>{{ i.price }} руб.</h4>
                             </div>
                         </div>
                     </div>
                     {% endfor %}
                     {% endif %}
                 </div>
-            {% if cat_2 and cat_3  %}
+{#            {% if cat_2 and cat_3  %}#}
             </div>
-            {% endif %}
+{#            {% endif %}#}
         </div>
     </div>
 

@@ -1808,7 +1808,7 @@ h1, h2, h3, h4, h5, h6, figure {
   padding: 2px 0px;
   }
 .search_main{
-  width: 65%;
+  width: 55%;
   }
 .search_main input{
   border: 0;
@@ -1823,9 +1823,10 @@ h1, h2, h3, h4, h5, h6, figure {
 .search_form_cat{
   background-color: white;
   /*padding: 1px 0px;*/
-  min-width: 236px;
+  min-width: 271px;
   border: solid #d1c286;
   border-width: 0px 0px 0px 4px;
+  width: 40%;
   }
 }
 /*
@@ -1968,7 +1969,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .img_single_owl_cont{
-  height: 600px;
+  height: 480px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top center;
@@ -2330,6 +2331,23 @@ h1, h2, h3, h4, h5, h6, figure {
   padding: 0;
   margin-left: 15px;
 }
+.main_cat_text{
+  margin: 0;
+}
+.main_cat_text a{
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #828282;
+}
+.main_cat_text a:hover{
+      color: #d1c286;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  font-weight: 700;
+}
+
 .bread_text span a,
 .bread_text span {
   font-weight: 700;
@@ -2349,15 +2367,71 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .price_up{
   letter-spacing: 2px !important;
-    border: 2px solid #d1c286;
-    display: inline-block !important;
-    margin-bottom: 20px !important;
-    padding: 7px 20px 10px 20px;
-    margin-left: 20px;
+  border: 2px solid #d1c286;
+  display: inline-block !important;
+  margin-bottom: 20px !important;
+  padding: 7px 20px 10px 20px;
+  margin-left: 20px;
   margin-bottom: 0 !important;
   font-family: "Playfair Display", serif !important;
   font-size: 16px !important;
 }
+
+
+/* МОДАЛЬНОЕ ОКНО СЛАЙДЕР */
+
+.hidden__slider{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.8s ease 0s;
+}
+.hidden__slider:target{
+  opacity: 1;
+  visibility: visible;
+}
+.hidden_slider_area{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.slider__items {
+  counter-reset: slide;
+}
+.slider__item {
+  counter-increment: slide;
+}
+.slider__item>div::before {
+  content: counter(slide);
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #fff;
+  font-style: italic;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.show-block {position: unset!important;}
+
+.img_single_slider_hidden{
+  height: 600px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+.slider__wrapper{
+  background-color: white;
+}
+/* /МОДАЛЬНОЕ ОКНО СЛАЙДЕР */
 
 
 /*# sourceMappingURL=style.css.map */

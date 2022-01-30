@@ -46,10 +46,9 @@ def index(request):
                 item_all = list()
                 item_search = Item.objects.all()
                 for i in item_search:
-                    # if search_text.upper().lower() in i.name.upper().lower() or search_text.upper().lower() in i.text.upper().lower():
-                    if search_text.upper().lower() in i.name.upper().lower():
-                        item_all.append(i)
-
+                    if (search_text.upper().lower() in i.name.upper().lower()) and (i.category_id == int(category)):
+                        if i.category_id == int(category):
+                            item_all.append(i)
                 image_all = Image.objects.all()
                 user_all = User.objects.all()
                 template = loader.get_template('../templates/main_app/index.html')
@@ -185,19 +184,24 @@ def member_bio(request):
 @csrf_protect
 def add_item(request):
     if request.user.is_authenticated:
+        cat_1 = Category.objects.filter(level=0)
         if request.method == 'POST':
             # if request.POST.get('form_type') == 'add_item_form':
+            # cat_1 = Category.objects.filter(level=0)
             form = main_app.main_app.forms.AddItemForm(request.POST, request.FILES)
             if form.is_valid():
                 name = request.POST.get('name')
                 price = request.POST.get('price')
+                address = request.POST.get('address')
                 category = request.POST.get('category')
                 text = request.POST.get('text')
-                status = request.POST.get('status')
+                # status = request.POST.get('status')
+                status = 'yes'
                 item = Item.objects.create(
                     user_id=request.user.id,
                     name=name,
                     price=price,
+                    address=address,
                     category_id=category,
                     text=text,
                     status=status)
@@ -211,7 +215,7 @@ def add_item(request):
                 return HttpResponse('not valid form')
         else:
             form = main_app.main_app.forms.AddItemForm()
-            return render(request, '../templates/main_app/add_item.html', {'form': form})
+            return render(request, '../templates/main_app/add_item.html', {'form': form, 'cat_1': cat_1})
     else:
         return HttpResponseRedirect('index')
 
@@ -328,21 +332,6 @@ def cart(request):
             # итоговая стоимость без учета количсетва
             price = cartItem.item_total_price
             total = Decimal(price) + total
-        # k = items.__len__()
-        # print(items)
-        # for i in items:
-        #     for ci in cart_items:
-        #         print(ci)
-        #         if i != ci.item:
-        #             cartItem = CartItem.objects.create(item = i)
-        #             cart_items.append(cartItem)
-        # cart_items.clear()
-        # for p in cart_items:
-        #     print(p)
-        # print(items)
-        # print(cart_items)
-    # else:
-    #     return HttpResponseRedirect("/")
     image_all = Image.objects.all()
     # cart_item = CartItem.objects.filter(id=id)
     template = loader.get_template('../templates/main_app/cart.html')
@@ -437,72 +426,79 @@ def make_order(request):
 #                        'image_all': image_all, 'cat_1': cat_1})
 
 
+def child_cat(parent_cat, child_level):
+    child_cat = Category.objects.filter(level=child_level)
+    child_categories = list()
+    for parent_c in parent_cat:
+        for child_c in child_cat:
+            if child_c.parent_id == parent_c.id:
+                child_categories.append(child_c)
+    return child_categories
+
+
 @csrf_protect
-def show_cat(request, id):
-    cat1 = Category.objects.filter(level=0)
-    cat_1 = list()
-    cat2 = Category.objects.filter(level=1)
-    cat_2 = list()
+def show_categories_2(request, id):  # id первой категории
+    category = Category.objects.filter(level=0, id=id)
+    up_cat = category[0].name
+    child = child_cat(category, 1)
+    item_all = cat_items(category)
+    image_all = Image.objects.all()
+    return render(request, '../templates/main_app/index.html',
+                  {'item_all': item_all, 'image_all': image_all, 'cat_2': child, 'main_cat': up_cat})
+
+
+@csrf_protect
+def show_categories_3(request, id):  # id второй категории
+    category = Category.objects.filter(level=1, id=id)
+    up_cat = category[0].name
+    up_cat_parent = category[0].parent_id
+    cat = Category.objects.filter(level=0, id=up_cat_parent)
+    up_cat2 = Category.objects.filter(level=0, id=up_cat_parent)
+    child = child_cat(category, 2)
+    if not child:
+        return HttpResponse(show_categories_2(request, id=up_cat_parent))
+    item_all = cat_items(category)
+    image_all = Image.objects.all()
+    return render(request, '../templates/main_app/index.html',
+                  {'item_all': item_all, 'image_all': image_all, 'cat_3': child, 'main_cat1': up_cat2,
+                   'main_cat2': up_cat})
+
+
+def cat_items(category):
     cat_3 = Category.objects.filter(level=2)
-    cat3 = Category.objects.filter(level=2, id=id)
     item_all = list()
     items = Item.objects.all()
-    category = Category.objects.filter(level=2, id=id)
-    category2 = list()
-
-    for cat3 in cat3:
-        for it in items:
-            if cat3.id == it.category_id:
-                item_all.append(it)
-
-    for cat1 in cat1:
-        for c2 in cat2:
+    lev = 0
+    for a in category:
+        lev = a.level + 1
+    child = child_cat(category, lev)
+    for c in child:
+        if c.level == 2:
+            for it in items:
+                if it.category_id == c.id:
+                    item_all.append(it)
+        else:
             for cat3 in cat_3:
-                if cat3.id == id:
-                    if cat3.parent_id == c2.id:
-                        if c2.parent_id == cat1.id:
-                            cat_1.append(cat1)
-
-    for c in cat2:
-        for c3 in cat_3:
-            if c3.id == id:
-                if c3.parent_id == c.id:
-                    category2.append(c)
-                    break
-
-    for cat3 in cat_3:
-        if cat3.id == id:
-            for cat in cat2:
-                if cat3.parent_id == cat.id:
-                    cat_2.append(cat)
-
-    image_all = Image.objects.all()
-
-    return render(request, '../templates/main_app/index.html',
-                  {'item_all': item_all, 'image_all': image_all, 'cat_2': cat_2,
-                   'cat_3': cat_3, 'category': category, 'category2': category2, 'cat_1': cat_1})
+                if cat3.parent_id == c.id:
+                    for it in items:
+                        if it.category_id == cat3.id:
+                            item_all.append(it)
+    return item_all
 
 
-@csrf_protect
-def show_categories(request, id):
-    cat_1 = Category.objects.filter(level=0, id=id)
-    cat2 = Category.objects.filter(level=1)
-    cat_3 = Category.objects.filter(level=2)
-    cat_2 = list()
+def chose_cat(request, id):
     item_all = list()
     items = Item.objects.all()
-
-    for cat2 in cat2:
-        if cat2.parent_id == id:
-            cat_2.append(cat2)
-
-    for cat2 in cat_2:
-        for cat3 in cat_3:
-            if cat3.parent_id == cat2.id:
-                for it in items:
-                    if cat3.id == it.category_id:
-                        item_all.append(it)
-
+    cat3 = Category.objects.filter(level=2, id=id)
+    cat2 = Category.objects.filter(level=1, id=cat3[0].parent_id)
+    cat1 = Category.objects.filter(level=0, id=cat2[0].parent_id)
+    for it in items:
+        if it.category_id == id:
+            item_all.append(it)
     image_all = Image.objects.all()
+    main_cat1 = cat1
+    main_cat2 = cat2
+    main_cat3 = cat3
     return render(request, '../templates/main_app/index.html',
-                  {'item_all': item_all, 'image_all': image_all, 'cat_2': cat_2, 'cat_3': cat_3})
+                  {'item_all': item_all, 'image_all': image_all, 'main_cat1': main_cat1, 'main_cat2': main_cat2,
+                   'main_cat3': main_cat3})

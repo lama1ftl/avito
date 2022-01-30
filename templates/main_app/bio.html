@@ -46,36 +46,40 @@
             <section class="prj-title" >
                 <div class="container">
                     <h1 style="margin-top: 40px;">Объявления:</h1>
+{#                     <div class="button" style="margin: 15px;"><a href="{% url 'add_item' %}" class="button_in">Разместить объявление</a></div>#}
                     {% for i in items %}
                         {% if i.user_id == request.user.id %}
                             <section class="container"style="box-shadow: 0 0 10px 5px #ebebeb;border-radius: 4px;margin-top: 48px;padding: 14px 0 0px 20px;">
                                 <div class="animate-box">
                                     <div class="row">
-                                        <div class="project-text col-md-2 col-xs-3 xs-3-width" >
-                                            <div class="img_single_cont">
-                                                {% for im in image_item %}
-                                                    {% if im.item_id == i.id %}
-                                                     <img class="img_single" src="{{ MEDIA_URL }}{{ im.image.url }}">
-                                                    {% endif %}
-                                                {% endfor %}
+                                        <a href="{% url 'single' i.id %}">
+                                            <div class="project-text col-md-2 col-xs-3 xs-3-width" >
+                                                <div class="img_single_cont">
+                                                    {% for im in image_item %}
+                                                        {% if im.item_id == i.id %}
+                                                         <a href="{% url 'single' i.id %}"><img class="img_single" src="{{ MEDIA_URL }}{{ im.image.url }}"></a>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="project-text col-md-10 col-xs-9 xs-9-width">
-                                            <h2 style="margin-top: 11px;margin-bottom: 10px;overflow: hidden;white-space: nowrap;text-overflow:ellipsis;">{{ i.name }}</h2>
-                                            <p style="margin-bottom: 0;"><b>{{ i.category }}</b></p>
-                                            <p style="overflow: hidden;white-space: nowrap;text-overflow:ellipsis;padding-right: 18px;">{{ i.text }}</p>
-                                        </div>
+                                        </a>
+                                        <a href="{% url 'single' i.id %}">
+                                            <div class="project-text col-md-10 col-xs-9 xs-9-width">
+                                                <h2 style="margin-top: 11px;margin-bottom: 10px;overflow: hidden;white-space: nowrap;text-overflow:ellipsis;">{{ i.name }}</h2>
+                                                <p style="margin-bottom: 0; color: #828282;"><b>{{ i.category }}</b></p>
+                                                <p style="overflow: hidden;white-space: nowrap;text-overflow:ellipsis;padding-right: 18px;color: #828282;">{{ i.text }}</p>
+                                            </div>
+                                        </a>
                                     </div>
-                                    <div style="padding-bottom: 15px">
-                                        <a style="margin-right: 15px;" href="{% url 'del_item' i.id %}">Удалить</a>
-                                        <a href="{% url 'single' i.id %}">Подробнее</a>
+                                    <div>
+                                        <a style="padding:0 2em 15px 0; float: right;" href="{% url 'del_item' i.id %}">Удалить</a>
                                     </div>
                                 </div>
                             </section>
                         {% endif %}
                     {% endfor %}
                     <section class="end">
-                    <div class="button" style="margin: 15px;"><a href="{% url 'add_item' %}" class="button_in">Добавить</a></div>
+{#                    <div class="button" style="margin: 15px;"><a href="{% url 'add_item' %}" class="button_in">Добавить</a></div>#}
                     </section>
                 </div>
             </section>
