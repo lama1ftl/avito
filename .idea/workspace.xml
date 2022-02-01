@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8264adaf-bb0d-40b5-b4f0-77c04c169b7e" name="Changes" comment="categories">
+    <list default="true" id="8264adaf-bb0d-40b5-b4f0-77c04c169b7e" name="Changes" comment="30.01.2022">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_app/main_app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/main_app/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_app/main_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/main_app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_app/main_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/main_app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_app/main_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/main_app/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/main_app/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main_app/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main_app/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/main_app/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main_app/add_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_app/add_item.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main_app/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_app/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main_app/bio.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_app/bio.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main_app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_app/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main_app/redaction.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_app/redaction.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main_app/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_app/registration.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main_app/single.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_app/single.html" afterDir="false" />
     </list>
@@ -30,8 +25,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -154,7 +149,12 @@
       <workItem from="1643362337641" duration="9031000" />
       <workItem from="1643383693095" duration="2079000" />
       <workItem from="1643389387865" duration="732000" />
-      <workItem from="1643518876648" duration="6417000" />
+      <workItem from="1643518876648" duration="18841000" />
+      <workItem from="1643601760128" duration="683000" />
+      <workItem from="1643620512393" duration="8988000" />
+      <workItem from="1643639004548" duration="5543000" />
+      <workItem from="1643706936167" duration="5158000" />
+      <workItem from="1643718236623" duration="7304000" />
     </task>
     <task id="LOCAL-00001" summary="mes">
       <created>1640859963939</created>
@@ -177,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642699152835</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="30.01.2022">
+      <created>1643546082627</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1643546082628</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +243,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="mes" />
     <MESSAGE value="categories" />
-    <option name="LAST_COMMIT_MESSAGE" value="categories" />
+    <MESSAGE value="30.01.2022" />
+    <option name="LAST_COMMIT_MESSAGE" value="30.01.2022" />
   </component>
 </project>

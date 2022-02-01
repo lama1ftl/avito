@@ -1,0 +1,41 @@
+{% extends 'main_app/base.html' %}
+
+{% block title %}ITEM{% endblock %}
+
+{% block content %}
+
+    <div id="fh5co-product">
+        <div class="container animate-box add_item_categoty">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                <h3>Новое объявление</h3>
+                <h4>Категория</h4>
+                    {% if cat_1 %}
+                    <div class="col-xs-3 cat_column">
+                        <span>Категория</span>
+                       <ul class="cat_tree_first">
+                        {% for cat1 in cat_1 %}
+                            <li class="li_first_cat"><a href="{% url 'add_item_category_select' cat1.id %}">{{ cat1.name }}</a></li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                    {% if cat_2 %}
+                    <div class="col-xs-3 cat_column cat_second_column">
+                        {% if up_name %}
+                        <span>{{ up_name }}</span>
+                        {% endif %}
+                       <ul class="cat_tree_first">
+                        {% for cat2 in cat_2 %}
+                            <li class="li_first_cat"><a href="{% url 'add_item' cat2.id %}">{{ cat2.name }}</a></li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

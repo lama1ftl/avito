@@ -73,7 +73,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-             <div id="fh5co-logo"><a href="{% url 'home' %}">Shop.</a></div>
+             <div id="fh5co-logo"><a href="{% url 'home' %}"><img src="../../static/main_app/images/Logo_LB_1.svg"></a></div>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -87,7 +87,7 @@
                 {% if request.user.is_authenticated %}
                     {% if request.user.role == 2 %}
                         <li><a href="{% url 'mem_bio' %}">Профиль</a></li>
-                        <li><a href="{% url 'add_item' %}">Разместить объявление</a></li>
+                        <li><a href="{% url 'add_item_category' %}">Разместить объявление</a></li>
                     {% else %}
                         <li><a href="{% url 'mem_bio' %}">Профиль</a></li>
                     {% endif %}
@@ -95,7 +95,7 @@
                 {% if request.user.is_authenticated %}
                     <li><a href="{% url 'logout' %}">Выйти</a></li>
                 {% else %}
-                    <li class="li_login_padding" data-toggle="modal" data-target="#loginModal">Войти</li>
+                    <li data-toggle="modal" data-target="#loginModal"><a>Войти</a></li>
                     <li class="reg"><a href="{% url 'reg' %}" class="menu">Регистрация</a></li>
                 {% endif %}
 {% comment %}                {% if request.user.is_authenticated %}
@@ -139,17 +139,21 @@
                                 {% csrf_token %}
                                 <fieldset>
                                     <input type="hidden" name="form_type" value="login_form">
-                                    <div class="form-group reg-form-group row">
-                                        <label for="login" class="col-sm-5">Логин:</label>
-                                        <div class="col-sm-7 login_input_row"><input  type="text" id="login" name="login"></div>
-                                    </div>
-                                    <div class="form-group reg-form-group row">
-                                        <label for="pwd" class="col-sm-5 label_password_padding">Пароль:</label>
-                                        <div class="col-sm-7 login_input_row"><input  type="password" id="pwd" name="pwd"></div>
+                                    <div class="login_input_block">
+                                        <div class="form-group reg-form-group row">
+    {#                                        <label for="login" class="col-sm-5">Логин:</label>#}
+                                            <div class=" login_input_row" ><input class="add_item" type="text" id="login" name="login" placeholder="Электронная почта"></div>
+                                        </div>
+                                        <div class="form-group reg-form-group row">
+    {#                                        <label for="pwd" class="col-sm-5 label_password_padding">Пароль:</label>#}
+                                            <div class=" login_input_row"><input class="add_item"  type="password" id="pwd" name="pwd" placeholder="Пароль"></div>
+                                        </div>
                                     </div>
                                 </fieldset>
-                                <input class=" button btn btn-secondary" type="submit" value="Войти">
-                                <a href="{% url 'reg' %}" class="menu">Регистрация</a>
+                                <div class="login_button_block ">
+                                     <input class=" button btn_add_item_save" type="submit" value="Войти">
+                                    <a href="{% url 'reg' %}" class="button btn_add_item_save">Регистрация</a>
+                                </div>
                             </form>
                             </div>
                         </div>

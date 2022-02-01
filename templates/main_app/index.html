@@ -9,7 +9,7 @@
     <div id="fh5co-product" xmlns="http://www.w3.org/1999/html">
         <div class="container">
             <div class="row animate-box">
-                <section class="col-md-8 col-md-offset-2 text-center fh5co-heading search_section" style="margin-bottom: 1em;">
+                <section class="col-md-12 text-center fh5co-heading search_section" style="margin-bottom: 1em; padding: 0">
                     <form method="post" enctype="multipart/form-data" id="SearchForm">
                         {% csrf_token %}
                         <div class="search_inline">
@@ -22,7 +22,7 @@
                                 <label for="search_form" class="">Категория:</label>
                                 {{ search_form.category }}
                             </div>
-                            <div class=" form-group fh5co-heading btn_search_form btn_search_form_media ">
+                            <div class=" form-group fh5co-heading btn_search_form btn_search_form_media btn_search_index">
                                 <input class="" type="submit" value="Поиск">
                             </div>
                         </div>

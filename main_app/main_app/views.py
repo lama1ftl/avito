@@ -182,12 +182,10 @@ def member_bio(request):
 
 
 @csrf_protect
-def add_item(request):
+def add_item(request, id):
     if request.user.is_authenticated:
-        cat_1 = Category.objects.filter(level=0)
+        cat_3 = Category.objects.filter(level=2, parent_id=id)
         if request.method == 'POST':
-            # if request.POST.get('form_type') == 'add_item_form':
-            # cat_1 = Category.objects.filter(level=0)
             form = main_app.main_app.forms.AddItemForm(request.POST, request.FILES)
             if form.is_valid():
                 name = request.POST.get('name')
@@ -209,15 +207,32 @@ def add_item(request):
                     image = Image(item=item, image=f)
                     image.save()
                 item.save()
-                return HttpResponseRedirect('bio')
+                return HttpResponseRedirect('/bio')
             else:
                 print(form.errors)
                 return HttpResponse('not valid form')
         else:
             form = main_app.main_app.forms.AddItemForm()
-            return render(request, '../templates/main_app/add_item.html', {'form': form, 'cat_1': cat_1})
+            return render(request, '../templates/main_app/add_item.html', {'form': form, 'cat_3': cat_3})
     else:
         return HttpResponseRedirect('index')
+
+
+@csrf_protect
+def add_item_category(request):
+    cat_1 = Category.objects.filter(level = 0)
+    return render(request, '../templates/main_app/add_item_category.html', {'cat_1': cat_1})
+
+
+@csrf_protect
+def add_item_category_select(request, id):
+    cat_1 = Category.objects.filter(level = 0)
+    cat_2 = Category.objects.filter(level=1, parent_id=id)
+    aa = Category.objects.filter(level=0, id=id)
+    up_name = ''
+    for a in aa:
+        up_name =a.name
+    return render(request, '../templates/main_app/add_item_category.html', {'cat_1': cat_1, 'cat_2': cat_2, 'up_name': up_name})
 
 
 def del_item(request, id):
