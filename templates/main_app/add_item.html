@@ -8,9 +8,9 @@
     <div id="fh5co-product">
         <div class="container animate-box container_input-form">
             <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                    <h2>Добавьте свое объявление</h2>
-                </div>
+{#                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">#}
+{#                    <h2>Добавьте свое объявление</h2>#}
+{#                </div>#}
             </div>
             <div class="row user-info-inner text-left reg_form_cont">
                 <form method="post" enctype="multipart/form-data" id="add_item_form">
@@ -42,9 +42,10 @@
                                 {% endfor %}
                             </select>
                         </div>
-                        <div class="form-group reg-form-group row ">
+                        <div class="form-group reg-form-group row textarea_count">
                             <label for="form.description" class="col-sm-3">Описание:</label>
-                            <textarea rows="6" class="col-sm-9" id="form.description" name="text"></textarea>
+                            <textarea rows="6" class="col-sm-9" onkeyup="countLetters();" id="form.description" name="text"></textarea>
+                            <p>Всего символов: <span  class="count"></span></p>
                         </div>
 {#                        <div class="form-group reg-form-group row ">#}
 {#                            <label for="form.status" class="col-sm-3">Категория:</label>#}
@@ -68,7 +69,16 @@
             </div>
         </div>
     </div>
+    <script>
+     const textarea = document.querySelector("textarea");
+const count = document.querySelector(".count");
 
+    function countLetters() {
+    const text = textarea.value; // #1
+    const textlength = textarea.value.length; // #2
+    count.innerText = `${textlength}`; // #3
+}
+    </script>
 
     <script>
         var list = ["Авиамоторная, Калининская линия",

@@ -13,7 +13,7 @@ class RegForm(forms.Form):
     pwd2 = forms.CharField(label='pwd2')
     email = forms.EmailField(label='email')
     name = forms.CharField(label='name')
-    role = forms.CharField(label='role')
+    # role = forms.CharField(label='role')
     phone = forms.CharField(label='phone')
     city = forms.CharField(label='city')
 

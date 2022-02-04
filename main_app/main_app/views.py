@@ -16,6 +16,8 @@ from .models import *
 import main_app.main_app.forms
 
 
+
+
 @csrf_exempt
 def index(request):
     if request.method == 'POST':
@@ -203,8 +205,14 @@ def add_item(request, id):
                     category_id=category,
                     text=text,
                     status=status)
+                main = 0
                 for f in request.FILES.getlist('image'):
-                    image = Image(item=item, image=f)
+                    if main == 0:
+                        image = Image(item=item, image=f, main_img=1)
+                        image.save()
+                        main = 1
+                    else:
+                        image = Image(item=item, image=f)
                     image.save()
                 item.save()
                 return HttpResponseRedirect('/bio')
@@ -254,7 +262,8 @@ def registration(request):
                 email = request.POST.get("email")
                 name = request.POST.get('name')
                 city = request.POST.get('city')
-                role = request.POST.get('role')
+                # role = request.POST.get('role')
+                role = '2'  # Роль продавца
                 phone = request.POST.get('phone')
                 user = User.objects.create_user(username=login,
                                                 password=password,

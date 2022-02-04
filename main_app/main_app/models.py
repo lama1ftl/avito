@@ -60,6 +60,7 @@ class Item(models.Model):
 class Image(models.Model):
     image = models.FileField(upload_to='images', verbose_name='image')
     item = models.ForeignKey(Item, related_name='images', on_delete=models.CASCADE)
+    main_img = models.CharField('main_img', blank=True, null=True, max_length=2)
 
 
 class CartItem(models.Model):

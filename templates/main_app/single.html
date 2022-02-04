@@ -11,18 +11,32 @@
 
                 <div class="col-md-7  animate-box">
                     <!-- СЛАЙДЕР ФОТОК-->
-                    <div class="owl-carousel owl-carousel-fullwidth product-carousel">
-                        {% for i in image_all %}
-                            {% if i.item_id == s.id %}
-                        <div class="item">
-                            <div class="active text-center">
-                                <a data-toggle="modal" data-target="#hidden_slider" class="">
-                                    <div class="img_single_owl_cont" style="background-image:url({{ MEDIA_URL }}{{ i.image.url }});"></div>
-                                </a>
-                            </div>
+                     <section>
+                        <div id="slider" class="flexslider">
+                          <ul class="slides">
+                            {% for i in image_all %}
+                                {% if i.item_id == s.id %}
+                                <li class="">
+                                 <a data-toggle="modal" data-target="#hidden_slider" class="">
+                                  <img src="{{ MEDIA_URL }}{{ i.image.url }}"/>
+                                 </a>
+                                </li>
+                            {% endif %}{% endfor %}
+                            <!-- items mirrored twice, total of 12 -->
+                          </ul>
                         </div>
-                        {% endif %}{% endfor %}
-                    </div>
+                        <div id="carousel" class="flexslider" >
+                          <ul class="slides" >
+                            {% for i in image_all %}
+                                {% if i.item_id == s.id %}
+                                <li class="">
+                                 <img src="{{ MEDIA_URL }}{{ i.image.url }}"/>
+                                </li>
+                            {% endif %}{% endfor %}
+                            <!-- items mirrored twice, total of 12 -->
+                          </ul>
+                        </div>
+                    </section>
                 </div>
 
                 <div class="col-md-5">
@@ -51,10 +65,11 @@
                             <div class="fh5co-tab-content tab-content active" data-tab-content="1">
                                 <div class="col-md-10 col-md-offset-1">
                                     <p style="margin-bottom: 1em;">Цена<span  class="price price_single">{{ s.price }} p.</span></p>
-                                    <a href="#" class="button btn_add_item_save btn_send">Написать сообщение</a>
+                                    {% if request.user.id != s.user_id%}
+                                        <a href="#" class="button btn_add_item_save btn_send">Написать сообщение</a>
+                                    {% endif %}
                                     <p>Категория: {{ s.category.name }}</p>
                                     <p>{{ s.text }}</p>
-{#                                    <p >Цена<span class="price">{{ s.price }}</span></p>#}
                                 </div>
                             </div>
                         </div>
@@ -100,6 +115,67 @@
             </div>
         </div>
     </div>
+
+<script  type="text/javascript">
+$(window).load(function() {
+  // The slider being synced must be initialized first
+  $('#carousel').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    itemWidth: 110,
+    itemMargin: 5,
+    asNavFor: '#slider'
+  });
+
+  $('#slider').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop:  true,
+    slideshow: false,
+    directionNav: false,
+    sync: "#carousel"
+  });
+});
+</script>
+    {% comment %}<section style="width: 30%">
+        <div class="flexslider">
+            <ul class="slides">
+                {% for i in image_all %}
+                    {% if i.item_id == s.id %}
+                    <li class="">
+                     <img src="{{ MEDIA_URL }}{{ i.image.url }}" style="width: 100%"/>
+                    </li>
+                {% endif %}{% endfor %}
+            </ul>
+        </div>
+        <div id="slider" class="flexslider">
+          <ul class="slides">
+            {% for i in image_all %}
+                {% if i.item_id == s.id %}
+                <li class="">
+                 <a data-toggle="modal" data-target="#hidden_slider" class="">
+                  <img src="{{ MEDIA_URL }}{{ i.image.url }}" style="width: 100%"/>
+                 </a>
+                </li>
+            {% endif %}{% endfor %}
+            <!-- items mirrored twice, total of 12 -->
+          </ul>
+        </div>
+        <div id="carousel" class="flexslider" >
+          <ul class="slides" >
+            {% for i in image_all %}
+                {% if i.item_id == s.id %}
+                <li class="">
+                 <img src="{{ MEDIA_URL }}{{ i.image.url }}"/>
+                </li>
+            {% endif %}{% endfor %}
+            <!-- items mirrored twice, total of 12 -->
+          </ul>
+        </div>
+    </section>{% endcomment %}
+
 
 
 

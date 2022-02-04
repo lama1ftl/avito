@@ -33,32 +33,9 @@
     </div>
 
     <div class="container">
-{#        <div class="row">#}
-{#            <div class="col-md-12 cat_full">#}
-{#                {% if not cat_2 and not cat_3  %}#}
-{##}
-{#                {% else %}#}
-{#                    <p class="bread_text">#}
-{#                        <span><a href="{% url 'home' %}">Все категории</a></span>#}
-{#                        <span class="sp"> / </span>#}
-{#                    {% for cat in cat_1%}#}
-{#                        <span>{{ cat.name }}</span>#}
-{#                    {% endfor %}#}
-{#                    {% for cat in category2%}#}
-{#                        <span class="sp"> / </span>#}
-{#                        <span>{{ cat.name }}</span>#}
-{#                        <span class="sp"> / </span>#}
-{#                    {% endfor %}#}
-{#                    {% for cat in category%}#}
-{#                        <span>{{ cat.name }}</span>#}
-{#                    {% endfor %}#}
-{#                    </p>#}
-{#                {% endif %}#}
-{#            </div>#}
-{#        </div>#}
         <div class="row">
             {% if cat_1  %}
-                <div class="col-md-3">
+                <div class="col-md-3 home_category">
                     <p class="main_cat_text"><a href="{% url 'home' %}">Все категории</a></p>
                     <ul class="cat_tree_first">
                     {% for cat1 in cat_1 %}
@@ -106,7 +83,7 @@
            {% endif %}
 
             <!--КАРТОЧКИ ТОВАРОВ-->
-            <div class="col-md-9">
+            <div class="col-md-9 items_small_container">
                 <div class="row">
                     {% if not item_all %}
                         <h3>По вашему запросу ничего не найдено</h3>
@@ -114,14 +91,16 @@
                     {% for i in item_all %}
                     <div class="col-md-4 col-xs-6 text-center animate-box product_card">
                         <div class="product">
-                            <div class="owl-carousel owl-carousel-fullwidth product-carousel">
+                            <div class="">  {% comment %}owl-carousel owl-carousel-fullwidth product-carousel{% endcomment %}
                                 {% for im in image_all %}
                                     {% if im.item_id == i.id %}
+                                        {% if im.main_img != null  %}
                                         <div class="item">
                                             <a href="{% url 'single' i.id %}">
                                              <div class="product-grid" style="background-image:url({{ MEDIA_URL }}{{ im.image.url }});"></div>
                                             </a>
                                         </div>
+                                        {% endif %}
                                     {% endif %}
                                 {% endfor %}
                             </div>
