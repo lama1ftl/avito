@@ -13,7 +13,6 @@ class User(AbstractUser):
     name = models.CharField('name', max_length=60)
     city = models.CharField('city', null=True, blank=True, max_length=20)
 
-    # ДОБАВИТЬ ПОЛЕ АВАТАРКИ
 
     def __str__(self):
         if User.is_staff:

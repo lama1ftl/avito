@@ -2,20 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8264adaf-bb0d-40b5-b4f0-77c04c169b7e" name="Changes" comment="requirements.txt">
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chatrooms/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chatrooms/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chatrooms/consumers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chatrooms/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chatrooms/routing.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chatrooms/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chatrooms/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chatrooms/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/chatrooms/auth.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/chatrooms/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/chatrooms/room.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/chatrooms/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/chatrooms/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/chatrooms/nav.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/chatrooms/room.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/avito.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/avito.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0d9ac117-182f-4bdb-95d7-002b5782a7f3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/avito2_0/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/avito2_0/asgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/avito2_0/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/avito2_0/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/avito2_0/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/avito2_0/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_app/main_app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/main_app/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_app/main_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/main_app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_app/main_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/main_app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main_app/css/flexslider.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main_app/css/flexslider.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main_app/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main_app/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main_app/add_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_app/add_item.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main_app/add_item_category.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_app/add_item_category.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main_app/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_app/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main_app/bio.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_app/bio.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main_app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_app/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main_app/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_app/registration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main_app/single.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_app/single.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,8 +85,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/dishop-master/src" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/chatrooms" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\vsevo\Desktop\avito\static\chatrooms" />
+      <recent name="C:\Users\vsevo\Desktop\avito\chatroom" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\vsevo\Desktop\avito\templates\chatrooms" />
+      <recent name="C:\Users\vsevo\Desktop\avito\static\chatrooms" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="avito" type="Python.DjangoServer" factoryName="Django server">
@@ -83,9 +107,9 @@
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DJANGO_SETTINGS_MODULE" value="avito2_0.settings" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\User\PycharmProjects\djangoProject1\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="launchJavascriptDebuger" value="false" />
@@ -164,6 +188,9 @@
       <workItem from="1643875651271" duration="16956000" />
       <workItem from="1643945172493" duration="15262000" />
       <workItem from="1643981168719" duration="566000" />
+      <workItem from="1644751693825" duration="3247000" />
+      <workItem from="1644758640057" duration="573000" />
+      <workItem from="1644904373304" duration="5809000" />
     </task>
     <task id="LOCAL-00001" summary="mes">
       <created>1640859963939</created>
@@ -262,6 +289,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="mes" />
